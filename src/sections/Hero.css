@@ -8,48 +8,120 @@
   padding: var(--space-md);
 }
 
+.hero-eyebrow {
+  margin-bottom: var(--space-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
 .hero h1 {
-  font-size: 4rem;
-  margin-bottom: var(--space-md);
-  font-weight: 700;
+  font-size: 48px;
+  letter-spacing: -1.2px;
+  margin: 0 0 var(--space-md);
+  font-weight: 500;
   line-height: 1.1;
 }
 
 .hero h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.3;
-  max-width: 700px;
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: -0.15px;
   margin-bottom: var(--space-md);
+  font-weight: 400;
+  max-width: var(--content-width);
 }
 
 .hero p {
   font-size: 1.2rem;
   line-height: 1.6;
-  max-width: 700px;
+  max-width: var(--content-width);
   margin-bottom: var(--space-md);
 }
 
 .hero-actions {
   display: flex;
   gap: var(--space-sm);
+  max-width: var(--content-width);
 }
 
-.hero-actions a {
+.cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
   padding: 0.9rem 1.5rem;
 
-  border: 1px solid #d0d7de;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius);
 
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: none;
 
   transition:
     background-color var(--transition),
     color var(--transition),
-    border-color var(--transition);
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.cta:hover {
+  transform: translateY(-1px);
+}
+
+.cta-primary {
+  background: var(--color-heading);
+  color: var(--color-background);
+  border-color: var(--color-heading);
+}
+
+.cta-primary:hover {
+  opacity: 0.92;
+}
+
+.cta-secondary {
+  background: transparent;
+  color: var(--color-heading);
+}
+
+.cta-secondary:hover {
+  background: var(--accent-bg);
+  border-color: var(--color-accent);
+}
+
+.cta:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: calc(100vh - 4rem);
+    padding: var(--space-sm);
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    letter-spacing: -0.8px;
+  }
+
+  .hero h2 {
+    font-size: 20px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .cta {
+    width: auto;
+  }
 }
