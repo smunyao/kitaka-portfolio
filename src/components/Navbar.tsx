@@ -3,9 +3,9 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="navbar-logo">
-        Kitaka
-      </div>
+      <a href="#hero" className="navbar-logo">
+  Kitaka
+</a>
 
       <ul className="navbar-links">
         <li>
@@ -13,6 +13,9 @@ function Navbar() {
         </li>
         <li>
           <a href="#experience">Experience</a>
+        </li>
+        <li>
+          <a href="#skills">Skills</a>
         </li>
         <li>
           <a href="#projects">Projects</a>

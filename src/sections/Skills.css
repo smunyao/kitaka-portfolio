@@ -1,0 +1,28 @@
+.skills {
+  padding: 5rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.skill-group {
+  padding: 1.5rem;
+}
+
+.skill-group h3 {
+  margin-bottom: 1rem;
+}
+
+.skill-group p {
+  line-height: 1.6;
+}
