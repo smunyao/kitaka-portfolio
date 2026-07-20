@@ -2,19 +2,28 @@ import "./Hero.css";
 
 function Hero() {
   return (
-    <section className="hero">
-      <h1>
-        Hi, I'm Kitaka.
-      </h1>
+    <section id="hero" className="hero">
+      <h1>Kitaka Munyao</h1>
 
       <h2>
-        Quality Engineer building reliable software.
+        Quality isn't something you test at the end. It's something you build
+        from the beginning.
       </h2>
 
       <p>
-        I specialise in creating high-quality digital experiences
-        through thoughtful testing, automation, and engineering.
+        I'm a Quality Engineer with over nine years of experience helping teams
+        build reliable software through thoughtful testing, automation, and
+        close collaboration with product and engineering teams.
       </p>
+
+      <div className="hero-actions">
+        <a href="#experience" className="experience-button">
+          View Experience
+        </a>
+        <a href="#" className="resume-button">
+          Download Résumé
+        </a>
+      </div>
     </section>
   );
 }
