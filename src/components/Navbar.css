@@ -20,7 +20,7 @@
   text-decoration: none;
 
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.3px;
 }
 
@@ -37,17 +37,44 @@
 }
 
 .navbar-links a {
-  color: var(--color-text);
+  position: relative;
 
+  color: var(--color-text);
   text-decoration: none;
 
   font-size: 0.95rem;
+  font-weight: 400;
 
   transition: color var(--transition);
 }
 
-.navbar-links a:hover {
-  color: var(--color-accent);
+.navbar-links a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+
+  width: 100%;
+  height: 2px;
+
+  background: var(--color-accent);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform var(--transition);
+}
+
+.navbar-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar-links a:focus-visible,
+.navbar-logo:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {
