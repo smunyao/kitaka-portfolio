@@ -1,7 +1,6 @@
 :root {
   /* Layout */
   --max-width: 900px;
-  --max-width: var(--content-width);
 
   /* Spacing */
   --space-xs: 0.5rem;
@@ -122,4 +121,10 @@ p {
   h2 {
     font-size: 20px;
   }
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
