@@ -39,7 +39,7 @@
 
 .hero p {
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.5;
   max-width: var(--content-width);
   margin-bottom: 2.5rem;
 }
@@ -64,7 +64,7 @@
   align-items: center;
   justify-content: center;
 
-  padding: 0.9rem 1.5rem;
+  padding: 0.8rem 1.2rem;
 
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -110,12 +110,12 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: calc(100svh - 4rem);
-    padding: 5rem var(--space-sm) 3rem;
+    min-height: auto;
+    padding: 4rem var(--space-sm) 2rem;
   }
 
   .hero h1 {
-    font-size: 36px;
+    font-size: 32px;
     letter-spacing: -0.8px;
   }
 
