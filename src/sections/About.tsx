@@ -8,15 +8,24 @@ function About() {
       <h2>Quality is built into the process, not inspected at the end.</h2>
 
       <p>
-        I'm a Quality Engineer with over nine years of experience helping teams
-        build reliable software through thoughtful testing, automation, and
-        close collaboration with product and engineering teams.
+        I believe the best products are built by teams that understand them
+        deeply. Quality isn't something added at the end of development. It's
+        shaped through curiosity, collaboration, and understanding the product
+        from the very beginning.
       </p>
 
       <p>
-        I enjoy working across the entire development lifecycle — from
-        understanding requirements and exploring new features to designing
-        effective test strategies and improving engineering practices.
+        I enjoy working with engineers, product managers, designers and customer
+        support to explore ideas, challenge assumptions and understand how
+        people actually use the software we build. The best conversations often
+        happen while solving problems together, not sitting in meetings.
+      </p>
+
+      <p>
+        Throughout my career I've helped improve testing practices, build
+        automation, mentor other quality engineers and grow QA functions. Those
+        experiences have reinforced one belief: quality isn't owned by QA. It's
+        something the whole team builds together.
       </p>
     </section>
   );
