@@ -38,14 +38,17 @@
 
 @media (max-width: 768px) {
   .about {
-    padding: var(--space-lg) var(--space-sm);
+    padding: 3.5rem var(--space-sm);
   }
 
   .about h2 {
     font-size: 24px;
+    margin-bottom: 1rem;
   }
 
   .about p:not(.about-eyebrow) {
     font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
   }
 }

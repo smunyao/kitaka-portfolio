@@ -1,4 +1,16 @@
 .footer {
-  padding: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+
   text-align: center;
+
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem var(--space-sm);
+  }
 }
