@@ -73,14 +73,30 @@
 
 @media (max-width: 768px) {
   .experience {
-    padding: var(--space-lg) var(--space-sm);
+    padding: 3.5rem var(--space-sm);
   }
 
   .experience h2 {
     font-size: 24px;
+    margin-bottom: 2rem;
+  }
+
+  .experience-list {
+    gap: 2rem;
   }
 
   .experience-item h3 {
-    font-size: 22px;
+    font-size: 20px;
+    line-height: 1.35;
+  }
+
+  .experience-context {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .experience-item p:last-child {
+    font-size: 1rem;
+    line-height: 1.65;
   }
 }
