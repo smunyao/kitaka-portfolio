@@ -16,7 +16,7 @@
 }
 
 .about h2 {
-  max-width: var(--content-width);
+  max-width: 42rem;
 
   font-size: 28px;
   line-height: 1.3;
@@ -28,7 +28,7 @@
 }
 
 .about p:not(.about-eyebrow) {
-  max-width: var(--content-width);
+  max-width: 42rem;
 
   font-size: 1.1rem;
   line-height: 1.7;
