@@ -27,6 +27,15 @@
   margin-bottom: var(--space-md);
 }
 
+.contact-note {
+  margin-bottom: var(--space-lg);
+
+  font-size: 0.95rem;
+  font-style: italic;
+
+  color: var(--color-text);
+}
+
 .contact p:not(.contact-eyebrow) {
   max-width: var(--content-width);
 
