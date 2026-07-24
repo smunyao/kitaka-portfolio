@@ -23,14 +23,19 @@ function Hero() {
         helping teams make decisions that lead to better software.
       </p>
 
-      <p className="hero-signature">Quality starts long before testing.</p>
+      <p className="hero-signature">— Kitaka</p>
 
       <div className="hero-actions">
         <a href="#experience" className="cta cta-primary">
-          View Experience
+          Meet the engineer
         </a>
-        <a href="#" className="cta cta-secondary">
-          Download Résumé
+        <a
+          href="/resume/sylvester-kitaka-munyao-resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cta cta-secondary"
+        >
+          View Résumé (PDF)
         </a>
       </div>
     </section>
