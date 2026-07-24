@@ -4,26 +4,26 @@ const experiences = [
   {
     company: "Harvest",
     url: "https://www.getharvest.com",
-    headline: "Building quality across",
-    context: "SaaS Platform · Web Applications · APIs · Integrations",
+    headline: "Building quality at scale",
+    context: "Mature SaaS Platform · Web · Mobile · APIs · Integrations",
     description:
-      "Worked across the Harvest and Forecast ecosystem, helping teams deliver reliable software through thoughtful testing, automation, and close collaboration with engineering and product teams.",
+      "Working across Harvest and Forecast taught me that quality grows through collaboration as much as testing. From researching automation approaches and improving test coverage to pairing with engineers and shaping releases, I learned how thoughtful quality practices help teams ship reliable software with confidence.",
   },
   {
     company: "Chili Piper",
     url: "https://www.chilipiper.com",
-    headline: "Improving quality across",
-    context: "B2B SaaS · Integrations · Calendar Systems · AI Features",
+    headline: "Navigating complexity",
+    context: "CRM Integrations · Calendars · AI Features · Customer Workflows",
     description:
-      "Focused on complex workflows and integrations, partnering with engineering and product teams to improve confidence in customer-facing experiences and new product capabilities.",
+      "Testing Chili Piper meant understanding systems that depended on other systems. Working across integrations, customer workflows and new AI capabilities reinforced the importance of learning products deeply before deciding how to test them.",
   },
   {
     company: "Sitemate",
     url: "https://sitemate.com",
-    headline: "Building and leading QA practices at",
-    context: "Startup Environment · QA Practices · Team Enablement",
+    headline: "Building quality from the ground up",
+    context: "Startup · QA Foundations · Team Growth",
     description:
-      "Helped establish and improve quality practices within a growing engineering team, creating processes that supported reliable releases and stronger collaboration.",
+      "Joining a growing startup gave me the opportunity to build QA practices while remaining hands-on with testing. I helped establish processes, hired and mentored the first QA engineers, and worked alongside the team to make quality part of everyday development rather than something added at the end.",
   },
 ];
 
@@ -39,16 +39,16 @@ function Experience() {
       <div className="experience-list">
         {experiences.map((experience) => (
           <article key={experience.company} className="experience-item">
-            <h3>
-              {experience.headline}{" "}
-              <a
-                href={experience.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {experience.company} ↗
-              </a>
-            </h3>
+            <a
+              className="experience-company"
+              href={experience.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {experience.company}
+            </a>
+
+            <h3>{experience.headline}</h3>
 
             <p className="experience-context">{experience.context}</p>
 
