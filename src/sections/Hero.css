@@ -1,14 +1,11 @@
 .hero {
-  min-height: calc(100svh - 5rem);
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
   max-width: var(--max-width);
   margin: 0 auto;
-
-  padding: 5.5rem var(--space-md) 5rem;
+  min-height: calc(100svh - 5rem);
+  padding: 5.5rem var(--space-md) 2rem;
 }
 
 .hero-eyebrow {

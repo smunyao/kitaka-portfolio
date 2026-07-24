@@ -1,8 +1,15 @@
 import "./About.css";
+import { useReveal } from "../hooks/useReveal";
 
 function About() {
+  const { ref, visible } = useReveal();
+
   return (
-    <section id="about" className="about">
+    <section
+      id="about"
+      ref={ref}
+      className={`about reveal ${visible ? "visible" : ""}`}
+    >
       <p className="about-eyebrow">About</p>
 
       <h2>Quality is built into the process, not inspected at the end.</h2>
