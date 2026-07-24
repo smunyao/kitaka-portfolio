@@ -23,7 +23,7 @@ function Hero() {
         helping teams make decisions that lead to better software.
       </p>
 
-      <p className="hero-signature">Quality starts long before testing.</p>
+      <p className="hero-signature">— Kitaka</p>
 
       <div className="hero-actions">
         <a href="#experience" className="cta cta-primary">
@@ -35,7 +35,7 @@ function Hero() {
           rel="noopener noreferrer"
           className="cta cta-secondary"
         >
-          View Résumé
+          View Résumé (PDF)
         </a>
       </div>
     </section>

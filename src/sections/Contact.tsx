@@ -42,7 +42,7 @@ function Contact() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Résumé
+          Résumé (PDF)
         </a>
       </div>
     </section>
