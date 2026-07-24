@@ -35,6 +35,8 @@
 
 .skill-group {
   max-width: var(--content-width);
+  border-left: 2px solid var(--color-border);
+  padding-left: 1rem;
 }
 
 .skill-group h3 {
@@ -47,6 +49,10 @@
 
 .skill-group p {
   line-height: 1.65;
+}
+
+.skill-group:hover {
+  border-left-color: var(--color-accent);
 }
 
 @media (max-width: 768px) {

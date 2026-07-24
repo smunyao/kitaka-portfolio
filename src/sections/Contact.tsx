@@ -29,7 +29,7 @@ function Contact() {
         </a>
 
         <a href="/resume.pdf" target="_blank">
-          Resume
+          Résumé
         </a>
       </div>
     </section>

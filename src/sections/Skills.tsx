@@ -3,36 +3,44 @@ import "./Skills.css";
 function Skills() {
   return (
     <section id="skills" className="skills">
-      <p className="skills-eyebrow">Skills</p>
+      <p className="skills-eyebrow">How I Work</p>
 
       <h2>
-        The tools, practices, and approaches I use to build confidence in
-        software.
+        Building quality means understanding products, contributing to the team,
+        and helping everyone ship with confidence.
       </h2>
 
       <div className="skills-grid">
         <div className="skill-group">
-          <h3>Quality Engineering</h3>
+          <h3>Understanding Products</h3>
+
           <p>
-            Test strategy, exploratory testing, API testing, integration
-            testing, and building confidence throughout the software development
-            lifecycle.
+            I learn products before I test them. Working closely with engineers,
+            product managers, designers and support teams helps me understand
+            how software is built, how customers use it, and where quality has
+            the greatest impact.
           </p>
         </div>
 
         <div className="skill-group">
-          <h3>Automation & Tooling</h3>
+          <h3>Building Confidence</h3>
+
           <p>
-            Playwright, TypeScript, JavaScript, CI/CD workflows, Postman, and
-            creating maintainable automated test solutions.
+            Testing is part of how I build confidence, not where quality begins.
+            I combine exploratory testing, automation and thoughtful
+            investigation to help teams understand risk, make informed decisions
+            and ship software with confidence.
           </p>
         </div>
 
         <div className="skill-group">
-          <h3>AI-Assisted Engineering</h3>
+          <h3>Building Together</h3>
+
           <p>
-            Using AI tools to improve test creation, debugging, documentation,
-            research, and everyday engineering workflows.
+            I like being part of the work, not standing beside it. I test,
+            automate, pair with engineers, learn from teammates and share
+            feedback because the best products come from teams that build
+            quality together.
           </p>
         </div>
       </div>
