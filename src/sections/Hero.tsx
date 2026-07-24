@@ -27,10 +27,15 @@ function Hero() {
 
       <div className="hero-actions">
         <a href="#experience" className="cta cta-primary">
-          View Experience
+          Meet the engineer
         </a>
-        <a href="#" className="cta cta-secondary">
-          Download Résumé
+        <a
+          href="/resume/sylvester-kitaka-munyao-resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cta cta-secondary"
+        >
+          View Résumé
         </a>
       </div>
     </section>
