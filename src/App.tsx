@@ -22,22 +22,11 @@ function App() {
       }
     }
   }, []);
-  useEffect(() => {
-    if (window.location.hash) {
-      const element = document.querySelector(window.location.hash);
-
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-        });
-      }
-    }
-  }, []);
   return (
     <>
       <Navbar />
 
-      <main>
+      <main id="main-content">
         <Hero />
         <About />
         <Experience />
