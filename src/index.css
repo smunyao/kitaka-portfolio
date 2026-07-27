@@ -16,13 +16,13 @@
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
   /* Colours */
-  --color-text: #6b6375;
-  --color-heading: #08060d;
-  --color-background: #ffffff;
-  --color-border: #e5e4e7;
-  --color-accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
+  --color-text: #5d564f;
+  --color-heading: #2f2b27;
+  --color-background: #f8f6f2;
+  --color-border: #e7e1d8;
+  --color-accent: #8d3bff;
+  --accent-bg: rgba(141, 59, 255, 0.08);
+  --accent-border: rgba(141, 59, 255, 0.35);
 
   /* Typography */
   --font-body: system-ui, "Segoe UI", Roboto, sans-serif;
