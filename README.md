@@ -1,75 +1,122 @@
-# React + TypeScript + Vite
+# Kitaka Munyao | Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> My corner of the web, built with React, TypeScript, and curiosity.
 
-Currently, two official plugins are available:
+![Portfolio homepage](docs/portfolio-home.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A personal portfolio exploring thoughtful software quality, engineering practices, and selected work.
 
-## React Compiler
+## Live site
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🌍 https://kitakamunyao.com
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## About
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+This portfolio was built from scratch as an opportunity to create a fast, accessible, and thoughtfully engineered web experience while practising modern frontend development workflows.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+The project focuses on:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Clean, responsive design
+- Accessibility
+- Performance
+- SEO
+- Maintainable architecture
+- Continuous deployment
 
+Rather than simply presenting information, the goal was to build something that reflects how I approach software engineering: with curiosity, attention to detail, and an emphasis on quality.
+
+---
+
+## Tech Stack
+
+- React
+- TypeScript
+- Vite
+- CSS
+- Cloudflare Pages
+- Cloudflare Registrar
+- GitHub
+
+---
+
+## Features
+
+- Responsive layout
+- Light & dark mode
+- Accessible navigation
+- Open Graph & Twitter Cards
+- robots.txt & sitemap.xml
+- Custom domain
+- Automatic deployments from GitHub
+
+---
+
+## Performance
+
+Latest Lighthouse scores:
+
+| Metric         |   Score |
+| :------------- | ------: |
+| Performance    |  **99** |
+| Accessibility  | **100** |
+| Best Practices | **100** |
+| SEO            | **100** |
+
+---
+
+## Running locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/smunyao/kitaka-portfolio.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
 ```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+---
+
+## Deployment
+
+The site is automatically deployed through **Cloudflare Pages** whenever changes are pushed to the `main` branch.
+
+---
+
+## Roadmap
+
+Future iterations will explore:
+
+- Case studies
+- Dedicated project pages
+- Refined typography
+- More thoughtful motion and interactions
+- Analytics
+- Continued content improvements
+
+---
+
+Understanding products. Building confidence.
