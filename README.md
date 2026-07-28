@@ -2,8 +2,6 @@
 
 > My corner of the web, built with React, TypeScript, and curiosity.
 
-![Portfolio homepage](docs/portfolio-home.png)
-
 A personal portfolio exploring thoughtful software quality, engineering practices, and selected work.
 
 ## Live site
