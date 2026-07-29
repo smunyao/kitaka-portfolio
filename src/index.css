@@ -1,51 +1,9 @@
-:root {
-  /* Layout */
-  --max-width: 900px;
-
-  /* Spacing */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 4rem;
-  --space-xl: 6rem;
-
-  /* Borders & Effects */
-  --radius: 12px;
-  --transition: 200ms ease;
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  /* Colours */
-  --color-text: #5d564f;
-  --color-heading: #2f2b27;
-  --color-background: #f8f6f2;
-  --color-border: #e7e1d8;
-  --color-accent: #8d3bff;
-  --accent-bg: rgba(141, 59, 255, 0.08);
-  --accent-border: rgba(141, 59, 255, 0.35);
-
-  /* Typography */
-  --font-body: system-ui, "Segoe UI", Roboto, sans-serif;
-  --font-heading: system-ui, "Segoe UI", Roboto, sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-text: #9ca3af;
-    --color-heading: #f3f4f6;
-    --color-background: #16171d;
-    --color-border: #2e303a;
-    --color-accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-}
+@import "./styles/variables.css";
+@import "./styles/typography.css";
+@import "./styles/utilities.css";
 
 html {
-  scroll-behavior: smooth;
+  scroll-behaviour: smooth;
 }
 
 body {
