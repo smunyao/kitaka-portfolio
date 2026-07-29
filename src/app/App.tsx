@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "../shared/Navbar";
+import Footer from "../shared/Footer";
 
 import Hero from "../sections/Hero";
 import About from "../sections/About";
