@@ -1,7 +1,8 @@
 .about {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem var(--space-md) var(--space-xl);
+  scroll-margin-top: 6rem;
+  padding: 0 var(--space-md) var(--space-xl);
 }
 
 .about-eyebrow {
