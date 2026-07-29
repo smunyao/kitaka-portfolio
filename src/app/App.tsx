@@ -1,7 +1,7 @@
 import { useEffect } from "react";
+
 import Navbar from "../shared/Navbar";
 import Footer from "../shared/Footer";
-
 import Hero from "../sections/Hero";
 import About from "../sections/About";
 import Experience from "../sections/Experience";
