@@ -10,9 +10,8 @@ function Hero() {
       <h1>Quality starts long before testing.</h1>
 
       <h2>
-        I work with engineers, product managers and designers to understand
-        products, challenge assumptions, and help teams build software people
-        can trust.
+        I help teams understand products deeply, uncover risk early, and build
+        software people can trust.
       </h2>
 
       <p>
@@ -27,7 +26,7 @@ function Hero() {
 
       <div className="hero-actions">
         <a href="#experience" className="cta cta-primary">
-          Meet the engineer
+          Explore my experience
         </a>
         <a
           href="/resume/sylvester-kitaka-munyao-resume.pdf"
