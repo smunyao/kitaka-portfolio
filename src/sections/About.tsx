@@ -8,10 +8,10 @@ function About() {
       <h2>Quality is built into the process, not inspected at the end.</h2>
 
       <p>
-        I believe the best products are built by teams that understand them
+        I believe the best products are built by teams that understand products
         deeply. Quality isn't something added at the end of development. It's
-        shaped through curiosity, collaboration, and understanding the product
-        from the very beginning.
+        shaped through curiosity, collaboration, and asking the right questions
+        to learn how a product really works from the very beginning.
       </p>
 
       <p>
@@ -22,10 +22,10 @@ function About() {
       </p>
 
       <p>
-        Throughout my career I've helped improve testing practices, build
-        automation, mentor other quality engineers and grow QA functions. Those
-        experiences have reinforced one belief: quality isn't owned by QA. It's
-        something the whole team builds together.
+        Throughout my career, those opportunities have reinforced one belief:
+        quality isn't owned by QA. The best products come from teams that share
+        responsibility for understanding customers, challenging assumptions, and
+        building the right thing together.
       </p>
     </section>
   );
