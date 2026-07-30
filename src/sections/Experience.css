@@ -4,17 +4,6 @@
   padding: var(--space-xl) var(--space-md);
 }
 
-.experience-eyebrow {
-  margin-bottom: var(--space-sm);
-
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  color: var(--color-accent);
-}
-
 .experience h2 {
   max-width: var(--content-width);
 

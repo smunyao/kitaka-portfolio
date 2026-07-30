@@ -6,7 +6,7 @@ import { site } from "../content/site";
 function Contact() {
   return (
     <section id="contact" className="contact">
-      <p className="contact-eyebrow">{contactContent.eyebrow}</p>
+      <p className="section-eyebrow">{contactContent.eyebrow}</p>
 
       <h2>{contactContent.heading}</h2>
 

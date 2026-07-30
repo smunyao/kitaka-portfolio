@@ -5,17 +5,6 @@
   padding: 0 var(--space-md) var(--space-xl);
 }
 
-.about-eyebrow {
-  margin-bottom: var(--space-sm);
-
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  color: var(--color-accent);
-}
-
 .about h2 {
   max-width: 42rem;
 
