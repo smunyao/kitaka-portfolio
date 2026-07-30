@@ -4,17 +4,6 @@
   padding: 3.5rem var(--space-sm);
 }
 
-.skills-eyebrow {
-  margin-bottom: var(--space-sm);
-
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  color: var(--color-accent);
-}
-
 .skills h2 {
   max-width: var(--content-width);
 

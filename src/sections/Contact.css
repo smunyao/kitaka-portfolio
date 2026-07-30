@@ -4,17 +4,6 @@
   padding: var(--space-xl) var(--space-md);
 }
 
-.contact-eyebrow {
-  margin-bottom: var(--space-sm);
-
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  color: var(--color-accent);
-}
-
 .contact h2 {
   max-width: var(--content-width);
 
