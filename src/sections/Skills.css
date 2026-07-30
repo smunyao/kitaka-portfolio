@@ -24,7 +24,7 @@
 
   font-weight: 500;
 
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-md);
 }
 
 .skills-grid {

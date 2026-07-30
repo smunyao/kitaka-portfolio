@@ -7,7 +7,7 @@ export const experiences: ExperienceItem[] = [
     headline: "Building quality at scale",
     context: "Mature SaaS Platform · Web · Mobile · APIs · Integrations",
     description:
-      "Working across Harvest and Forecast taught me that quality grows through collaboration as much as testing. From researching automation approaches and improving test coverage to pairing with engineers and shaping releases, I learned how thoughtful quality practices help teams ship reliable software with confidence.",
+      "Working across Harvest and Forecast taught me that quality grows through collaboration as much as testing. Whether I was researching automation approaches, improving test coverage, pairing with engineers or helping shape releases, I learned that thoughtful quality practices help teams ship reliable software with confidence.",
   },
   {
     company: "Chili Piper",
@@ -15,7 +15,7 @@ export const experiences: ExperienceItem[] = [
     headline: "Navigating complexity",
     context: "CRM Integrations · Calendars · AI Features · Customer Workflows",
     description:
-      "Testing Chili Piper meant understanding systems that depended on other systems. Working across integrations, customer workflows and new AI capabilities reinforced the importance of learning products deeply before deciding how to test them.",
+      "Working at Chili Piper taught me that testing complex software starts with understanding how systems depend on one another. Working across integrations, customer workflows and new AI capabilities reinforced the importance of learning products deeply before deciding how best to test them.",
   },
   {
     company: "Sitemate",
@@ -23,6 +23,6 @@ export const experiences: ExperienceItem[] = [
     headline: "Building quality from the ground up",
     context: "Startup · QA Foundations · Team Growth",
     description:
-      "Joining a growing startup gave me the opportunity to build QA practices while remaining hands-on with testing. I helped establish processes, hired and mentored the first QA engineers, and worked alongside the team to make quality part of everyday development rather than something added at the end.",
+      "Joining a growing startup gave me the opportunity to build QA practices while remaining hands-on with testing. Establishing processes, hiring and mentoring the first QA engineers, and working closely with the development team reinforced that quality works best when it's built into everyday development, not added at the end.",
   },
 ];

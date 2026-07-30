@@ -4,45 +4,50 @@ export function useActiveSection(sectionIds: string[]) {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const sections = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter((section): section is HTMLElement => section !== null);
+    const updateActiveSection = () => {
+      const navbar = document.querySelector(".site-header");
+      const navbarHeight =
+        navbar instanceof HTMLElement ? navbar.offsetHeight : 0;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntry = entries.find((entry) => entry.isIntersecting);
+      // Reading line: just below the sticky navbar, about 35% down the viewport.
+      const readingLineRatio = 0.35;
 
-        if (!visibleEntry) return;
+      const readingLine = navbarHeight + window.innerHeight * readingLineRatio;
 
-        setActiveSection((current) =>
-          current === visibleEntry.target.id ? current : visibleEntry.target.id,
-        );
-      },
-      {
-        rootMargin: "-35% 0px -55% 0px",
-        threshold: 0,
-      },
-    );
+      let currentSection = sectionIds[0] ?? "";
 
-    sections.forEach((section) => observer.observe(section));
+      for (const id of sectionIds) {
+        const section = document.getElementById(id);
 
-    const handleScroll = () => {
-      const bottomOffset = 2;
+        if (!section) continue;
 
-      const atBottom =
-        window.innerHeight + window.scrollY >=
-        document.documentElement.scrollHeight - bottomOffset;
+        const rect = section.getBoundingClientRect();
 
-      if (atBottom) {
-        setActiveSection(sectionIds[sectionIds.length - 1]);
+        const top = rect.top;
+        const bottom = rect.bottom;
+
+        if (top <= readingLine && bottom >= readingLine) {
+          currentSection = id;
+          break;
+        }
       }
+
+      setActiveSection((previous) =>
+        previous === currentSection ? previous : currentSection,
+      );
     };
 
-    window.addEventListener("scroll", handleScroll);
+    updateActiveSection();
+
+    window.addEventListener("scroll", updateActiveSection, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", updateActiveSection);
 
     return () => {
-      observer.disconnect();
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
     };
   }, [sectionIds]);
 

@@ -15,7 +15,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-accent);
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-sm);
 }
 
 .hero h1 {
