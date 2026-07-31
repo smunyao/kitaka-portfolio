@@ -41,32 +41,36 @@
   --color-background: #f8f6f2;
   --color-border: #e7e1d8;
 
-  --color-accent: #8d3bff;
+  --color-accent: #7b3a4d;
 
-  --accent-bg: rgba(141, 59, 255, 0.08);
-  --accent-border: rgba(141, 59, 255, 0.35);
+  --accent-bg: rgba(123, 58, 77, 0.09);
+  --accent-border: rgba(123, 58, 77, 0.38);
 
   /* ========================================
      Typography
      ======================================== */
 
-  --font-body: system-ui, "Segoe UI", Roboto, sans-serif;
-  --font-heading: system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Geist Variable", system-ui, sans-serif;
+  --font-heading: "Geist Variable", system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-text: #9ca3af;
-    --color-heading: #f3f4f6;
-    --color-background: #16171d;
-    --color-border: #2e303a;
+    --color-text: #b4ada6;
+    --color-heading: #f3f0ed;
+    --color-background: #171616;
+    --color-border: #34302f;
 
-    --color-accent: #c084fc;
+    --color-accent: #d28a9d;
 
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
+    --accent-bg: rgba(210, 138, 157, 0.14);
+    --accent-border: rgba(210, 138, 157, 0.45);
 
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  .section-eyebrow {
+    color: #a58b92;
   }
 }
