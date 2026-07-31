@@ -4,7 +4,7 @@ import { skillPrinciples } from "../content/skills";
 function Skills() {
   return (
     <section id="skills" className="skills">
-      <p className="skills-eyebrow">How I Work</p>
+      <p className="section-eyebrow">How I Work</p>
 
       <h2>How I put quality into practice.</h2>
 

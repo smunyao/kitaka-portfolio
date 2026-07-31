@@ -3,7 +3,7 @@ import "./About.css";
 function About() {
   return (
     <section id="about" className="about">
-      <p className="about-eyebrow">About</p>
+      <p className="section-eyebrow">About</p>
 
       <h2>Quality is built into the process, not inspected at the end.</h2>
 
