@@ -10,13 +10,9 @@ function Navbar() {
     "contact",
   ]);
 
-  // const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-  //   event.currentTarget.blur();
-  // };
-
   return (
     <header className="site-header">
-      <nav className="navbar">
+      <nav className="navbar" aria-label="Primary navigation">
         <div className="navbar-inner">
           <a href="#hero" className="navbar-logo">
             Kitaka
@@ -26,35 +22,46 @@ function Navbar() {
             <li>
               <a
                 href="#about"
-                // onClick={handleClick}
                 className={activeSection === "about" ? "active" : ""}
+                aria-current={
+                  activeSection === "about" ? "location" : undefined
+                }
               >
                 About
               </a>
             </li>
+
             <li>
               <a
                 href="#experience"
-                // onClick={handleClick}
                 className={activeSection === "experience" ? "active" : ""}
+                aria-current={
+                  activeSection === "experience" ? "location" : undefined
+                }
               >
                 Experience
               </a>
             </li>
+
             <li>
               <a
                 href="#skills"
-                // onClick={handleClick}
                 className={activeSection === "skills" ? "active" : ""}
+                aria-current={
+                  activeSection === "skills" ? "location" : undefined
+                }
               >
                 Skills
               </a>
             </li>
+
             <li>
               <a
                 href="#contact"
-                // onClick={handleClick}
                 className={activeSection === "contact" ? "active" : ""}
+                aria-current={
+                  activeSection === "contact" ? "location" : undefined
+                }
               >
                 Contact
               </a>

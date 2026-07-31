@@ -12,6 +12,7 @@ import "../App.css";
 
 function App() {
   useEffect(() => {
+    // Keep initial hash navigation in sync with active-section tracking.
     if (window.location.hash) {
       const element = document.querySelector(window.location.hash);
 
@@ -22,11 +23,16 @@ function App() {
       }
     }
   }, []);
+
   return (
     <>
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
+
       <Navbar />
 
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Hero />
         <About />
         <Experience />
