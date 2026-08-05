@@ -1,8 +1,11 @@
 # Kitaka Munyao | Portfolio
 
-> My corner of the web, built with React, TypeScript, and curiosity.
+> A personal portfolio exploring quality engineering, thoughtful design, accessibility, and modern frontend engineering.
 
-A personal portfolio exploring thoughtful software quality, engineering practices, and selected work.
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
 ## Live site
 
@@ -25,6 +28,8 @@ The project focuses on:
 
 Rather than simply presenting information, the goal was to build something that reflects how I approach software engineering: with curiosity, attention to detail, and an emphasis on quality.
 
+The repository documents the development process through GitHub Issues, feature branches, pull requests, milestones, and iterative releases, reflecting how I approach software projects beyond writing code.
+
 ---
 
 ## Tech Stack
@@ -32,32 +37,37 @@ Rather than simply presenting information, the goal was to build something that 
 - React
 - TypeScript
 - Vite
-- CSS
+- CSS Modules / Vanilla CSS
+- Git & GitHub
+- GitHub Projects & Issues
 - Cloudflare Pages
 - Cloudflare Registrar
-- GitHub
+- Fontsource (Geist Variable)
 
 ---
 
 ## Features
 
-- Responsive layout
+- Responsive design
 - Light & dark mode
-- Accessible navigation
-- Open Graph & Twitter Cards
+- Keyboard-accessible navigation
+- Skip-to-content support
+- Reduced-motion support
+- Active section tracking
+- Open Graph & Twitter/X Cards
 - robots.txt & sitemap.xml
 - Custom domain
-- Automatic deployments from GitHub
+- Automatic Cloudflare deployments
 
 ---
 
 ## Performance
 
-Latest Lighthouse scores:
+Latest Lighthouse audit (Production):
 
 | Metric         |   Score |
 | :------------- | ------: |
-| Performance    |  **99** |
+| Performance    | **100** |
 | Accessibility  | **100** |
 | Best Practices | **100** |
 | SEO            | **100** |
@@ -106,15 +116,21 @@ The site is automatically deployed through **Cloudflare Pages** whenever changes
 
 ## Roadmap
 
-Future iterations will explore:
+Planned improvements include:
 
 - Case studies
-- Dedicated project pages
-- Refined typography
-- More thoughtful motion and interactions
+- Selected project pages
+- Writing and technical notes
 - Analytics
-- Continued content improvements
+- Continued accessibility improvements
+- Ongoing design refinements
 
 ---
 
 Understanding products. Building confidence.
+
+---
+
+## Licence
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
