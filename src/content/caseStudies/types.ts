@@ -14,5 +14,6 @@ export interface CaseStudy {
   impact: string[];
   reflection: string[];
 
-  capabilities: string[];
+  focusAreas: string[];
+  productEcosystemItems: string[];
 }

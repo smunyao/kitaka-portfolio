@@ -47,16 +47,23 @@ export const harvestCaseStudy: CaseStudy = {
     "Most importantly, working across Harvest, Forecast, mobile applications, APIs and integrations strengthened my ability to think about products as connected systems. That perspective continues to shape how I approach quality today.",
   ],
 
-  capabilities: [
+  focusAreas: [
     "Product risk analysis",
     "Exploratory testing",
     "API validation",
     "Integration testing",
     "End-to-end automation",
-    "Playwright",
-    "TypeScript",
     "Cross-platform testing",
     "Release readiness",
     "Cross-functional collaboration",
+  ],
+
+  productEcosystemItems: [
+    "Harvest",
+    "Forecast",
+    "Mobile applications",
+    "APIs",
+    "Browser extensions",
+    "Third-party integrations",
   ],
 };
