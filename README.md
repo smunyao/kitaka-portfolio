@@ -9,7 +9,7 @@
 
 ## Live site
 
-🌍 https://kitakamunyao.com
+https://kitakamunyao.com
 
 ---
 
