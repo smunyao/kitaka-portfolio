@@ -1,5 +1,5 @@
 .case-study {
-  max-width: 72rem;
+  max-width: var(--max-width);
 
   margin: 0 auto;
   padding: var(--space-xl) var(--space-md);
@@ -29,11 +29,7 @@
 
 .case-study-layout {
   display: grid;
-  grid-template-columns:
-    minmax(0, 48rem)
-    15rem;
-
-  justify-content: space-between;
+  grid-template-columns: minmax(0, 1fr) 13rem;
   align-items: start;
 
   gap: var(--space-xl);
@@ -72,7 +68,7 @@
 
 .case-study-sidebar {
   position: sticky;
-  top: var(--header-offset);
+  top: calc(var(--header-offset) + var(--space-md));
 
   padding-left: var(--space-md);
 
