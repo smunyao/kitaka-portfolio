@@ -62,20 +62,9 @@ function CaseStudyLayout({ caseStudy }: CaseStudyLayoutProps) {
         <aside className="case-study-sidebar" aria-label="Case study details">
           <div className="case-study-company">
             <h2>{caseStudy.company}</h2>
-
             <p>{caseStudy.role}</p>
             <p>{caseStudy.period}</p>
           </div>
-
-          <section className="case-study-sidebar-section">
-            <h3>Focus areas</h3>
-
-            <ul>
-              {caseStudy.focusAreas.map((focusArea) => (
-                <li key={focusArea}>{focusArea}</li>
-              ))}
-            </ul>
-          </section>
 
           <section className="case-study-sidebar-section">
             <h3>Product ecosystem</h3>
@@ -83,6 +72,16 @@ function CaseStudyLayout({ caseStudy }: CaseStudyLayoutProps) {
             <ul>
               {caseStudy.productEcosystemItems.map((item) => (
                 <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="case-study-sidebar-section">
+            <h3>Focus areas</h3>
+
+            <ul>
+              {caseStudy.focusAreas.map((focusArea) => (
+                <li key={focusArea}>{focusArea}</li>
               ))}
             </ul>
           </section>

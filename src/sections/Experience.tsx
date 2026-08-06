@@ -16,7 +16,6 @@ function Experience() {
           <article key={experience.company} className="experience-item">
             <a
               className="experience-company"
-              href={experience.url}
               target="_blank"
               rel="noopener noreferrer"
             >
