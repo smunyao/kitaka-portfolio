@@ -3,6 +3,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { getCaseStudyBySlug } from "../content/caseStudies";
 import CaseStudyLayout from "../shared/CaseStudyLayout";
 import Footer from "../shared/Footer";
+import Seo from "../shared/Seo";
 
 import "./CaseStudyPage.css";
 
@@ -17,6 +18,13 @@ function CaseStudyPage() {
 
   return (
     <>
+      <Seo
+        title={caseStudy.seo.title}
+        description={caseStudy.seo.description}
+        canonical={`/case-studies/${caseStudy.slug}`}
+        type="article"
+      />
+
       <a className="skip-link" href="#main-content">
         Skip to main content
       </a>
