@@ -3,7 +3,6 @@ import type { ExperienceItem } from "../types/experience";
 export const experiences: ExperienceItem[] = [
   {
     company: "Harvest",
-    url: "https://www.getharvest.com",
     headline: "Building quality at scale",
     context: "Mature SaaS Platform · Web · Mobile · APIs · Integrations",
     description:
@@ -12,7 +11,6 @@ export const experiences: ExperienceItem[] = [
   },
   {
     company: "Chili Piper",
-    url: "https://www.chilipiper.com",
     headline: "Navigating complexity",
     context: "CRM Integrations · Calendars · AI Features · Customer Workflows",
     description:
@@ -21,7 +19,6 @@ export const experiences: ExperienceItem[] = [
   },
   {
     company: "Sitemate",
-    url: "https://sitemate.com",
     headline: "Building quality from the ground up",
     context: "Startup · QA Foundations · Team Growth",
     description:

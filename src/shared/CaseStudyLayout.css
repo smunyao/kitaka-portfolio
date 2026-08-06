@@ -91,6 +91,8 @@
 .case-study-company p {
   margin: 0;
 
+  color: var(--color-text);
+
   font-size: 0.95rem;
   line-height: 1.55;
 }
@@ -130,12 +132,19 @@
   margin-bottom: 0;
 }
 
+.case-study-company p:last-child {
+  color: color-mix(in srgb, var(--color-text) 72%, transparent);
+
+  font-size: 0.85rem;
+}
+
 .case-study-company-link {
   display: inline-block;
 
   color: var(--color-heading);
 
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 500;
   text-decoration-color: var(--color-accent);
   text-underline-offset: 3px;
 
