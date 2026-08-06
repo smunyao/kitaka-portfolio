@@ -1,7 +1,14 @@
 export interface CaseStudy {
   slug: string;
+
+  seo: {
+    title: string;
+    description: string;
+  };
+
   company: string;
   companyUrl: string;
+
   role: string;
   period: string;
 
@@ -16,9 +23,4 @@ export interface CaseStudy {
 
   focusAreas: string[];
   productEcosystemItems: string[];
-}
-
-seo: {
-  title: string;
-  description: string;
 }
