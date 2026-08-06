@@ -60,6 +60,28 @@
   color: var(--color-text);
 }
 
+.experience-case-study-link {
+  display: inline-block;
+
+  margin-top: var(--space-sm);
+
+  color: var(--color-heading);
+
+  font-weight: 600;
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: 3px;
+
+  transition:
+    color var(--transition),
+    text-decoration-color var(--transition),
+    transform var(--transition);
+}
+
+.experience-case-study-link:hover {
+  color: var(--color-accent);
+  transform: translateX(2px);
+}
+
 @media (max-width: 768px) {
   .experience {
     padding: 3.5rem var(--space-sm);

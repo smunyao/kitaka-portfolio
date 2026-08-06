@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+
 import { experiences } from "../content/experience";
+
 import "./Experience.css";
 
 function Experience() {
@@ -25,6 +28,15 @@ function Experience() {
             <p className="experience-context">{experience.context}</p>
 
             <p>{experience.description}</p>
+
+            {experience.caseStudyUrl && (
+              <Link
+                className="experience-case-study-link"
+                to={experience.caseStudyUrl}
+              >
+                Read case study →
+              </Link>
+            )}
           </article>
         ))}
       </div>
