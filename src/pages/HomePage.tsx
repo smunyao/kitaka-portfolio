@@ -2,6 +2,7 @@ import { useEffect } from "react";
 
 import Navbar from "../shared/Navbar";
 import Footer from "../shared/Footer";
+import Seo from "../shared/Seo";
 import Hero from "../sections/Hero";
 import About from "../sections/About";
 import Experience from "../sections/Experience";
@@ -24,6 +25,12 @@ function HomePage() {
 
   return (
     <>
+      <Seo
+        title="Kitaka | Quality Engineer"
+        description="Senior Quality Engineer specialising in software quality, automation, engineering practices and testing strategy. Explore experience, projects and detailed case studies."
+        canonical="/"
+      />
+
       <a className="skip-link" href="#main-content">
         Skip to main content
       </a>

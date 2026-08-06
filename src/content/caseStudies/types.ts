@@ -17,3 +17,8 @@ export interface CaseStudy {
   focusAreas: string[];
   productEcosystemItems: string[];
 }
+
+seo: {
+  title: string;
+  description: string;
+}
