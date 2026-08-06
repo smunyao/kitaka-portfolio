@@ -1,10 +1,11 @@
 import { chiliPiperCaseStudy } from "./chiliPiper";
 import { harvestCaseStudy } from "./harvest";
+import { sitemateCaseStudy } from "./sitemate";
 
 export const caseStudies = [
   harvestCaseStudy,
   chiliPiperCaseStudy,
-  // sitemateCaseStudy,
+  sitemateCaseStudy,
 ];
 
 export function getCaseStudyBySlug(slug: string) {
