@@ -4,4 +4,5 @@ export interface ExperienceItem {
   headline: string;
   context: string;
   description: string;
+  caseStudyUrl?: string;
 }
