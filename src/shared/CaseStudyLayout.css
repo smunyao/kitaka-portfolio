@@ -183,10 +183,25 @@
 
 .case-study-company-link:hover {
   color: var(--color-heading);
+
   border-bottom-color: var(--company-accent);
 }
 
 .case-study-company-link:hover .case-study-company-link-arrow {
+  color: var(--company-accent);
+
+  transform: translateX(2px);
+}
+
+.case-study-company-link:focus-visible {
+  outline: 3px solid var(--company-accent);
+  outline-offset: 4px;
+
+  border-radius: 4px;
+  border-bottom-color: var(--company-accent);
+}
+
+.case-study-company-link:focus-visible .case-study-company-link-arrow {
   color: var(--company-accent);
 
   transform: translateX(2px);
