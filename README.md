@@ -76,10 +76,10 @@ Latest Lighthouse audit (Production):
 
 | Metric         |   Score |
 | :------------- | ------: |
-| Performance    |  **98** |
+| Performance    | **100** |
 | Accessibility  | **100** |
 | Best Practices | **100** |
-| SEO            |  **92** |
+| SEO            | **100** |
 
 > Performance and SEO scores are periodically reviewed as the portfolio evolves.
 
