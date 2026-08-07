@@ -6,15 +6,17 @@ export function useActiveSection(sectionIds: string[]) {
   useEffect(() => {
     const updateActiveSection = () => {
       const navbar = document.querySelector(".site-header");
+
       const navbarHeight =
         navbar instanceof HTMLElement ? navbar.offsetHeight : 0;
 
-      // Reading line: just below the sticky navbar, about 35% down the viewport.
+      // Reading line: just below the sticky navbar,
+      // about 35% down the viewport.
       const readingLineRatio = 0.35;
 
       const readingLine = navbarHeight + window.innerHeight * readingLineRatio;
 
-      let currentSection = sectionIds[0] ?? "";
+      let currentSection = "";
 
       for (const id of sectionIds) {
         const section = document.getElementById(id);

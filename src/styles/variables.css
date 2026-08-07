@@ -1,13 +1,15 @@
 :root {
   /* ========================================
-   Layering
-   ======================================== */
+     Layering
+     ======================================== */
 
   --z-header: 100;
+
   /* ========================================
      Layout
      ======================================== */
-  --header-offset: 3.5rem; /* or 4rem;*/
+
+  --header-offset: 3.5rem;
   --max-width: 832px;
   --content-width: 48rem;
 
@@ -41,10 +43,30 @@
   --color-background: #f8f6f2;
   --color-border: #e7e1d8;
 
+  /* Accent */
+
   --color-accent: #7b3a4d;
 
   --accent-bg: rgba(123, 58, 77, 0.09);
   --accent-border: rgba(123, 58, 77, 0.38);
+
+  /* Semantic */
+
+  --color-success: #6dbb75;
+
+  --color-success-soft: color-mix(
+    in srgb,
+    var(--color-success) 10%,
+    transparent
+  );
+
+  --color-success-border: color-mix(
+    in srgb,
+    var(--color-success) 30%,
+    transparent
+  );
+
+  /* Company */
 
   --company-harvest: #fa5d00;
   --company-chili-piper: #ff5721;
@@ -65,10 +87,28 @@
     --color-background: #171616;
     --color-border: #34302f;
 
+    /* Accent */
+
     --color-accent: #d28a9d;
 
     --accent-bg: rgba(210, 138, 157, 0.14);
     --accent-border: rgba(210, 138, 157, 0.45);
+
+    /* Semantic */
+
+    --color-success: #7fcb87;
+
+    --color-success-soft: color-mix(
+      in srgb,
+      var(--color-success) 12%,
+      transparent
+    );
+
+    --color-success-border: color-mix(
+      in srgb,
+      var(--color-success) 35%,
+      transparent
+    );
 
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
