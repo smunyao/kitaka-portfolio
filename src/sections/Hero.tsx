@@ -34,7 +34,7 @@ function Hero() {
           rel="noopener noreferrer"
           className="cta cta-secondary"
         >
-          View Résumé (PDF)
+          View résumé (PDF)
         </a>
       </div>
     </section>
