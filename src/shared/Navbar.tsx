@@ -2,19 +2,23 @@ import { useActiveSection } from "../hooks/useActiveSection";
 
 import "./Navbar.css";
 
+const SECTION_IDS = ["about", "experience", "projects", "skills", "contact"];
+
 function Navbar() {
-  const activeSection = useActiveSection([
-    "about",
-    "experience",
-    "skills",
-    "contact",
-  ]);
+  const activeSection = useActiveSection(SECTION_IDS);
+
+  const experienceActive =
+    activeSection === "experience" || activeSection === "projects";
 
   return (
     <header className="site-header">
       <nav className="navbar" aria-label="Primary navigation">
         <div className="navbar-inner">
-          <a href="#hero" className="navbar-logo">
+          <a
+            className="navbar-logo"
+            href="#top"
+            aria-label="Kitaka Munyao home"
+          >
             Kitaka
           </a>
 
@@ -34,10 +38,8 @@ function Navbar() {
             <li>
               <a
                 href="#experience"
-                className={activeSection === "experience" ? "active" : ""}
-                aria-current={
-                  activeSection === "experience" ? "location" : undefined
-                }
+                className={experienceActive ? "active" : ""}
+                aria-current={experienceActive ? "location" : undefined}
               >
                 Experience
               </a>

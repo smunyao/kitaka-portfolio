@@ -2,24 +2,21 @@
 
 > A personal portfolio exploring quality engineering, engineering thinking, accessibility, and modern frontend development.
 
-![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)
-![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite)
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-
 ## Live site
 
-**https://kitakamunyao.com**
+[**https://kitakamunyao.com**](https://kitakamunyao.com)
 
 ---
 
 ## About
 
-This portfolio was built from scratch as an opportunity to create a fast, accessible and thoughtfully engineered web experience while practising modern frontend development workflows.
+This portfolio was built from scratch as an opportunity to create a fast, accessible and thoughtfully engineered web experience while exploring modern frontend engineering.
 
-It has since evolved into a place to demonstrate not only what I have built, but how I think about software quality.
+It has since evolved into a place to demonstrate not only what I have worked on, but how I think about software quality, engineering decisions and continuous improvement.
 
 Alongside the portfolio itself, it includes long-form engineering case studies exploring real product challenges, testing strategy, engineering trade-offs and the principles that have shaped my approach to quality engineering.
+
+The Projects section complements that professional experience by presenting personal engineering work that can be inspected directly, beginning with the portfolio itself.
 
 The project focuses on:
 
@@ -30,8 +27,9 @@ The project focuses on:
 - Responsive design
 - Maintainable architecture
 - Continuous deployment
+- Iterative product development
 
-The repository documents the development process through GitHub Issues, feature branches, pull requests, milestones and iterative releases, reflecting the same engineering practices I value in professional software teams.
+The repository documents the development process through GitHub Issues, feature branches, pull requests, milestones, semantic versioning and iterative releases, reflecting the same engineering practices I value in professional software teams.
 
 ---
 
@@ -55,6 +53,8 @@ The repository documents the development process through GitHub Issues, feature 
 
 - Responsive portfolio
 - Engineering case studies
+- Personal engineering projects
+- Reusable project content model
 - Dynamic routing
 - Light & dark mode
 - Keyboard-accessible navigation
@@ -76,12 +76,12 @@ Latest Lighthouse audit (Production):
 
 | Metric         |   Score |
 | :------------- | ------: |
-| Performance    |  **98** |
+| Performance    | **100** |
 | Accessibility  | **100** |
 | Best Practices | **100** |
-| SEO            |  **92** |
+| SEO            | **100** |
 
-> Performance and SEO scores are periodically reviewed as the portfolio evolves.
+> Lighthouse scores are periodically reviewed as the portfolio evolves.
 
 ---
 
@@ -132,7 +132,8 @@ Planned improvements include:
 - Editorial review of engineering case studies
 - Mobile case-study highlights panel
 - Dedicated Open Graph images for individual case studies
-- Selected project pages
+- Additional personal engineering projects
+- Potential long-form project pages for larger projects
 - Writing and technical notes
 - Analytics
 - Continued accessibility improvements
