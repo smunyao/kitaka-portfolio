@@ -8,16 +8,16 @@ interface SeoProps {
   image?: string;
 }
 
-const SITE_NAME = "Kitaka";
+const SITE_NAME = "Kitaka Munyao";
 const BASE_URL = "https://kitakamunyao.com";
-const DEFAULT_IMAGE = "/og-image-v2.png";
+const DEFAULT_SOCIAL_IMAGE = "/og-image-v2.png";
 
 function Seo({
   title,
   description,
   canonical,
   type = "website",
-  image = DEFAULT_IMAGE,
+  image = DEFAULT_SOCIAL_IMAGE,
 }: SeoProps) {
   const canonicalUrl = `${BASE_URL}${canonical}`;
   const imageUrl = `${BASE_URL}${image}`;
@@ -33,15 +33,31 @@ function Seo({
       <link rel="canonical" href={canonicalUrl} />
 
       <meta property="og:type" content={type} />
+
       <meta property="og:site_name" content={SITE_NAME} />
+
       <meta property="og:title" content={title} />
+
       <meta property="og:description" content={description} />
+
       <meta property="og:url" content={canonicalUrl} />
+
       <meta property="og:image" content={imageUrl} />
 
+      <meta property="og:image:type" content="image/png" />
+
+      <meta property="og:image:width" content="1200" />
+
+      <meta property="og:image:height" content="630" />
+
+      <meta property="og:image:alt" content="Kitaka Munyao, Quality Engineer" />
+
       <meta name="twitter:card" content="summary_large_image" />
+
       <meta name="twitter:title" content={title} />
+
       <meta name="twitter:description" content={description} />
+
       <meta name="twitter:image" content={imageUrl} />
     </Helmet>
   );
