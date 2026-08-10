@@ -1,0 +1,7 @@
+# Default owner for the entire repository
+
+- @smunyao
+
+# Protect repository governance files
+
+/.github/ @smunyao
