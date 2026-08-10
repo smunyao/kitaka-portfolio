@@ -1,11 +1,10 @@
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 
 import { getCaseStudyBySlug } from "../content/caseStudies";
 import CaseStudyLayout from "../shared/CaseStudyLayout";
+import EditorialPageHeader from "../shared/EditorialPageHeader";
 import Footer from "../shared/Footer";
 import Seo from "../shared/Seo";
-
-import "./CaseStudyPage.css";
 
 function CaseStudyPage() {
   const { slug } = useParams();
@@ -29,26 +28,11 @@ function CaseStudyPage() {
         Skip to main content
       </a>
 
-      <header className="case-study-page-header">
-        <div className="case-study-page-nav">
-          <nav
-            className="case-study-page-header-content"
-            aria-label="Case study navigation"
-          >
-            <Link
-              className="case-study-home-link"
-              to="/"
-              aria-label="Kitaka Munyao home"
-            >
-              Kitaka
-            </Link>
-
-            <Link className="case-study-back-link" to="/#experience">
-              ← Back to experience
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <EditorialPageHeader
+        backTo="/#experience"
+        backLabel="Back to experience"
+        ariaLabel="Case study navigation"
+      />
 
       <main id="main-content" tabIndex={-1}>
         <CaseStudyLayout caseStudy={caseStudy} />

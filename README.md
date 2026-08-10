@@ -12,7 +12,7 @@
 
 This portfolio was built from scratch as an opportunity to create a fast, accessible and thoughtfully engineered web experience while exploring modern frontend engineering.
 
-It has since evolved into a place to demonstrate not only what I have worked on, but how I think about software quality, engineering decisions and continuous improvement.
+It has since evolved into a place to demonstrate not only what I have worked on, but how I think about software quality, engineering decisions and continuous improvement. A dedicated **How I work** page explores the principles behind that approach, including product understanding, risk, testing, collaboration, automation and building confidence.
 
 Alongside the portfolio itself, it includes long-form engineering case studies exploring real product challenges, testing strategy, engineering trade-offs and the principles that have shaped my approach to quality engineering.
 
@@ -53,6 +53,7 @@ The repository documents the development process through GitHub Issues, feature 
 
 - Responsive portfolio
 - Engineering case studies
+- Long-form "How I work" engineering philosophy
 - Personal engineering projects
 - Reusable project content model
 - Dynamic routing
@@ -129,8 +130,6 @@ The site is automatically deployed through **Cloudflare Pages** whenever changes
 
 Planned improvements include:
 
-- Editorial review of engineering case studies
-- Mobile case-study highlights panel
 - Dedicated Open Graph images for individual case studies
 - Additional personal engineering projects
 - Potential long-form project pages for larger projects

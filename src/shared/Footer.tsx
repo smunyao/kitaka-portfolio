@@ -3,7 +3,7 @@ import "./Footer.css";
 function Footer() {
   return (
     <footer className="footer">
-      <p>© {new Date().getFullYear()} Sylvester Kitaka Munyao</p>
+      <p>© {new Date().getFullYear()} Kitaka Munyao</p>
     </footer>
   );
 }

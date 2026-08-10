@@ -36,7 +36,10 @@ function Projects() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View source →
+                  <span>View source</span>
+                  <span className="project-link-arrow" aria-hidden="true">
+                    →
+                  </span>
                 </a>
               )}
 
@@ -46,7 +49,10 @@ function Projects() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Visit site →
+                  <span>Visit site</span>
+                  <span className="project-link-arrow" aria-hidden="true">
+                    →
+                  </span>
                 </a>
               )}
             </div>

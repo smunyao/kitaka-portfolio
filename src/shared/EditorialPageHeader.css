@@ -1,4 +1,4 @@
-.case-study-page-header {
+.editorial-page-header {
   position: sticky;
   top: 0;
 
@@ -8,7 +8,7 @@
   -webkit-backdrop-filter: blur(10px);
 }
 
-.case-study-page-nav {
+.editorial-page-nav {
   width: 100%;
 
   background: color-mix(in srgb, var(--color-background) 82%, transparent);
@@ -16,10 +16,10 @@
   border-bottom: 1px solid var(--color-border);
 }
 
-.case-study-page-header-content {
+.editorial-page-header-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   max-width: var(--max-width);
 
@@ -27,9 +27,8 @@
   padding: var(--space-md);
 }
 
-.case-study-home-link {
+.editorial-page-home-link {
   color: var(--color-heading);
-
   text-decoration: none;
 
   font-size: 1.25rem;
@@ -39,12 +38,15 @@
   transition: color var(--transition);
 }
 
-.case-study-home-link:hover {
+.editorial-page-home-link:hover {
   color: var(--color-accent);
 }
 
-.case-study-back-link {
-  position: relative;
+.editorial-page-back-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.3rem;
 
   padding-bottom: 0.25rem;
 
@@ -56,33 +58,57 @@
   font-size: 0.95rem;
   font-weight: 400;
 
-  transition:
-    color var(--transition),
-    border-color var(--transition);
+  transition: border-color var(--transition);
 }
 
-.case-study-back-link:hover {
-  color: var(--color-heading);
+.editorial-page-back-link-arrow {
+  color: currentColor;
+
+  transition:
+    color var(--transition),
+    transform var(--transition);
+}
+
+.editorial-page-back-link:hover {
+  color: var(--color-text);
+
   border-bottom-color: var(--color-accent);
 }
 
-.case-study-home-link:focus-visible,
-.case-study-back-link:focus-visible {
+.editorial-page-back-link:hover .editorial-page-back-link-arrow {
+  color: var(--color-accent);
+
+  transform: translateX(-2px);
+}
+
+.editorial-page-home-link:focus-visible,
+.editorial-page-back-link:focus-visible {
   outline: 3px solid var(--color-accent);
   outline-offset: 3px;
+
   border-radius: 4px;
 }
 
+.editorial-page-back-link:focus-visible {
+  border-bottom-color: var(--color-accent);
+}
+
+.editorial-page-back-link:focus-visible .editorial-page-back-link-arrow {
+  color: var(--color-accent);
+
+  transform: translateX(-2px);
+}
+
 @media (max-width: 768px) {
-  .case-study-page-header-content {
+  .editorial-page-header-content {
     padding: var(--space-sm);
   }
 
-  .case-study-home-link {
+  .editorial-page-home-link {
     font-size: 1.15rem;
   }
 
-  .case-study-back-link {
+  .editorial-page-back-link {
     font-size: 0.85rem;
   }
 }
