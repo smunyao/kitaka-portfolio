@@ -11,8 +11,4 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/sylvester-munyao/",
     github: "https://github.com/smunyao",
   },
-
-  resume: {
-    url: "/resume/sylvester-kitaka-munyao-resume.pdf",
-  },
 };

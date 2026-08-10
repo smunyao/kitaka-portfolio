@@ -32,10 +32,6 @@ function Contact() {
         <a href={site.social.github} target="_blank" rel="noopener noreferrer">
           GitHub
         </a>
-
-        <a href={site.resume.url} target="_blank" rel="noopener noreferrer">
-          Résumé (PDF)
-        </a>
       </div>
     </section>
   );
