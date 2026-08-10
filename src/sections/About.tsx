@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "./About.css";
 
 function About() {
@@ -27,6 +29,10 @@ function About() {
         responsibility for understanding customers, challenging assumptions, and
         building the right thing together.
       </p>
+
+      <Link className="about-link" to="/how-i-work">
+        How I work →
+      </Link>
     </section>
   );
 }
