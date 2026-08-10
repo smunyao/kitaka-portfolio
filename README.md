@@ -145,6 +145,12 @@ Planned improvements include:
 
 ---
 
-## Licence
+## Licence and content rights
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+The source code in this repository is licensed under the [MIT License](LICENSE).
+
+Unless otherwise stated, the original editorial and personal content in this repository — including case studies, professional experience, biography, project narratives, written commentary, branding and original imagery — is © 2026 Kitaka Munyao. All rights reserved.
+
+The MIT License applies to the source code and does not grant permission to reproduce, republish or adapt that original editorial or personal content.
+
+Third-party names, trademarks, logos and other assets remain the property of their respective owners.
