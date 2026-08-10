@@ -21,7 +21,7 @@ function HowIWorkPage() {
 
       <EditorialPageHeader
         backTo="/#about"
-        backLabel="Back to portfolio"
+        backLabel="Back to about"
         ariaLabel="How I work navigation"
       />
 

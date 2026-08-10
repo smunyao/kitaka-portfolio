@@ -4,6 +4,9 @@ import { contactContent } from "../content/contact";
 import { site } from "../content/site";
 
 function Contact() {
+  const emailSubject = encodeURIComponent("[Portfolio] Let's connect");
+  const resumeSubject = encodeURIComponent("[Portfolio] Résumé request");
+
   return (
     <section id="contact" className="contact">
       <p className="section-eyebrow">{contactContent.eyebrow}</p>
@@ -12,25 +15,35 @@ function Contact() {
 
       <p>{contactContent.intro}</p>
 
-      <p className="contact-note">{site.contact.preferredMethod}</p>
-
-      <div className="contact-links">
-        <a
-          href={`mailto:${site.contact.email}?subject=%5BPortfolio%5D%20Let's%20connect`}
-        >
-          Email
+      <p className="contact-note">
+        Drop me an{" "}
+        <a href={`mailto:${site.contact.email}?subject=${emailSubject}`}>
+          email
+        </a>{" "}
+        to continue the conversation, or{" "}
+        <a href={`mailto:${site.contact.email}?subject=${resumeSubject}`}>
+          request a copy of my résumé
         </a>
+        .
+      </p>
 
+      <div className="contact-links" aria-label="Professional profiles">
         <a
           href={site.social.linkedin}
           target="_blank"
           rel="noopener noreferrer"
         >
-          LinkedIn
+          <span>LinkedIn</span>
+          <span className="contact-link-arrow" aria-hidden="true">
+            ↗
+          </span>
         </a>
 
         <a href={site.social.github} target="_blank" rel="noopener noreferrer">
-          GitHub
+          <span>GitHub</span>
+          <span className="contact-link-arrow" aria-hidden="true">
+            ↗
+          </span>
         </a>
       </div>
     </section>

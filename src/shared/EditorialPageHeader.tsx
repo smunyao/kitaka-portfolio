@@ -26,7 +26,10 @@ function EditorialPageHeader({
           </Link>
 
           <Link className="editorial-page-back-link" to={backTo}>
-            ← {backLabel}
+            <span className="editorial-page-back-link-arrow" aria-hidden="true">
+              ←
+            </span>
+            <span>{backLabel}</span>
           </Link>
         </nav>
       </div>

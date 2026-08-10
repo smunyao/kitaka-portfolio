@@ -31,7 +31,10 @@ function About() {
       </p>
 
       <Link className="about-link" to="/how-i-work">
-        How I work →
+        <span>How I work</span>
+        <span className="about-link-arrow" aria-hidden="true">
+          →
+        </span>
       </Link>
     </section>
   );

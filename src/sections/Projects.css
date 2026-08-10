@@ -104,6 +104,11 @@
 }
 
 .project-links a {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.3rem;
+
   padding-bottom: 0.2rem;
 
   border-bottom: 1px solid var(--color-border);
@@ -114,15 +119,25 @@
   font-size: 0.9rem;
   font-weight: 500;
 
+  transition: border-color var(--transition);
+}
+
+.project-link-arrow {
+  color: currentColor;
+
   transition:
     color var(--transition),
-    border-color var(--transition),
     transform var(--transition);
 }
 
 .project-links a:hover {
-  color: var(--color-accent);
+  color: var(--color-heading);
+
   border-bottom-color: var(--color-accent);
+}
+
+.project-links a:hover .project-link-arrow {
+  color: var(--color-accent);
 
   transform: translateX(2px);
 }
@@ -132,6 +147,13 @@
   outline-offset: 4px;
 
   border-radius: 4px;
+  border-bottom-color: var(--color-accent);
+}
+
+.project-links a:focus-visible .project-link-arrow {
+  color: var(--color-accent);
+
+  transform: translateX(2px);
 }
 
 @media (max-width: 768px) {

@@ -28,7 +28,10 @@
 }
 
 .about-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.3rem;
 
   padding-bottom: 0.2rem;
 
@@ -40,15 +43,25 @@
   font-size: 0.9rem;
   font-weight: 500;
 
+  transition: border-color var(--transition);
+}
+
+.about-link-arrow {
+  color: currentColor;
+
   transition:
     color var(--transition),
-    border-color var(--transition),
     transform var(--transition);
 }
 
 .about-link:hover {
-  color: var(--color-accent);
+  color: var(--color-heading);
+
   border-bottom-color: var(--color-accent);
+}
+
+.about-link:hover .about-link-arrow {
+  color: var(--color-accent);
 
   transform: translateX(2px);
 }
@@ -58,6 +71,13 @@
   outline-offset: 4px;
 
   border-radius: 4px;
+  border-bottom-color: var(--color-accent);
+}
+
+.about-link:focus-visible .about-link-arrow {
+  color: var(--color-accent);
+
+  transform: translateX(2px);
 }
 
 @media (max-width: 768px) {
