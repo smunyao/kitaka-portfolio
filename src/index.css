@@ -1,4 +1,4 @@
-@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist/wght.css";
 @import "./styles/variables.css";
 @import "./styles/typography.css";
 @import "./styles/utilities.css";
