@@ -30,12 +30,21 @@ function About() {
         building the right thing together.
       </p>
 
-      <Link className="about-link" to="/how-i-work">
-        <span>How I work</span>
-        <span className="about-link-arrow" aria-hidden="true">
-          →
-        </span>
-      </Link>
+      <div className="about-links">
+        <Link className="about-link" to="/how-i-work">
+          <span>How I work</span>
+          <span className="about-link-arrow" aria-hidden="true">
+            →
+          </span>
+        </Link>
+
+        <Link className="about-link" to="/writing">
+          <span>Writing</span>
+          <span className="about-link-arrow" aria-hidden="true">
+            →
+          </span>
+        </Link>
+      </div>
     </section>
   );
 }

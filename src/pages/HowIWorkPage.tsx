@@ -20,8 +20,8 @@ function HowIWorkPage() {
       </a>
 
       <EditorialPageHeader
-        backTo="/#about"
-        backLabel="Back to about"
+        backTo="/"
+        backLabel="Back to home"
         ariaLabel="How I work navigation"
       />
 
