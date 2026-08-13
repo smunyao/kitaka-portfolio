@@ -14,7 +14,9 @@ This portfolio was built from scratch as an opportunity to create a fast, access
 
 It has since evolved into a place to demonstrate not only what I have worked on, but how I think about software quality, engineering decisions and continuous improvement. A dedicated **How I work** page explores the principles behind that approach, including product understanding, risk, testing, collaboration, automation and building confidence.
 
-Alongside the portfolio itself, it includes long-form engineering case studies exploring real product challenges, testing strategy, engineering trade-offs and the principles that have shaped my approach to quality engineering.
+The portfolio also includes long-form engineering case studies exploring real product challenges, testing strategy, engineering trade-offs and the principles that have shaped my approach to quality engineering.
+
+A dedicated **Writing** area provides space for longer-form articles about quality engineering, testing, product understanding and engineering practice.
 
 The Projects section complements that professional experience by presenting personal engineering work that can be inspected directly, beginning with the portfolio itself.
 
@@ -54,6 +56,7 @@ The repository documents the development process through GitHub Issues, feature 
 - Responsive portfolio
 - Engineering case studies
 - Long-form "How I work" engineering philosophy
+- Technical writing and reusable article architecture
 - Personal engineering projects
 - Reusable project content model
 - Dynamic routing
@@ -133,7 +136,6 @@ Planned improvements include:
 - Dedicated Open Graph images for individual case studies
 - Additional personal engineering projects
 - Potential long-form project pages for larger projects
-- Writing and technical notes
 - Analytics
 - Continued accessibility improvements
 - Ongoing design refinements
