@@ -2,44 +2,63 @@
   max-width: var(--max-width);
 
   margin: 0 auto;
-  padding: var(--space-xl) var(--space-md);
+  padding: 7rem var(--space-md) var(--space-xl);
 }
 
 .writing-header {
-  max-width: 54rem;
+  max-width: 46rem;
 
-  margin-bottom: var(--space-xl);
+  margin-bottom: 4.5rem;
+}
+
+.writing-header .section-eyebrow {
+  margin-bottom: 1.25rem;
 }
 
 .writing-header h1 {
-  margin-bottom: var(--space-md);
+  margin-bottom: 1.5rem;
 
-  font-size: 40px;
+  font-family:
+    Iowan Old Style,
+    Baskerville,
+    "Times New Roman",
+    Times,
+    serif;
+  font-size: 52px;
   font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -0.8px;
+  line-height: 1.02;
+  letter-spacing: -1.2px;
 }
 
 .writing-summary {
-  max-width: var(--content-width);
+  max-width: 38rem;
+
+  color: var(--color-text);
 
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.65;
+}
+
+.writing-rule {
+  width: 100%;
+
+  margin-bottom: 3rem;
+
+  border-top: 2px solid var(--color-heading);
 }
 
 .writing-list {
-  display: flex;
-  flex-direction: column;
-
-  gap: var(--space-xl);
-
-  max-width: var(--content-width);
+  max-width: 46rem;
 }
 
 .writing-item {
-  padding-bottom: var(--space-lg);
+  padding: 0 0 3.5rem;
 
   border-bottom: 1px solid var(--color-border);
+}
+
+.writing-item + .writing-item {
+  padding-top: 3.5rem;
 }
 
 .writing-item:last-child {
@@ -52,36 +71,67 @@
   display: flex;
   flex-wrap: wrap;
 
-  gap: var(--space-sm);
+  gap: 0.65rem;
 
-  margin-bottom: var(--space-sm);
+  margin-bottom: 1rem;
 
-  color: color-mix(in srgb, var(--color-text) 72%, transparent);
+  color: color-mix(in srgb, var(--color-text) 65%, transparent);
 
-  font-size: 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 500;
   line-height: 1.5;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
 }
 
 .writing-item-meta span::before {
   content: "·";
 
-  margin-right: var(--space-sm);
+  margin-right: 0.65rem;
 }
 
 .writing-item h2 {
-  margin-bottom: var(--space-sm);
+  max-width: 43rem;
 
-  color: var(--color-heading);
+  margin-bottom: 1rem;
 
-  font-size: 1.45rem;
-  font-weight: 500;
-  line-height: 1.3;
-  letter-spacing: -0.3px;
+  font-family:
+    Iowan Old Style,
+    Baskerville,
+    "Times New Roman",
+    Times,
+    serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: -0.45px;
 }
 
-.writing-item > p {
-  margin-bottom: var(--space-md);
+.writing-item h2 a {
+  color: var(--color-heading);
+  text-decoration: none;
+}
 
+.writing-item h2 a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+.writing-item h2 a:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+
+  border-radius: 4px;
+}
+
+.writing-item-description {
+  max-width: 39rem;
+
+  margin-bottom: 1.5rem;
+
+  font-size: 1rem;
   line-height: 1.7;
 }
 
@@ -98,7 +148,7 @@
   color: var(--color-heading);
   text-decoration: none;
 
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
 
   transition: border-color var(--transition);
@@ -140,36 +190,44 @@
 
 @media (max-width: 768px) {
   .writing {
-    padding: 3.5rem var(--space-sm);
+    padding: 4rem var(--space-sm);
   }
 
   .writing-header {
-    margin-bottom: var(--space-lg);
+    margin-bottom: 3rem;
   }
 
   .writing-header h1 {
-    font-size: 32px;
-    letter-spacing: -0.6px;
+    margin-bottom: 1.25rem;
+
+    font-size: 42px;
+    letter-spacing: -0.8px;
   }
 
   .writing-summary {
-    font-size: 1rem;
+    font-size: 1.05rem;
     line-height: 1.65;
   }
 
-  .writing-list {
-    gap: var(--space-lg);
+  .writing-rule {
+    margin-bottom: 2rem;
   }
 
   .writing-item {
-    padding-bottom: var(--space-md);
+    padding-bottom: 2.5rem;
+  }
+
+  .writing-item + .writing-item {
+    padding-top: 2.5rem;
   }
 
   .writing-item h2 {
-    font-size: 1.25rem;
+    font-size: 27px;
+    line-height: 1.18;
+    letter-spacing: -0.35px;
   }
 
-  .writing-item > p {
+  .writing-item-description {
     font-size: 1rem;
     line-height: 1.65;
   }
