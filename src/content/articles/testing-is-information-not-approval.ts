@@ -6,11 +6,11 @@ export const testingIsInformationNotApproval: Article = {
   title: "Testing is information, not approval",
 
   description:
-    "Why testing should help teams understand risk and make informed release decisions rather than turning QA into the final gatekeeper.",
+    "Why testing should inform release decisions rather than turning QA into the final gatekeeper.",
 
   publishedAt: "2026-08-13",
 
-  readingTime: "7 min read",
+  readingTime: "6 min read",
 
   seo: {
     title: "Testing is information, not approval | Kitaka",
@@ -23,7 +23,7 @@ export const testingIsInformationNotApproval: Article = {
       type: "paragraphs",
       paragraphs: [
         "One of the most uncomfortable responsibilities that can quietly fall onto a quality engineer is the idea that software becomes safe to release only when QA approves it.",
-        "It often sounds reasonable. Testing happens near the end of a piece of work, QA has seen more of the product than most people at that point, and someone needs to decide whether the release should proceed.",
+        "It often sounds reasonable. Testing usually happens towards the end of a piece of work, QA has often explored more of the product's behaviour by that point, and someone needs to decide whether the release should proceed.",
         "But I think that framing creates the wrong kind of responsibility.",
         "Testing can tell a team what has been observed, what has not been explored, which behaviours appear reliable, where uncertainty remains and what risks may still matter. It can provide evidence. It cannot turn uncertainty into certainty.",
       ],
@@ -44,7 +44,7 @@ export const testingIsInformationNotApproval: Article = {
       type: "paragraphs",
       heading: "Testing should reduce uncertainty",
       paragraphs: [
-        "The most useful testing gives the team better information than it had before.",
+        "Useful testing changes what the team knows.",
         "Sometimes that means confirming that an important workflow still behaves as expected. Sometimes it means discovering an unexpected interaction between systems. Sometimes the outcome of testing is that we still do not understand something well enough and need more investigation.",
         "That is why I prefer to think about testing in terms of confidence rather than approval.",
         "Confidence can increase when repeated checks show that important behaviour remains stable. It can decrease when exploratory testing reveals assumptions we had not considered. Either outcome is useful because the team now knows more than it did before.",
@@ -68,7 +68,6 @@ export const testingIsInformationNotApproval: Article = {
       heading: "Quality works better as a shared responsibility",
       paragraphs: [
         "Moving away from QA sign-off does not mean reducing the influence of quality engineering.",
-        "I think it does the opposite.",
         "When quality engineers are expected to provide useful information rather than a final verdict, they can become involved much earlier in the work. Questions about risk, user behaviour, integrations, failure modes and testability can influence the product before implementation is complete.",
         "That creates a healthier responsibility model. Engineers remain responsible for the quality of what they build. Product remains responsible for product decisions. Quality engineering helps the team investigate behaviour and understand risk. Everyone contributes to the confidence behind a release.",
       ],
@@ -80,8 +79,8 @@ export const testingIsInformationNotApproval: Article = {
       paragraphs: [
         "This approach also changes how testing results should be communicated.",
         "A simple 'pass' or 'fail' can hide useful context. I would rather communicate what was tested, what was observed, where the important risks are and what remains uncertain.",
-        "That does not require an enormous test report for every change. Often a short conversation or concise release note is enough.",
-        "The important thing is that the team can make the decision with its eyes open.",
+        "That does not require an enormous report. Often a short conversation or concise release note is enough.",
+        "The goal is simple: the team should understand the decision it is making.",
       ],
     },
 
