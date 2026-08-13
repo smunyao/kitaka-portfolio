@@ -2,7 +2,7 @@
   max-width: var(--max-width);
 
   margin: 0 auto;
-  padding: 7rem var(--space-md) var(--space-xl);
+  padding: 6rem var(--space-md) var(--space-xl);
 }
 
 .writing-header {
@@ -75,7 +75,7 @@
 
   margin-bottom: 1rem;
 
-  color: color-mix(in srgb, var(--color-text) 65%, transparent);
+  color: var(--color-text);
 
   font-size: 0.78rem;
   font-weight: 500;
