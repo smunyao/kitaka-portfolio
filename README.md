@@ -47,6 +47,7 @@ The repository documents the development process through GitHub Issues, feature 
 - GitHub Projects & Issues
 - Cloudflare Pages
 - Cloudflare Registrar
+- Cloudflare Web Analytics
 - Fontsource (Geist)
 
 ---
@@ -66,6 +67,7 @@ The repository documents the development process through GitHub Issues, feature 
 - Reduced-motion support
 - Sticky editorial sidebar
 - Active section tracking
+- Privacy-friendly site analytics
 - Open Graph & Twitter/X metadata
 - Canonical URLs
 - robots.txt & sitemap.xml
@@ -85,7 +87,17 @@ Latest Lighthouse audit (Production):
 | Best Practices | **100** |
 | SEO            | **100** |
 
-> Lighthouse scores are periodically reviewed as the portfolio evolves.
+> Lighthouse scores are periodically reviewed as the portfolio evolves and may vary slightly between routes, devices and individual runs.
+
+---
+
+## Analytics
+
+The portfolio uses **Cloudflare Web Analytics** for lightweight site-usage measurement.
+
+The existing Cloudflare integration records traffic across the portfolio's public routes, including the home page, How I work, case studies, Writing and individual articles.
+
+No additional client-side analytics library or custom event-tracking system has been introduced. Interaction-level tracking will only be considered where the resulting information would be useful enough to justify the additional implementation and maintenance.
 
 ---
 
@@ -136,7 +148,6 @@ Planned improvements include:
 - Dedicated Open Graph images for individual case studies
 - Additional personal engineering projects
 - Potential long-form project pages for larger projects
-- Analytics
 - Continued accessibility improvements
 - Ongoing design refinements
 
