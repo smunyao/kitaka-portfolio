@@ -1,6 +1,8 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 
 import { getArticleBySlug } from "../content/articles";
+import { formatDate } from "../utils/formatDate";
+
 import EditorialPageHeader from "../shared/EditorialPageHeader";
 import Footer from "../shared/Footer";
 import Seo from "../shared/Seo";
@@ -45,7 +47,9 @@ function ArticlePage() {
             <p className="article-description">{article.description}</p>
 
             <div className="article-meta">
-              <time dateTime={article.publishedAt}>{article.publishedAt}</time>
+              <time dateTime={article.publishedAt}>
+                {formatDate(article.publishedAt)}
+              </time>
 
               <span>{article.readingTime}</span>
             </div>

@@ -1,19 +1,13 @@
 import { Link } from "react-router-dom";
 
 import { articles } from "../content/articles";
+import { formatDate } from "../utils/formatDate";
+
 import EditorialPageHeader from "../shared/EditorialPageHeader";
 import Footer from "../shared/Footer";
 import Seo from "../shared/Seo";
 
 import "./WritingPage.css";
-
-function formatPublicationDate(date: string) {
-  return new Intl.DateTimeFormat("en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(new Date(`${date}T00:00:00`));
-}
 
 function WritingPage() {
   return (
@@ -54,7 +48,7 @@ function WritingPage() {
               <article key={article.slug} className="writing-item">
                 <div className="writing-item-meta">
                   <time dateTime={article.publishedAt}>
-                    {formatPublicationDate(article.publishedAt)}
+                    {formatDate(article.publishedAt)}
                   </time>
 
                   <span>{article.readingTime}</span>
@@ -70,6 +64,7 @@ function WritingPage() {
 
                 <Link className="writing-link" to={`/writing/${article.slug}`}>
                   <span>Read article</span>
+
                   <span className="writing-link-arrow" aria-hidden="true">
                     →
                   </span>
