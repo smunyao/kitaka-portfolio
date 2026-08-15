@@ -82,7 +82,12 @@
 .navbar-logo:focus-visible {
   outline: 3px solid var(--color-accent);
   outline-offset: 3px;
+
   border-radius: 4px;
+}
+
+.navbar-logo:focus-visible {
+  color: var(--color-accent);
 }
 
 @media (max-width: 768px) {
