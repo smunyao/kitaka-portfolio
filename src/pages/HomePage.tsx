@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import Navbar from "../shared/Navbar";
 import Footer from "../shared/Footer";
@@ -10,9 +10,13 @@ import Projects from "../sections/Projects";
 import Skills from "../sections/Skills";
 import Contact from "../sections/Contact";
 
+import "./HomePage.css";
+
 function HomePage() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    // Keep initial hash navigation in sync with active-section tracking.
     if (window.location.hash) {
       const element = document.querySelector(window.location.hash);
 
@@ -22,6 +26,63 @@ function HomePage() {
         });
       }
     }
+  }, []);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    const content = contentRef.current;
+
+    if (!hero || !content) {
+      return;
+    }
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    );
+
+    if (prefersReducedMotion.matches) {
+      return;
+    }
+
+    let frameId = 0;
+
+    const clamp = (value: number) => Math.min(Math.max(value, 0), 1);
+
+    const updateHeroFade = () => {
+      const contentTop = content.getBoundingClientRect().top;
+      const viewportHeight = window.innerHeight;
+      const isMobile = window.innerWidth <= 768;
+
+      const fadeStart = viewportHeight * (isMobile ? 0.95 : 0.9);
+      const fadeEnd = viewportHeight * (isMobile ? 0.4 : 0.25);
+
+      const progress = clamp((fadeStart - contentTop) / (fadeStart - fadeEnd));
+
+      const easedProgress = 0.5 * (1 - Math.cos(Math.PI * progress));
+
+      hero.style.setProperty("--hero-fade", easedProgress.toString());
+    };
+
+    const handleScroll = () => {
+      cancelAnimationFrame(frameId);
+
+      frameId = requestAnimationFrame(updateHeroFade);
+    };
+
+    updateHeroFade();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   return (
@@ -39,12 +100,21 @@ function HomePage() {
       <Navbar />
 
       <main id="main-content" tabIndex={-1}>
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Contact />
+        <div className="home-flow">
+          <div ref={heroRef} className="home-hero-layer">
+            <Hero />
+          </div>
+
+          <div className="home-hero-space" aria-hidden="true" />
+
+          <div ref={contentRef} className="home-content">
+            <About />
+            <Experience />
+            <Projects />
+            <Skills />
+            <Contact />
+          </div>
+        </div>
       </main>
 
       <Footer />

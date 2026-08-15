@@ -4,7 +4,7 @@
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)
-![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
 ## Live site
