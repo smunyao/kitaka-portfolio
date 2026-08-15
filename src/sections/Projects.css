@@ -2,7 +2,7 @@
   max-width: var(--max-width);
 
   margin: 0 auto;
-  padding: var(--space-xl) var(--space-md);
+  padding: 0 var(--space-md) var(--space-xl);
 }
 
 .projects-list {
@@ -158,7 +158,7 @@
 
 @media (max-width: 768px) {
   .projects {
-    padding: 3.5rem var(--space-sm);
+    padding: 0 var(--space-sm) 3.5rem;
   }
 
   .project-title {

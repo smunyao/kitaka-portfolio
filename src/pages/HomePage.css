@@ -47,6 +47,14 @@
   background: linear-gradient(to bottom, transparent, var(--color-background));
 }
 
+#about,
+#experience,
+#projects,
+#skills,
+#contact {
+  scroll-margin-top: 7rem;
+}
+
 @media (max-width: 768px) {
   .home-hero-space {
     height: calc(92svh - var(--header-offset));

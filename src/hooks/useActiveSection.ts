@@ -10,27 +10,32 @@ export function useActiveSection(sectionIds: string[]) {
       const navbarHeight =
         navbar instanceof HTMLElement ? navbar.offsetHeight : 0;
 
-      // Reading line: just below the sticky navbar,
-      // about 35% down the viewport.
       const readingLineRatio = 0.35;
 
       const readingLine = navbarHeight + window.innerHeight * readingLineRatio;
 
+      const scrollBottom = window.scrollY + window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      const isAtBottom = scrollBottom >= documentHeight - 2;
+
       let currentSection = "";
 
-      for (const id of sectionIds) {
-        const section = document.getElementById(id);
+      if (isAtBottom) {
+        currentSection = sectionIds.at(-1) ?? "";
+      } else {
+        for (const id of sectionIds) {
+          const section = document.getElementById(id);
 
-        if (!section) continue;
+          if (!section) continue;
 
-        const rect = section.getBoundingClientRect();
+          const { top } = section.getBoundingClientRect();
 
-        const top = rect.top;
-        const bottom = rect.bottom;
-
-        if (top <= readingLine && bottom >= readingLine) {
-          currentSection = id;
-          break;
+          if (top <= readingLine) {
+            currentSection = id;
+          } else {
+            break;
+          }
         }
       }
 
