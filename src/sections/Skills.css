@@ -2,7 +2,7 @@
   max-width: var(--max-width);
 
   margin: 0 auto;
-  padding: 3.5rem var(--space-sm);
+  padding: 0 var(--space-md) var(--space-xl);
 }
 
 .skills h2 {
@@ -50,7 +50,7 @@
 
 @media (max-width: 768px) {
   .skills {
-    padding: var(--space-lg) var(--space-sm);
+    padding: 0 var(--space-sm) 3.5rem;
   }
 
   .skills h2 {
