@@ -1,9 +1,11 @@
-import { Navigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { getCaseStudyBySlug } from "../content/caseStudies";
+
 import CaseStudyLayout from "../shared/CaseStudyLayout";
 import EditorialPageHeader from "../shared/EditorialPageHeader";
 import Footer from "../shared/Footer";
+import NotFound from "./NotFound";
 import Seo from "../shared/Seo";
 
 function CaseStudyPage() {
@@ -12,7 +14,7 @@ function CaseStudyPage() {
   const caseStudy = slug ? getCaseStudyBySlug(slug) : undefined;
 
   if (!caseStudy) {
-    return <Navigate to="/" replace />;
+    return <NotFound variant="case-study" />;
   }
 
   return (
