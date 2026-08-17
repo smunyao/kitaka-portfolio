@@ -22,6 +22,8 @@ Changes should not be pushed directly to the `main` branch.
 Please make sure that:
 
 - the project builds successfully;
+- relevant automated tests pass;
+- appropriate manual or exploratory checks have been completed;
 - existing behaviour has not been unintentionally broken;
 - accessibility is considered where relevant;
 - the change follows the existing structure and design language;
@@ -33,4 +35,17 @@ For changes to the application, run:
 ```bash
 npm run lint
 npm run build
+npm run test:e2e
 ```
+
+The Playwright suite builds and serves the production application
+automatically. On a first-time local setup, install its managed Chromium
+browser with:
+
+```bash
+npx playwright install chromium
+```
+
+See the [test strategy and manual regression guide](docs/testing.md) for test
+scope, debugging commands, selector guidance, manual checks, and preview or
+production verification.
