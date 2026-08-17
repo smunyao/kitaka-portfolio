@@ -3,8 +3,9 @@
 > A personal portfolio exploring quality engineering, engineering thinking, accessibility, and modern frontend development.
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)
+![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript)
 ![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite)
+[![Playwright tests](https://github.com/smunyao/kitaka-portfolio/actions/workflows/playwright.yml/badge.svg)](https://github.com/smunyao/kitaka-portfolio/actions/workflows/playwright.yml)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
 ## Live site
@@ -48,7 +49,9 @@ The repository documents the development process through GitHub Issues, feature 
 - Vite
 - React Helmet Async
 - Vanilla CSS
+- Playwright
 - Git & GitHub
+- GitHub Actions
 - GitHub Projects & Issues
 - Cloudflare Pages
 - Cloudflare Registrar
@@ -83,7 +86,7 @@ The repository documents the development process through GitHub Issues, feature 
 
 ## Performance
 
-Latest Lighthouse audit (Production):
+Reference Lighthouse audit (Production):
 
 | Metric         |   Score |
 | :------------- | ------: |
@@ -92,7 +95,10 @@ Latest Lighthouse audit (Production):
 | Best Practices | **100** |
 | SEO            | **100** |
 
-> Lighthouse scores are periodically reviewed as the portfolio evolves and may vary slightly between routes, devices and individual runs.
+> Lighthouse scores are periodically reviewed as the portfolio evolves. Scores
+> vary between routes, devices and individual runs, so regressions are assessed
+> using repeated runs and individual performance metrics rather than a single
+> aggregate score.
 
 ---
 
