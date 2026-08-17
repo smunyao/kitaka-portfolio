@@ -140,6 +140,24 @@ npm run preview
 
 ---
 
+## Testing
+
+The portfolio uses Playwright for focused end-to-end coverage of its critical
+routes, navigation, accessibility behaviour, responsive layouts, and error
+states.
+
+Run the automated suite:
+
+```bash
+npm run test:e2e
+```
+
+See the [test strategy and manual regression guide](docs/testing.md) for the
+scope of automation, local and deployed test commands, manual checks,
+exploratory charters, and release criteria.
+
+---
+
 ## Deployment
 
 The site is automatically deployed through **Cloudflare Pages** whenever changes are merged into the `main` branch.
