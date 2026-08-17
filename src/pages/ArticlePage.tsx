@@ -1,10 +1,11 @@
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { getArticleBySlug } from "../content/articles";
 import { formatDate } from "../utils/formatDate";
 
 import EditorialPageHeader from "../shared/EditorialPageHeader";
 import Footer from "../shared/Footer";
+import NotFound from "./NotFound";
 import Seo from "../shared/Seo";
 
 import "./ArticlePage.css";
@@ -15,7 +16,7 @@ function ArticlePage() {
   const article = slug ? getArticleBySlug(slug) : undefined;
 
   if (!article) {
-    return <Navigate to="/writing" replace />;
+    return <NotFound variant="article" />;
   }
 
   return (
@@ -119,6 +120,7 @@ function ArticlePage() {
                 <span className="article-back-link-arrow" aria-hidden="true">
                   ←
                 </span>
+
                 <span>Back to writing</span>
               </Link>
             </footer>

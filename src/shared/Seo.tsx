@@ -3,9 +3,10 @@ import { Helmet } from "react-helmet-async";
 interface SeoProps {
   title: string;
   description: string;
-  canonical: string;
+  canonical?: string;
   type?: "website" | "article";
   image?: string;
+  noIndex?: boolean;
 }
 
 const SITE_NAME = "Kitaka Munyao";
@@ -18,8 +19,9 @@ function Seo({
   canonical,
   type = "website",
   image = DEFAULT_SOCIAL_IMAGE,
+  noIndex = false,
 }: SeoProps) {
-  const canonicalUrl = `${BASE_URL}${canonical}`;
+  const canonicalUrl = canonical ? `${BASE_URL}${canonical}` : undefined;
   const imageUrl = `${BASE_URL}${image}`;
 
   return (
@@ -30,7 +32,9 @@ function Seo({
 
       <meta name="author" content="Kitaka Munyao" />
 
-      <link rel="canonical" href={canonicalUrl} />
+      {noIndex && <meta name="robots" content="noindex, follow" />}
+
+      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 
       <meta property="og:type" content={type} />
 
@@ -40,7 +44,7 @@ function Seo({
 
       <meta property="og:description" content={description} />
 
-      <meta property="og:url" content={canonicalUrl} />
+      {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
 
       <meta property="og:image" content={imageUrl} />
 
