@@ -48,6 +48,33 @@ test.describe("navigation", () => {
   }) => {
     await page.goto("/");
 
+    const workingPrinciples = page.locator("#how-i-work");
+
+    await expect(
+      workingPrinciples.getByRole("heading", {
+        level: 2,
+        name: "The work starts with context, questions and conversation.",
+      }),
+    ).toBeVisible();
+    await expect(
+      workingPrinciples.getByRole("heading", {
+        level: 3,
+        name: "Learning the product",
+      }),
+    ).toBeVisible();
+    await expect(
+      workingPrinciples.getByRole("heading", {
+        level: 3,
+        name: "Paying attention to risk",
+      }),
+    ).toBeVisible();
+    await expect(
+      workingPrinciples.getByRole("heading", {
+        level: 3,
+        name: "Keeping quality in the conversation",
+      }),
+    ).toBeVisible();
+
     await page.getByRole("link", { name: "Explore how I work" }).click();
     await expect(page).toHaveURL("/how-i-work");
     await expect(
@@ -88,7 +115,9 @@ test.describe("navigation", () => {
           name: caseStudy.heading,
         }),
       ).toBeVisible();
-      await expect(page.getByText(caseStudy.summary, { exact: true })).toBeVisible();
+      await expect(
+        page.getByText(caseStudy.summary, { exact: true }),
+      ).toBeVisible();
     });
   }
 

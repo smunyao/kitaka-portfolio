@@ -105,16 +105,22 @@ is shown the principles that connect those experiences.
 **Purpose:** Provide a concise summary of Kitaka's working principles without
 repeating the full editorial page.
 
-This section consolidates the former About and Skills sections. It preserves
-three meaningful distinctions:
+This section consolidates the former About and Skills sections. “How I work”
+remains the section name because it describes observable practice more clearly
+than “Skills” or “Working principles”. The stable `#how-i-work` identifier is
+preserved for navigation and existing links.
 
-- understanding products;
-- building confidence through evidence;
-- building quality collaboratively.
+The homepage introduces three recurring ideas in deliberately reflective rather
+than competency-led language:
+
+- learning the product and its surrounding context;
+- paying attention to meaningful risk;
+- keeping quality within the team's ongoing conversation.
 
 The dedicated How I Work page remains the appropriate place for a fuller
 explanation of product understanding, risk, testing, collaboration and
-automation.
+automation. The homepage introduces the behaviours; it does not attempt to
+repeat that philosophy or substitute short claims for case-study evidence.
 
 **Transition to Writing:** The principles are followed by independent written
 thinking that allows visitors to examine one of those ideas in greater depth.
@@ -172,9 +178,11 @@ the professional evidence and made the homepage feel circular.
 ### Consolidation decisions
 
 - The Hero retains the core position and value proposition.
-- The standalone About section has been removed from the homepage.
+- The standalone About section and its unused implementation have been removed.
 - The strongest About and Skills distinctions are consolidated into How I
   Work.
+- The old Skills name and content model have been replaced with Working
+  Principles to reflect the section's actual purpose.
 - The detailed philosophy remains on the dedicated How I Work page.
 - Experience moves directly after the Hero.
 - Writing becomes a deliberate homepage section rather than a secondary text
