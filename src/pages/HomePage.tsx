@@ -88,8 +88,8 @@ function HomePage() {
   return (
     <>
       <Seo
-        title="Kitaka | Quality Engineer"
-        description="Senior Quality Engineer specialising in software quality, automation, engineering practices and testing strategy. Explore experience, projects and detailed case studies."
+        title="Kitaka Munyao | Quality Engineer"
+        description="Quality Engineer helping product and engineering teams understand complex systems, uncover risk early and ship with confidence. Explore experience and case studies."
         canonical="/"
       />
 
