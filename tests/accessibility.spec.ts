@@ -48,5 +48,27 @@ test.describe("accessibility", () => {
     );
     await expect(page.locator(".home-hero-layer")).toHaveCSS("opacity", "1");
     await expect(page.locator(".home-hero-space")).toHaveCSS("display", "none");
+    await expect(page.locator(".hero h1")).toBeVisible();
+    await expect(page.locator(".hero h1")).toHaveCSS("animation-name", "none");
+    await expect(page.locator(".hero-intro")).toBeVisible();
+  });
+
+  test("hero remains readable at a narrow mobile width", async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 720 });
+    await page.goto("/");
+
+    await expect(
+      page.getByRole("heading", {
+        level: 1,
+        name: "Quality starts long before testing.",
+      }),
+    ).toBeVisible();
+    await expect(page.locator(".hero-intro")).toBeVisible();
+
+    const horizontalOverflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - window.innerWidth,
+    );
+
+    expect(horizontalOverflow).toBeLessThanOrEqual(0);
   });
 });

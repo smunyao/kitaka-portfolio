@@ -61,4 +61,28 @@ test.describe("core routes", () => {
       expect(horizontalOverflow).toBeLessThanOrEqual(0);
     });
   }
+
+  test("homepage metadata reflects the visible positioning", async ({ page }) => {
+    await page.goto("/");
+
+    const description =
+      "Quality Engineer helping product and engineering teams understand complex systems, uncover risk early and ship with confidence. Explore experience and case studies.";
+
+    await expect(page).toHaveTitle("Kitaka Munyao | Quality Engineer");
+    const metaDescription = page.locator('meta[name="description"]');
+
+    await expect(metaDescription).toHaveCount(1);
+    await expect(metaDescription).toHaveAttribute(
+      "content",
+      description,
+    );
+    await expect(page.locator('meta[property="og:description"]')).toHaveAttribute(
+      "content",
+      description,
+    );
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      "https://kitakamunyao.com/",
+    );
+  });
 });
