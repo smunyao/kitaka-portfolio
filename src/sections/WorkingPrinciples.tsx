@@ -9,12 +9,7 @@ function WorkingPrinciples() {
     <section id="how-i-work" className="working-principles">
       <p className="section-eyebrow">How I work</p>
 
-      <h2>Principles matter when they change the work.</h2>
-
-      <p className="working-principles-intro">
-        These are the habits I bring to product conversations, testing and
-        release decisions.
-      </p>
+      <h2>The work starts with context, questions and conversation.</h2>
 
       <div className="working-principles-grid">
         {workingPrinciples.map((principle) => (

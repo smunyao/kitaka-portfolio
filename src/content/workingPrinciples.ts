@@ -2,18 +2,18 @@ import type { WorkingPrinciple } from "../types/workingPrinciple";
 
 export const workingPrinciples: WorkingPrinciple[] = [
   {
-    title: "Understand the product",
+    title: "Learning the product",
     description:
-      "I trace the user journey, the systems beneath it and the assumptions around it before deciding what meaningful testing looks like.",
+      "The user journey, the systems beneath it and the assumptions around it all shape what is worth testing.",
   },
   {
-    title: "Investigate meaningful risk",
+    title: "Paying attention to risk",
     description:
-      "I focus exploration and automation on the behaviours, boundaries and uncertainties that could most affect customers or the team’s decisions.",
+      "Exploration and automation are most useful when directed towards behaviours, boundaries and uncertainties that matter.",
   },
   {
-    title: "Build confidence together",
+    title: "Keeping quality in the conversation",
     description:
-      "I share evidence early, ask questions while choices can still change and work with the team to decide what the remaining risk means.",
+      "Sharing what testing reveals gives the team more context for decisions as the work develops.",
   },
 ];

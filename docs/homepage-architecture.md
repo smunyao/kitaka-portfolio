@@ -110,11 +110,12 @@ remains the section name because it describes observable practice more clearly
 than “Skills” or “Working principles”. The stable `#how-i-work` identifier is
 preserved for navigation and existing links.
 
-The homepage expresses three actionable behaviours:
+The homepage introduces three recurring ideas in deliberately reflective rather
+than competency-led language:
 
-- understand the product before choosing a testing approach;
-- investigate the risks and uncertainties that matter;
-- share evidence early so the team can make informed decisions together.
+- learning the product and its surrounding context;
+- paying attention to meaningful risk;
+- keeping quality within the team's ongoing conversation.
 
 The dedicated How I Work page remains the appropriate place for a fuller
 explanation of product understanding, risk, testing, collaboration and

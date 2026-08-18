@@ -53,25 +53,25 @@ test.describe("navigation", () => {
     await expect(
       workingPrinciples.getByRole("heading", {
         level: 2,
-        name: "Principles matter when they change the work.",
+        name: "The work starts with context, questions and conversation.",
       }),
     ).toBeVisible();
     await expect(
       workingPrinciples.getByRole("heading", {
         level: 3,
-        name: "Understand the product",
+        name: "Learning the product",
       }),
     ).toBeVisible();
     await expect(
       workingPrinciples.getByRole("heading", {
         level: 3,
-        name: "Investigate meaningful risk",
+        name: "Paying attention to risk",
       }),
     ).toBeVisible();
     await expect(
       workingPrinciples.getByRole("heading", {
         level: 3,
-        name: "Build confidence together",
+        name: "Keeping quality in the conversation",
       }),
     ).toBeVisible();
 
