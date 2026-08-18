@@ -2,13 +2,10 @@ import { useActiveSection } from "../hooks/useActiveSection";
 
 import "./Navbar.css";
 
-const SECTION_IDS = ["about", "experience", "projects", "skills", "contact"];
+const SECTION_IDS = ["experience", "how-i-work", "writing", "contact"];
 
 function Navbar() {
   const activeSection = useActiveSection(SECTION_IDS);
-
-  const experienceActive =
-    activeSection === "experience" || activeSection === "projects";
 
   return (
     <header className="site-header">
@@ -25,21 +22,11 @@ function Navbar() {
           <ul className="navbar-links">
             <li>
               <a
-                href="#about"
-                className={activeSection === "about" ? "active" : ""}
-                aria-current={
-                  activeSection === "about" ? "location" : undefined
-                }
-              >
-                About
-              </a>
-            </li>
-
-            <li>
-              <a
                 href="#experience"
-                className={experienceActive ? "active" : ""}
-                aria-current={experienceActive ? "location" : undefined}
+                className={activeSection === "experience" ? "active" : ""}
+                aria-current={
+                  activeSection === "experience" ? "location" : undefined
+                }
               >
                 Experience
               </a>
@@ -47,13 +34,25 @@ function Navbar() {
 
             <li>
               <a
-                href="#skills"
-                className={activeSection === "skills" ? "active" : ""}
+                href="#how-i-work"
+                className={activeSection === "how-i-work" ? "active" : ""}
                 aria-current={
-                  activeSection === "skills" ? "location" : undefined
+                  activeSection === "how-i-work" ? "location" : undefined
                 }
               >
-                Skills
+                How I work
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#writing"
+                className={activeSection === "writing" ? "active" : ""}
+                aria-current={
+                  activeSection === "writing" ? "location" : undefined
+                }
+              >
+                Writing
               </a>
             </li>
 

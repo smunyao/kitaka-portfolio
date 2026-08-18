@@ -13,11 +13,36 @@
 
   width: 100%;
 
+  overflow: hidden;
+
   opacity: calc(1 - (var(--hero-fade) * 0.95));
 
   pointer-events: none;
 
   will-change: opacity;
+}
+
+.home-hero-layer::before {
+  position: absolute;
+  inset: 0;
+
+  content: "";
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 50% 46%,
+      color-mix(in srgb, var(--color-accent) 9%, transparent) 0,
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 50% 58%,
+      color-mix(in srgb, var(--color-heading) 4%, transparent) 0,
+      transparent 34%
+    );
+
+  opacity: calc(1 - var(--hero-fade));
 }
 
 .home-hero-space {
@@ -47,23 +72,31 @@
   background: linear-gradient(to bottom, transparent, var(--color-background));
 }
 
-#about,
 #experience,
-#projects,
-#skills,
+#how-i-work,
+#writing,
+#engineering-work,
 #contact {
   scroll-margin-top: 7rem;
 }
 
 @media (max-width: 768px) {
   .home-hero-space {
-    height: calc(92svh - var(--header-offset));
+    height: calc(100svh - var(--header-offset));
   }
 
   .home-content::before {
     top: -3rem;
 
     height: 3rem;
+  }
+
+  .home-hero-layer::before {
+    background: radial-gradient(
+      circle at 50% 44%,
+      color-mix(in srgb, var(--color-accent) 10%, transparent) 0,
+      transparent 48%
+    );
   }
 }
 
@@ -84,5 +117,9 @@
 
   .home-content::before {
     display: none;
+  }
+
+  .home-hero-layer::before {
+    opacity: 1;
   }
 }

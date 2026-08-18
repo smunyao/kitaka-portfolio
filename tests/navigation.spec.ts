@@ -1,9 +1,9 @@
 import { expect, test } from "@playwright/test";
 
 const primaryNavigation = [
-  { name: "About", hash: "#about" },
   { name: "Experience", hash: "#experience" },
-  { name: "Skills", hash: "#skills" },
+  { name: "How I work", hash: "#how-i-work" },
+  { name: "Writing", hash: "#writing" },
   { name: "Contact", hash: "#contact" },
 ];
 
@@ -37,10 +37,12 @@ test.describe("navigation", () => {
     }
   });
 
-  test("homepage links reach How I work and Writing", async ({ page }) => {
+  test("homepage content links reach How I work and Writing", async ({
+    page,
+  }) => {
     await page.goto("/");
 
-    await page.getByRole("link", { name: "How I work", exact: true }).click();
+    await page.getByRole("link", { name: "Explore how I work" }).click();
     await expect(page).toHaveURL("/how-i-work");
     await expect(
       page.getByRole("heading", {
@@ -50,7 +52,7 @@ test.describe("navigation", () => {
     ).toBeVisible();
 
     await page.goto("/");
-    await page.getByRole("link", { name: "Writing", exact: true }).click();
+    await page.getByRole("link", { name: "View all writing" }).click();
     await expect(page).toHaveURL("/writing");
     await expect(
       page.getByRole("heading", { level: 1, name: "Writing" }),
@@ -100,7 +102,7 @@ test.describe("navigation", () => {
     page,
   }) => {
     await page.goto("/");
-    await page.getByRole("link", { name: "Writing", exact: true }).click();
+    await page.getByRole("link", { name: "View all writing" }).click();
     await expect(page).toHaveURL("/writing");
 
     await page.goBack();

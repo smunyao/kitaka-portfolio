@@ -1,0 +1,110 @@
+.working-principles {
+  max-width: var(--max-width);
+
+  margin: 0 auto;
+  padding: 0 var(--space-md) var(--space-xl);
+}
+
+.working-principles h2 {
+  max-width: var(--content-width);
+
+  margin-bottom: var(--space-sm);
+
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+
+.working-principles-intro {
+  max-width: var(--content-width);
+
+  margin-bottom: var(--space-md);
+
+  line-height: 1.7;
+}
+
+.working-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: var(--space-lg);
+
+  margin-bottom: var(--space-md);
+}
+
+.working-principle {
+  padding-left: var(--space-sm);
+
+  border-left: 2px solid var(--color-border);
+
+  transition: border-color var(--transition);
+}
+
+.working-principle:hover {
+  border-left-color: var(--color-accent);
+}
+
+.working-principle h3 {
+  margin-bottom: var(--space-xs);
+
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.working-principle p {
+  line-height: 1.65;
+}
+
+.working-principles-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.3rem;
+
+  padding-bottom: 0.2rem;
+
+  border-bottom: 1px solid var(--color-border);
+
+  color: var(--color-heading);
+  text-decoration: none;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  transition: border-color var(--transition);
+}
+
+.working-principles-link-arrow {
+  transition:
+    color var(--transition),
+    transform var(--transition);
+}
+
+.working-principles-link:hover,
+.working-principles-link:focus-visible {
+  border-bottom-color: var(--color-accent);
+}
+
+.working-principles-link:hover .working-principles-link-arrow,
+.working-principles-link:focus-visible .working-principles-link-arrow {
+  color: var(--color-accent);
+
+  transform: translateX(2px);
+}
+
+@media (max-width: 768px) {
+  .working-principles {
+    padding: 0 var(--space-sm) 3.5rem;
+  }
+
+  .working-principles h2 {
+    font-size: 24px;
+  }
+
+  .working-principles-grid {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-md);
+  }
+}
