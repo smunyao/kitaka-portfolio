@@ -24,7 +24,7 @@ The portfolio also includes long-form engineering case studies exploring real pr
 
 A dedicated **Writing** area provides space for longer-form articles about quality engineering, testing, product understanding and engineering practice.
 
-The Projects section complements that professional experience by presenting personal engineering work that can be inspected directly, beginning with the portfolio itself.
+The homepage prioritises selected professional experience, concise working principles and technical writing. A compact engineering-work section also makes the portfolio's source and documented development history directly inspectable without competing with the stronger professional evidence.
 
 The project focuses on:
 
@@ -66,8 +66,7 @@ The repository documents the development process through GitHub Issues, feature 
 - Engineering case studies
 - Long-form "How I work" engineering philosophy
 - Technical writing and reusable article architecture
-- Personal engineering projects
-- Reusable project content model
+- Inspectable source and engineering documentation
 - Dynamic routing
 - Light & dark mode
 - Keyboard-accessible navigation

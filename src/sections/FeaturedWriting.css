@@ -1,0 +1,125 @@
+.featured-writing {
+  max-width: var(--max-width);
+
+  margin: 0 auto;
+  padding: 0 var(--space-md) var(--space-xl);
+}
+
+.featured-writing > h2 {
+  max-width: var(--content-width);
+
+  margin-bottom: var(--space-md);
+
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+
+.featured-writing-article {
+  max-width: var(--content-width);
+}
+
+.featured-writing-meta {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: var(--space-xs);
+
+  margin-bottom: var(--space-xs);
+
+  color: color-mix(in srgb, var(--color-text) 72%, transparent);
+
+  font-size: 0.85rem;
+}
+
+.featured-writing-article h3 {
+  margin-bottom: var(--space-sm);
+
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+.featured-writing-article h3 a {
+  color: var(--color-heading);
+  text-decoration: none;
+}
+
+.featured-writing-article h3 a:hover {
+  color: var(--color-accent);
+}
+
+.featured-writing-description {
+  margin-bottom: var(--space-md);
+
+  line-height: 1.7;
+}
+
+.featured-writing-links {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: var(--space-md);
+}
+
+.featured-writing-links a {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.3rem;
+
+  padding-bottom: 0.2rem;
+
+  border-bottom: 1px solid var(--color-border);
+
+  color: var(--color-heading);
+  text-decoration: none;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  transition: border-color var(--transition);
+}
+
+.featured-writing-link-arrow {
+  transition:
+    color var(--transition),
+    transform var(--transition);
+}
+
+.featured-writing-links a:hover,
+.featured-writing-links a:focus-visible {
+  border-bottom-color: var(--color-accent);
+}
+
+.featured-writing-links a:hover .featured-writing-link-arrow,
+.featured-writing-links a:focus-visible .featured-writing-link-arrow {
+  color: var(--color-accent);
+
+  transform: translateX(2px);
+}
+
+@media (max-width: 768px) {
+  .featured-writing {
+    padding: 0 var(--space-sm) 3.5rem;
+  }
+
+  .featured-writing > h2 {
+    font-size: 24px;
+  }
+
+  .featured-writing-article h3 {
+    font-size: 1.25rem;
+  }
+
+  .featured-writing-description {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .featured-writing-links {
+    gap: var(--space-sm);
+  }
+}

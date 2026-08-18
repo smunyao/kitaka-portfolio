@@ -4,10 +4,10 @@ import Navbar from "../shared/Navbar";
 import Footer from "../shared/Footer";
 import Seo from "../shared/Seo";
 import Hero from "../sections/Hero";
-import About from "../sections/About";
+import EngineeringWork from "../sections/EngineeringWork";
 import Experience from "../sections/Experience";
-import Projects from "../sections/Projects";
-import Skills from "../sections/Skills";
+import FeaturedWriting from "../sections/FeaturedWriting";
+import WorkingPrinciples from "../sections/WorkingPrinciples";
 import Contact from "../sections/Contact";
 
 import "./HomePage.css";
@@ -108,10 +108,10 @@ function HomePage() {
           <div className="home-hero-space" aria-hidden="true" />
 
           <div ref={contentRef} className="home-content">
-            <About />
             <Experience />
-            <Projects />
-            <Skills />
+            <WorkingPrinciples />
+            <FeaturedWriting />
+            <EngineeringWork />
             <Contact />
           </div>
         </div>

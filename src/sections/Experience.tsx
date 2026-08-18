@@ -9,7 +9,7 @@ function Experience() {
     <section id="experience" className="experience">
       <p className="section-eyebrow">Experience</p>
 
-      <h2>The teams that shaped how I think about quality.</h2>
+      <h2>Quality engineering across products, teams and stages of growth.</h2>
 
       <div className="experience-list">
         {experiences.map((experience) => (
@@ -35,7 +35,7 @@ function Experience() {
               )}
             </div>
 
-            <h4 className="experience-headline">{experience.headline}</h4>
+            <p className="experience-headline">{experience.headline}</p>
 
             <p className="experience-context">{experience.context}</p>
 

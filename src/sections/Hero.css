@@ -1,21 +1,58 @@
 .hero {
+  position: relative;
+
+  z-index: 1;
+
   scroll-margin-top: var(--header-offset);
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
 
   max-width: var(--max-width);
+  min-height: calc(100svh - var(--header-offset));
+
+  box-sizing: border-box;
 
   margin: 0 auto;
   padding: 5.5rem var(--space-md) var(--space-xl);
+
+  text-align: center;
 }
 
 .hero .section-eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 0.75rem;
+
   margin-bottom: 1.25rem;
 
   font-size: 0.95rem;
   letter-spacing: 0.065em;
+}
+
+.hero .section-eyebrow::before,
+.hero .section-eyebrow::after {
+  width: 3rem;
+  height: 1px;
+
+  content: "";
+
+  background: color-mix(in srgb, var(--color-accent) 55%, transparent);
+}
+
+.hero > * {
+  animation: hero-reveal 700ms ease both;
+}
+
+.hero h1 {
+  animation-delay: 80ms;
+}
+
+.hero-intro {
+  animation-delay: 160ms;
 }
 
 .hero h1 {
@@ -28,34 +65,26 @@
 }
 
 .hero-intro {
-  max-width: var(--content-width);
+  max-width: 44rem;
 
   margin-bottom: 1.5rem;
 
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 1.35;
   letter-spacing: -0.15px;
 }
 
-.hero-copy {
-  max-width: var(--content-width);
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 
-  margin-bottom: 2.5rem;
-
-  font-size: 1.2rem;
-  line-height: 1.5;
-}
-
-.hero-signature {
-  margin-bottom: 2.5rem;
-
-  color: var(--color-heading);
-
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
@@ -64,10 +93,17 @@
   }
 
   .hero .section-eyebrow {
+    display: block;
+
     margin-bottom: var(--space-sm);
 
     font-size: 0.85rem;
     letter-spacing: 0.06em;
+  }
+
+  .hero .section-eyebrow::before,
+  .hero .section-eyebrow::after {
+    display: none;
   }
 
   .hero h1 {
@@ -81,10 +117,4 @@
     line-height: 1.4;
   }
 
-  .hero-copy {
-    margin-bottom: 1.5rem;
-
-    font-size: 1rem;
-    line-height: 1.55;
-  }
 }
