@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { skillPrinciples } from "../content/skills";
+import { workingPrinciples } from "../content/workingPrinciples";
 
 import "./WorkingPrinciples.css";
 
@@ -9,15 +9,15 @@ function WorkingPrinciples() {
     <section id="how-i-work" className="working-principles">
       <p className="section-eyebrow">How I work</p>
 
-      <h2>Quality grows through understanding, evidence and shared ownership.</h2>
+      <h2>Principles matter when they change the work.</h2>
 
       <p className="working-principles-intro">
-        I work alongside the people shaping and building the product, helping
-        teams learn earlier, make risk visible and build confidence together.
+        These are the habits I bring to product conversations, testing and
+        release decisions.
       </p>
 
       <div className="working-principles-grid">
-        {skillPrinciples.map((principle) => (
+        {workingPrinciples.map((principle) => (
           <article key={principle.title} className="working-principle">
             <h3>{principle.title}</h3>
             <p>{principle.description}</p>
