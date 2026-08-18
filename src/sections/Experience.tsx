@@ -16,30 +16,31 @@ function Experience() {
           <article key={experience.company} className="experience-item">
             <div className="experience-item-header">
               <h3 className="experience-company">{experience.company}</h3>
-
-              {experience.caseStudyUrl && (
-                <Link
-                  className="experience-case-study-link"
-                  data-company={experience.slug}
-                  to={experience.caseStudyUrl}
-                >
-                  <span>Read the case study</span>
-
-                  <span
-                    className="experience-case-study-arrow"
-                    aria-hidden="true"
-                  >
-                    →
-                  </span>
-                </Link>
-              )}
             </div>
 
             <p className="experience-headline">{experience.headline}</p>
 
             <p className="experience-context">{experience.context}</p>
 
-            <p className="experience-description">{experience.description}</p>
+            <p className="experience-summary">{experience.summary}</p>
+
+            {experience.caseStudyUrl && (
+              <Link
+                className="experience-case-study-link"
+                data-company={experience.slug}
+                to={experience.caseStudyUrl}
+                aria-label={`Read the ${experience.company} case study`}
+              >
+                <span>Read the case study</span>
+
+                <span
+                  className="experience-case-study-arrow"
+                  aria-hidden="true"
+                >
+                  →
+                </span>
+              </Link>
+            )}
           </article>
         ))}
       </div>

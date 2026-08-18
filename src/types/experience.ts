@@ -5,6 +5,6 @@ export interface ExperienceItem {
   company: string;
   headline: string;
   context: string;
-  description: string;
+  summary: string;
   caseStudyUrl?: string;
 }

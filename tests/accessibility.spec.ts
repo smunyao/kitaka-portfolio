@@ -71,4 +71,20 @@ test.describe("accessibility", () => {
 
     expect(horizontalOverflow).toBeLessThanOrEqual(0);
   });
+
+  test("experience case-study links retain a visible focus indicator", async ({
+    page,
+  }) => {
+    await page.goto("/#experience");
+
+    const caseStudyLink = page.getByRole("link", {
+      name: "Read the Harvest case study",
+    });
+
+    await caseStudyLink.focus();
+
+    await expect(caseStudyLink).toBeFocused();
+    await expect(caseStudyLink).toHaveCSS("outline-style", "solid");
+    await expect(caseStudyLink).toHaveCSS("outline-width", "3px");
+  });
 });

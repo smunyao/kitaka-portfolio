@@ -18,7 +18,7 @@ export const sitemateCaseStudy: CaseStudy = {
   title: "Building quality from the ground up",
 
   summary:
-    "Joining Sitemate provided the opportunity to help establish quality practices within a rapidly growing engineering organisation. Alongside hands-on testing, I contributed to building processes, expanding automation, mentoring engineers and helping quality become an integral part of everyday software development rather than a separate stage at the end.",
+    "At Sitemate, I combined hands-on testing with establishing QA practices and starting the automation effort, then began building the QA team by hiring and mentoring its first additional engineer.",
 
   productEcosystem: [
     "My work centred on Dashpivot, Sitemate's flagship platform, spanning web and mobile applications used to digitise operational and field workflows. The product supported complex forms, document management, inspections, data collection and reporting, providing customers with a highly configurable platform for managing work in the field.",
@@ -35,8 +35,8 @@ export const sitemateCaseStudy: CaseStudy = {
   approach: [
     "Although my responsibilities expanded into leadership, I remained actively involved in day-to-day testing across Dashpivot, Sitemate ID and their evolving integration. Staying close to the product ensured that strategic decisions remained grounded in practical engineering work.",
     "Alongside hands-on testing, I helped establish quality processes that supported engineers throughout development rather than concentrating testing at the end of a release. Quality became a continuous conversation involving Engineering, Product and QA.",
-    "I contributed to hiring and mentoring QA engineers while helping build a collaborative quality culture. The objective was not simply to increase testing capacity, but to create shared ownership of quality across the engineering organisation.",
-    "Automation continued to play an important role, but always alongside exploratory testing and product understanding. Rather than pursuing automation for its own sake, the focus remained on providing meaningful feedback that helped teams make informed decisions with confidence.",
+    "As the QA function began to grow, I hired and mentored the first additional QA engineer while helping build a collaborative quality culture. The objective was not simply to increase testing capacity, but to create shared ownership of quality across the engineering organisation.",
+    "I started the automation effort with the same principle in mind: automation should complement exploratory testing and product understanding rather than become an objective of its own. The focus remained on providing meaningful feedback that helped teams make informed decisions with confidence.",
   ],
 
   impact: [

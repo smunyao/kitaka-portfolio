@@ -6,8 +6,8 @@ export const experiences: ExperienceItem[] = [
     company: "Harvest",
     headline: "Building quality at scale",
     context: "Mature SaaS Platform · Web · Mobile · APIs · Integrations",
-    description:
-      "Working across Harvest and Forecast taught me that quality grows through collaboration as much as testing. Whether I was researching automation approaches, improving test coverage, pairing with engineers or helping shape releases, I learned that thoughtful quality practices help teams ship reliable software with confidence.",
+    summary:
+      "Across Harvest and Forecast, I worked with engineers, product managers and Customer Support to investigate risk across web, mobile, APIs and third-party integrations. My work combined exploratory testing, integration validation and targeted automation across a connected product ecosystem.",
     caseStudyUrl: "/case-studies/harvest",
   },
   {
@@ -15,8 +15,8 @@ export const experiences: ExperienceItem[] = [
     company: "Chili Piper",
     headline: "Navigating complexity",
     context: "CRM Integrations · Calendars · AI Features · Customer Workflows",
-    description:
-      "Working at Chili Piper taught me that testing complex software starts with understanding how systems depend on one another. Working across integrations, customer workflows and new AI capabilities reinforced the importance of learning products deeply before deciding how best to test them.",
+    summary:
+      "At Chili Piper, I tested scheduling workflows spanning CRM integrations, calendar providers, APIs and emerging AI capabilities. Understanding customer configurations and data flow was essential to deciding where exploratory testing, integration validation and automation could provide useful evidence.",
     caseStudyUrl: "/case-studies/chili-piper",
   },
   {
@@ -24,8 +24,8 @@ export const experiences: ExperienceItem[] = [
     company: "Sitemate",
     headline: "Building quality from the ground up",
     context: "Startup · QA Foundations · Team Growth",
-    description:
-      "Joining a growing startup gave me the opportunity to build QA practices while remaining hands-on with testing. Establishing processes, hiring and mentoring the first QA engineers, and working closely with the development team reinforced that quality works best when it's built into everyday development, not added at the end.",
+    summary:
+      "At Sitemate, I remained hands-on across Dashpivot and Sitemate ID while helping establish QA practices and starting the automation effort. As the organisation grew, I began building the QA team by hiring and mentoring its first additional engineer.",
     caseStudyUrl: "/case-studies/sitemate",
   },
 ];

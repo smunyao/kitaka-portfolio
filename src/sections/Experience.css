@@ -24,15 +24,16 @@
 }
 
 .experience-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+
+  column-gap: var(--space-md);
+
   max-width: var(--content-width);
 }
 
 .experience-item-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-
-  gap: var(--space-md);
+  grid-column: 1;
 
   margin-bottom: var(--space-xs);
 }
@@ -49,6 +50,8 @@
 }
 
 .experience-headline {
+  grid-column: 1 / -1;
+
   margin: 0 0 var(--space-xs);
 
   color: var(--color-text);
@@ -60,6 +63,8 @@
 }
 
 .experience-context {
+  grid-column: 1 / -1;
+
   margin-bottom: var(--space-sm);
 
   color: var(--color-text);
@@ -68,7 +73,11 @@
   letter-spacing: 0.02em;
 }
 
-.experience-description {
+.experience-summary {
+  grid-column: 1 / -1;
+
+  margin-bottom: var(--space-sm);
+
   line-height: 1.7;
 }
 
@@ -78,7 +87,10 @@
   display: inline-flex;
   align-items: center;
 
-  flex-shrink: 0;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: baseline;
+
   gap: 0.3rem;
 
   padding-bottom: 0.2rem;
@@ -157,13 +169,8 @@
     gap: var(--space-md);
   }
 
-  .experience-item-header {
-    align-items: flex-start;
-    flex-direction: column;
-
-    gap: var(--space-xs);
-
-    margin-bottom: var(--space-sm);
+  .experience-item {
+    grid-template-columns: 1fr;
   }
 
   .experience-company {
@@ -181,12 +188,16 @@
     font-size: 0.9rem;
   }
 
-  .experience-description {
+  .experience-summary {
     font-size: 1rem;
     line-height: 1.65;
   }
 
   .experience-case-study-link {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+
     font-size: 0.85rem;
   }
 }
