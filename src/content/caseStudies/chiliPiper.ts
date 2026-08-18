@@ -18,7 +18,7 @@ export const chiliPiperCaseStudy: CaseStudy = {
   title: "Quality begins with understanding the system",
 
   summary:
-    "Working on Chili Piper's scheduling platform reinforced that effective quality engineering starts with understanding how complex systems behave. When products depend on multiple integrations, external services and customer-specific workflows, thoughtful product understanding becomes just as important as testing itself.",
+    "At Chili Piper, I investigated scheduling workflows across CRM integrations, calendar providers, APIs and emerging AI capabilities, using product understanding to shape the testing approach.",
 
   productEcosystem: [
     "My work spanned scheduling workflows, CRM integrations, APIs, calendar providers and emerging AI-powered capabilities. These products formed a connected ecosystem where users expected scheduling to feel effortless, despite the complexity behind the scenes.",

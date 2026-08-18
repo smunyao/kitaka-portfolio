@@ -19,7 +19,7 @@ export const harvestCaseStudy: CaseStudy = {
   title: "Building confidence across a connected product ecosystem",
 
   summary:
-    "Working across Harvest and Forecast taught me that quality depends on understanding how products, platforms, APIs and integrations behave together—not only whether individual features work in isolation.",
+    "Across Harvest and Forecast, I combined exploratory testing, API and integration validation and targeted automation to help teams understand risk across a connected product ecosystem.",
 
   productEcosystem: [
     "My work spanned multiple parts of the Harvest ecosystem, including Harvest, Forecast, mobile applications, APIs, browser extensions and third-party integrations.",
