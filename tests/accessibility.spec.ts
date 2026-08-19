@@ -73,7 +73,7 @@ test.describe("accessibility", () => {
       .locator("#experience")
       .evaluate((element) => element.getBoundingClientRect().top);
 
-    expect(experienceTop).toBeGreaterThanOrEqual(568);
+    expect(experienceTop).toBeGreaterThanOrEqual(568 + 96);
 
     const horizontalOverflow = await page.evaluate(
       () => document.documentElement.scrollWidth - window.innerWidth,
@@ -102,7 +102,7 @@ test.describe("accessibility", () => {
     }));
 
     expect(initialLayout.experienceTop).toBeGreaterThanOrEqual(
-      initialLayout.viewportHeight,
+      initialLayout.viewportHeight + 96,
     );
 
     await page.evaluate(() => window.scrollTo(0, 48));
