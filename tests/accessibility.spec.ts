@@ -54,7 +54,7 @@ test.describe("accessibility", () => {
   });
 
   test("hero remains readable at a narrow mobile width", async ({ page }) => {
-    await page.setViewportSize({ width: 320, height: 720 });
+    await page.setViewportSize({ width: 320, height: 568 });
     await page.goto("/");
 
     await expect(
@@ -64,12 +64,87 @@ test.describe("accessibility", () => {
       }),
     ).toBeVisible();
     await expect(page.locator(".hero-intro")).toBeVisible();
+    await expect(page.locator(".home-hero-layer")).toHaveCSS(
+      "position",
+      "fixed",
+    );
+
+    const experienceTop = await page
+      .locator("#experience")
+      .evaluate((element) => element.getBoundingClientRect().top);
+
+    expect(experienceTop).toBeLessThan(568);
 
     const horizontalOverflow = await page.evaluate(
       () => document.documentElement.scrollWidth - window.innerWidth,
     );
 
     expect(horizontalOverflow).toBeLessThanOrEqual(0);
+  });
+
+  test("compact navigation supports touch and keyboard operation", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 320, height: 568 });
+    await page.goto("/");
+
+    const menuButton = page.getByRole("button", { name: "Menu" });
+
+    await menuButton.focus();
+    await expect(menuButton).toHaveCSS("outline-style", "solid");
+    await expect(menuButton).toHaveCSS("outline-width", "3px");
+
+    await menuButton.press("Enter");
+
+    const navigationLinks = page.locator(".navbar-links").getByRole("link");
+
+    for (const link of await navigationLinks.all()) {
+      const height = await link.evaluate(
+        (element) => element.getBoundingClientRect().height,
+      );
+
+      expect(Math.round(height)).toBeGreaterThanOrEqual(44);
+    }
+
+    const experienceLink = page.getByRole("link", {
+      name: "Experience",
+      exact: true,
+    });
+
+    await experienceLink.focus();
+    await experienceLink.press("Escape");
+
+    await expect(menuButton).toHaveAttribute("aria-expanded", "false");
+    await expect(menuButton).toBeFocused();
+  });
+
+  test("footer covers the fixed hero at the bottom of a short landscape viewport", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 882, height: 344 });
+    await page.goto("/");
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+
+    const footerLayout = await page.locator(".footer").evaluate((element) => {
+      const rect = element.getBoundingClientRect();
+      const styles = getComputedStyle(element);
+
+      return {
+        backgroundColor: styles.backgroundColor,
+        bottom: rect.bottom,
+        viewportHeight: window.innerHeight,
+        width: rect.width,
+        viewportWidth: window.innerWidth,
+      };
+    });
+
+    expect(footerLayout.backgroundColor).not.toBe("rgba(0, 0, 0, 0)");
+    expect(
+      Math.abs(footerLayout.bottom - footerLayout.viewportHeight),
+    ).toBeLessThanOrEqual(1);
+    expect(footerLayout.width).toBeGreaterThanOrEqual(
+      footerLayout.viewportWidth - 2,
+    );
   });
 
   test("experience case-study links retain a visible focus indicator", async ({

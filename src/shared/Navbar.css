@@ -90,6 +90,10 @@
   color: var(--color-accent);
 }
 
+.navbar-menu-button {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .navbar-inner {
     padding: var(--space-sm);
@@ -105,5 +109,132 @@
 
   .navbar-links a {
     font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .navbar {
+    position: relative;
+  }
+
+  .navbar-menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+
+    gap: 0.4rem;
+
+    margin: -0.5rem 0;
+    padding: 0.5rem 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--color-text);
+
+    font: inherit;
+    font-size: 0.9rem;
+
+    cursor: pointer;
+  }
+
+  .navbar-menu-button:hover {
+    color: var(--color-heading);
+  }
+
+  .navbar-menu-button:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+
+    border-radius: 4px;
+  }
+
+  .navbar-menu-icon {
+    color: var(--color-accent);
+
+    transition: transform var(--transition);
+  }
+
+  .navbar-menu-button[aria-expanded="true"] .navbar-menu-icon {
+    transform: rotate(180deg);
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    right: var(--space-sm);
+
+    display: block;
+    align-items: stretch;
+
+    width: min(12rem, calc(100vw - (2 * var(--space-sm))));
+
+    gap: 0;
+
+    padding: 0.35rem;
+
+    border: 1px solid var(--color-border);
+
+    background: color-mix(
+      in srgb,
+      var(--color-background) 96%,
+      transparent
+    );
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-4px);
+    pointer-events: none;
+
+    transition:
+      visibility 0s linear 200ms,
+      opacity var(--transition),
+      transform var(--transition);
+  }
+
+  .navbar-links.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+
+    transition-delay: 0s;
+  }
+
+  .navbar-links a {
+    display: flex;
+    align-items: center;
+
+    min-height: 44px;
+
+    box-sizing: border-box;
+
+    padding: 0.65rem 0.75rem;
+
+    border-bottom-width: 1px;
+
+    transition:
+      color var(--transition),
+      border-color var(--transition),
+      transform var(--transition);
+  }
+
+  .navbar-links a:hover,
+  .navbar-links a:focus-visible {
+    transform: translateX(3px);
+  }
+}
+
+@media (max-width: 350px) and (prefers-reduced-motion: reduce) {
+  .navbar-menu-icon,
+  .navbar-links,
+  .navbar-links a {
+    transition: none;
   }
 }
