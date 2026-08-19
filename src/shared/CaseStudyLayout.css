@@ -207,17 +207,18 @@
   transform: translateX(2px);
 }
 
-.case-study-mobile-details {
+.case-study-mobile-context {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px),
+  (max-width: 900px) and (max-height: 500px) {
   .case-study {
     padding: 3.5rem var(--space-sm);
   }
 
   .case-study-header {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
   }
 
   .case-study-header h1 {
@@ -230,13 +231,45 @@
     line-height: 1.65;
   }
 
-  .case-study-mobile-details {
+  .case-study-mobile-context {
     display: block;
 
     margin-bottom: var(--space-lg);
 
     border-top: 1px solid var(--color-border);
+  }
+
+  .case-study-mobile-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+
+    margin: 0;
+    padding: var(--space-sm) 0;
+
+    color: color-mix(in srgb, var(--color-text) 72%, transparent);
+
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .case-study-mobile-details {
+    --company-accent: var(--color-accent);
+
+    border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
+  }
+
+  .case-study-mobile-details[data-company="harvest"] {
+    --company-accent: var(--company-harvest);
+  }
+
+  .case-study-mobile-details[data-company="chili-piper"] {
+    --company-accent: var(--company-chili-piper);
+  }
+
+  .case-study-mobile-details[data-company="sitemate"] {
+    --company-accent: var(--company-sitemate);
   }
 
   .case-study-mobile-details summary {
@@ -265,17 +298,21 @@
 
     color: var(--color-text);
 
-    transition: transform var(--transition);
+    transition:
+      color var(--transition),
+      transform var(--transition);
   }
 
   .case-study-mobile-details[open] summary::after {
+    color: var(--company-accent);
+
     transform: rotate(180deg);
   }
 
   .case-study-mobile-details-content {
     padding-bottom: var(--space-md);
 
-    animation: case-study-details-reveal 180ms ease-out;
+    animation: case-study-details-reveal 240ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .case-study-layout {
@@ -300,7 +337,7 @@
 @keyframes case-study-details-reveal {
   from {
     opacity: 0;
-    transform: translateY(-0.35rem);
+    transform: translateY(-0.25rem);
   }
 
   to {
