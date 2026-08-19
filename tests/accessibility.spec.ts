@@ -73,13 +73,88 @@ test.describe("accessibility", () => {
       .locator("#experience")
       .evaluate((element) => element.getBoundingClientRect().top);
 
-    expect(experienceTop).toBeLessThan(568);
+    expect(experienceTop).toBeGreaterThanOrEqual(568);
 
     const horizontalOverflow = await page.evaluate(
       () => document.documentElement.scrollWidth - window.innerWidth,
     );
 
     expect(horizontalOverflow).toBeLessThanOrEqual(0);
+  });
+
+  test("homepage navigation yields to the hero until visitors interact", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto("/");
+
+    const header = page.locator(".site-header");
+    const heroLayer = page.locator(".home-hero-layer");
+
+    await expect(header).toHaveCSS("opacity", "0");
+    await expect(heroLayer).toHaveCSS("opacity", "1");
+
+    const initialLayout = await page.evaluate(() => ({
+      experienceTop: document
+        .querySelector("#experience")!
+        .getBoundingClientRect().top,
+      viewportHeight: window.innerHeight,
+    }));
+
+    expect(initialLayout.experienceTop).toBeGreaterThanOrEqual(
+      initialLayout.viewportHeight,
+    );
+
+    await page.evaluate(() => window.scrollTo(0, 48));
+
+    await expect(header).toHaveCSS("opacity", "1");
+
+    await page.evaluate(() => window.scrollTo(0, 0));
+
+    await expect(header).toHaveCSS("opacity", "0");
+  });
+
+  test("keyboard focus reveals the initially hidden navigation", async ({
+    page,
+  }) => {
+    await page.goto("/");
+
+    const header = page.locator(".site-header");
+    const homeLink = page.getByRole("link", { name: "Kitaka Munyao home" });
+
+    await page.keyboard.press("Tab");
+    await expect(
+      page.getByRole("link", { name: "Skip to main content" }),
+    ).toBeFocused();
+
+    await page.keyboard.press("Tab");
+
+    await expect(homeLink).toBeFocused();
+    await expect(header).toHaveCSS("opacity", "1");
+  });
+
+  test("short landscape loads with an unfaded, fully framed hero", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 882, height: 344 });
+    await page.goto("/");
+
+    await expect(page.locator(".site-header")).toHaveCSS("opacity", "0");
+    await expect(page.locator(".home-hero-layer")).toHaveCSS("opacity", "1");
+
+    const landscapeLayout = await page.evaluate(() => ({
+      experienceTop: document
+        .querySelector("#experience")!
+        .getBoundingClientRect().top,
+      heroHeight: document.querySelector(".hero")!.getBoundingClientRect()
+        .height,
+      viewportHeight: window.innerHeight,
+    }));
+
+    expect(landscapeLayout.heroHeight).toBe(landscapeLayout.viewportHeight);
+    expect(landscapeLayout.experienceTop).toBeGreaterThanOrEqual(
+      landscapeLayout.viewportHeight,
+    );
   });
 
   test("compact navigation supports touch and keyboard operation", async ({

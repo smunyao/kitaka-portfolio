@@ -8,9 +8,55 @@ const SECTION_IDS = ["experience", "how-i-work", "writing", "contact"];
 
 function Navbar() {
   const activeSection = useActiveSection(SECTION_IDS);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(
+    () =>
+      window.scrollY > 24 ||
+      (window.location.hash.length > 0 && window.location.hash !== "#top"),
+  );
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const navigationRef = useRef<HTMLElement>(null);
+  const showForInitialHashRef = useRef(
+    window.location.hash.length > 0 && window.location.hash !== "#top",
+  );
+
+  useEffect(() => {
+    let frameId = 0;
+
+    const updateHeaderVisibility = () => {
+      if (window.scrollY > 24) {
+        showForInitialHashRef.current = false;
+        setIsHeaderVisible(true);
+        return;
+      }
+
+      setIsHeaderVisible(showForInitialHashRef.current);
+    };
+
+    const handleHashChange = () => {
+      showForInitialHashRef.current =
+        window.scrollY <= 24 &&
+        window.location.hash.length > 0 &&
+        window.location.hash !== "#top";
+
+      updateHeaderVisibility();
+    };
+
+    const handleScroll = () => {
+      cancelAnimationFrame(frameId);
+      frameId = requestAnimationFrame(updateHeaderVisibility);
+    };
+
+    updateHeaderVisibility();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
 
   useEffect(() => {
     if (!isMenuOpen) return;
@@ -53,7 +99,9 @@ function Navbar() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="site-header">
+    <header
+      className={`site-header${isHeaderVisible ? " is-visible" : ""}`}
+    >
       <nav
         ref={navigationRef}
         className="navbar"

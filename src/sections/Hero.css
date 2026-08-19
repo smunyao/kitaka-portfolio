@@ -11,7 +11,7 @@
   justify-content: center;
 
   max-width: var(--max-width);
-  min-height: calc(100svh - var(--header-offset));
+  min-height: 100svh;
 
   box-sizing: border-box;
 
@@ -115,5 +115,31 @@
   .hero-intro {
     font-size: 20px;
     line-height: 1.4;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    padding: 2.5rem var(--space-md) 2rem;
+  }
+
+  .hero .section-eyebrow {
+    margin-bottom: 0.75rem;
+
+    font-size: 0.8rem;
+  }
+
+  .hero h1 {
+    margin-bottom: var(--space-sm);
+
+    font-size: 30px;
+  }
+
+  .hero-intro {
+    max-width: 40rem;
+
+    margin-bottom: 0;
+
+    font-size: 18px;
   }
 }
