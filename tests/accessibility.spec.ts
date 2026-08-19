@@ -98,11 +98,23 @@ test.describe("accessibility", () => {
       experienceTop: document
         .querySelector("#experience")!
         .getBoundingClientRect().top,
+      measuredViewportBottom: Number.parseFloat(
+        getComputedStyle(document.querySelector(".home-flow")!).getPropertyValue(
+          "--home-viewport-bottom",
+        ),
+      ),
+      visualViewportBottom: Math.ceil(
+        (window.visualViewport?.height ?? window.innerHeight) +
+          (window.visualViewport?.offsetTop ?? 0),
+      ),
       viewportHeight: window.innerHeight,
     }));
 
+    expect(initialLayout.measuredViewportBottom).toBe(
+      initialLayout.visualViewportBottom,
+    );
     expect(initialLayout.experienceTop).toBeGreaterThanOrEqual(
-      initialLayout.viewportHeight,
+      initialLayout.measuredViewportBottom,
     );
 
     await page.evaluate(() => window.scrollTo(0, 48));
