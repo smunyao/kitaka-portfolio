@@ -13,6 +13,7 @@ interface CaseStudySectionProps {
 
 interface CaseStudyDetailsProps {
   caseStudy: CaseStudy;
+  includeCompany?: boolean;
 }
 
 function CaseStudySection({ heading, paragraphs }: CaseStudySectionProps) {
@@ -27,14 +28,19 @@ function CaseStudySection({ heading, paragraphs }: CaseStudySectionProps) {
   );
 }
 
-function CaseStudyDetails({ caseStudy }: CaseStudyDetailsProps) {
+function CaseStudyDetails({
+  caseStudy,
+  includeCompany = true,
+}: CaseStudyDetailsProps) {
   return (
     <>
-      <div className="case-study-company">
-        <h2>{caseStudy.company}</h2>
-        <p>{caseStudy.role}</p>
-        <p>{caseStudy.period}</p>
-      </div>
+      {includeCompany && (
+        <div className="case-study-company">
+          <h2>{caseStudy.company}</h2>
+          <p>{caseStudy.role}</p>
+          <p>{caseStudy.period}</p>
+        </div>
+      )}
 
       <section className="case-study-sidebar-section">
         <h3>Product ecosystem</h3>
@@ -84,13 +90,24 @@ function CaseStudyLayout({ caseStudy }: CaseStudyLayoutProps) {
         <p className="case-study-summary">{caseStudy.summary}</p>
       </header>
 
-      <details className="case-study-mobile-details">
-        <summary>At a glance</summary>
+      <div className="case-study-mobile-context">
+        <p className="case-study-mobile-meta">
+          <span>{caseStudy.role}</span>{" "}
+          <span aria-hidden="true">·</span>{" "}
+          <span>{caseStudy.period}</span>
+        </p>
 
-        <div className="case-study-mobile-details-content">
-          <CaseStudyDetails caseStudy={caseStudy} />
-        </div>
-      </details>
+        <details
+          className="case-study-mobile-details"
+          data-company={caseStudy.slug}
+        >
+          <summary>Product and focus details</summary>
+
+          <div className="case-study-mobile-details-content">
+            <CaseStudyDetails caseStudy={caseStudy} includeCompany={false} />
+          </div>
+        </details>
+      </div>
 
       <div className="case-study-layout">
         <div className="case-study-content">

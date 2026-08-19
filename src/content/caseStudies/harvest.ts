@@ -22,36 +22,35 @@ export const harvestCaseStudy: CaseStudy = {
     "Across Harvest and Forecast, I combined exploratory testing, API and integration validation and targeted automation to help teams understand risk across a connected product ecosystem.",
 
   productEcosystem: [
-    "My work spanned multiple parts of the Harvest ecosystem, including Harvest, Forecast, mobile applications, APIs, browser extensions and third-party integrations.",
-    "Each product served different workflows, but they were connected by shared customer journeys and data. A change that appeared contained within one area could affect another product, platform or integration in ways that were not always immediately obvious.",
-    "Over time, my responsibilities expanded across the ecosystem. During my later work, I was especially involved with Forecast as the team refined the relationship between the two products and worked towards a more connected experience.",
+    "My work spanned Harvest, Forecast, mobile applications, APIs, browser extensions and third-party integrations. Each served a different part of the customer experience, but they were connected through shared workflows and data.",
+    "That connection mattered. A change that appeared contained within one product could affect another platform or integration, sometimes beyond the boundary of the team making it.",
+    "I worked increasingly closely with Forecast during my later years at Harvest, as the team reconsidered the relationship between the two products and moved towards a more connected experience.",
   ],
 
   challenge: [
-    "The breadth of the ecosystem made quality a systems problem rather than a collection of isolated feature checks.",
-    "Reliable releases required understanding how users moved between products, how information travelled through APIs, and how integrations behaved when external services, permissions or data changed.",
-    "The challenge was not simply to find defects before release. It was to help the team understand where risk existed, which workflows mattered most and how much confidence the available evidence could reasonably provide.",
+    "The breadth of the ecosystem made quality a systems problem rather than a collection of isolated feature checks. A workflow could cross products, pass through an API and depend on an external service before reaching the outcome a customer expected.",
+    "Permissions, data changes and third-party behaviour added uncertainty that could not be understood from the interface alone. Testing a feature in isolation was therefore rarely enough to explain the risk surrounding it.",
+    "The practical challenge was to identify which connections mattered for each change, what could reasonably be exercised before release and where uncertainty still remained.",
   ],
 
   approach: [
-    "I combined exploratory testing, API validation, integration testing, regression coverage and automated end-to-end checks. The balance depended on the change and the risks involved rather than on applying the same testing method to every feature.",
-    "For integration-heavy work, I looked beyond the immediate interface and examined the full flow of data between Harvest, connected products and external services. This helped uncover problems that would not necessarily appear through isolated user-interface testing.",
-    "I also contributed to building and expanding automated integration coverage using Playwright and TypeScript. Automation was most useful when it protected important, repeatable workflows and gave the team fast feedback without replacing exploratory investigation.",
-    "Close collaboration was central to the work. I partnered with engineers and product managers while features were still being shaped, and worked with Customer Support to understand how issues appeared in real customer workflows.",
-    "As my work on Forecast increased, I applied the same principles to a product with different user needs and workflows: understand the product deeply, identify the most meaningful risks and use testing to provide useful information throughout development.",
+    "I used exploratory testing, API and integration validation, regression coverage and automated end-to-end checks in different combinations. The choice depended on the change: its customer importance, the systems it crossed and the kind of uncertainty the team needed to investigate.",
+    "For integration-heavy work, I followed data beyond the immediate interface and through the products and external services involved. This exposed behaviour that isolated user-interface testing could miss and made failures easier to discuss with the engineers working on them.",
+    "I contributed to automated integration coverage using Playwright and TypeScript. The most useful checks protected important, repeatable workflows and provided timely feedback, while exploratory work remained available for new behaviour and risks that were difficult to predict in advance.",
+    "I worked with engineers and product managers while features were being shaped, and with Customer Support when production behaviour needed the context of a real customer workflow. That collaboration helped connect implementation decisions, test evidence and the ways people were actually using the products.",
+    "As my involvement with Forecast increased, I brought the same investigative approach to a product with its own users and constraints rather than assuming that practices from Harvest would transfer unchanged.",
   ],
 
   impact: [
-    "This approach gave teams clearer visibility into risk and supported more confident release decisions across a broad product ecosystem.",
-    "Expanding automated coverage helped protect important integration workflows while leaving room for exploratory testing where judgement and product context were more valuable.",
-    "Working across Harvest and Forecast also encouraged a more consistent view of quality across products, rather than treating each application or platform as a separate testing responsibility.",
-    "The result was not simply broader test coverage. It was a stronger shared understanding of how connected changes could affect customers and where the team should focus its attention.",
+    "The work gave teams evidence about risk across complete workflows, not only the feature or interface being changed. That made it easier to discuss what had been covered, what remained uncertain and where further investigation would be useful.",
+    "Automated integration checks protected selected repeatable journeys and made regressions in those connections visible earlier. They complemented rather than displaced the exploratory testing needed for unfamiliar behaviour and changing product relationships.",
+    "Working across Harvest and Forecast also brought a more connected view of quality to conversations about the products. Changes could be considered in terms of their effect on customers moving through the ecosystem, rather than as separate testing responsibilities for each application.",
   ],
 
   reflection: [
-    "Harvest reinforced the idea that quality is created long before a final testing phase. It grows through product understanding, early conversations, thoughtful engineering and shared ownership of risk.",
-    "It also taught me that automation is most valuable when it supports judgement. A reliable automated check can protect a known workflow, but it cannot replace curiosity, context or the ability to recognise when the product is behaving correctly for the wrong reasons.",
-    "Most importantly, working across Harvest, Forecast, mobile applications, APIs and integrations strengthened my ability to think about products as connected systems. That perspective continues to shape how I approach quality today.",
+    "Harvest reinforced my view that quality begins before a final testing phase. Product understanding, early conversations and thoughtful engineering all influence the evidence available when a team needs to make a decision.",
+    "It also clarified the place of automation in my work. A reliable check can protect a known workflow, but it cannot replace curiosity, context or recognising when a product reaches the expected result for the wrong reason.",
+    "Working across Harvest and Forecast ultimately strengthened how I think about products as connected systems: follow the customer journey, understand the boundaries it crosses and remain honest about what the testing can—and cannot—tell you.",
   ],
 
   focusAreas: [
