@@ -6,7 +6,10 @@ import "./WorkingPrinciples.css";
 
 function WorkingPrinciples() {
   return (
-    <section id="how-i-work" className="working-principles">
+    <section
+      id="how-i-work"
+      className="home-section home-section--principles working-principles"
+    >
       <p className="section-eyebrow">How I work</p>
 
       <h2>The work starts with context, questions and conversation.</h2>

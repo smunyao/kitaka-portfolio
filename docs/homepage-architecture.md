@@ -248,6 +248,40 @@ is reordered visually through CSS.
 The primary navigation remains usable at current content volumes. Its mobile
 treatment will receive a dedicated review in Story 4.7.
 
+## Visual hierarchy decisions
+
+The homepage uses a shared section container and type scale while varying
+spacing and treatment according to each section's role in the visitor journey.
+Consistency remains the baseline, but it no longer gives every section equal
+visual weight.
+
+- Experience is the primary evidence chapter. It receives the most generous
+  section spacing, while subtle rules make individual experience entries easier
+  to scan without turning them into cards.
+- How I Work retains its three-column principle structure and sits one level
+  below the professional evidence.
+- Writing uses an editorial rule above and below the featured article to make
+  the recommendation distinct without introducing a decorative container.
+- Engineering Work remains deliberately compact and uses a quieter heading so
+  one inspectable artefact does not compete with professional experience.
+- Contact uses a section rule and closing space to read as the conclusion of
+  the homepage journey.
+
+No new evidence component was introduced. The experience summaries and
+descriptive case-study links already communicate the available evidence; a new
+callout would repeat it rather than reveal something useful. This decision
+should be revisited only when a distinct outcome or artefact needs a repeated
+presentation pattern.
+
+The hierarchy is communicated through heading scale, spacing, borders and
+document position rather than colour alone. No imagery, shadows, additional
+gradients, animation or JavaScript were added.
+
+The comparative production Lighthouse review is deferred to Story 4.9, where
+the complete milestone will be measured against the established baseline.
+Story 4.6 remains responsible for avoiding new asset or JavaScript weight,
+layout shift and observable responsive regressions.
+
 ## Trade-offs
 
 ### Removing the standalone About section

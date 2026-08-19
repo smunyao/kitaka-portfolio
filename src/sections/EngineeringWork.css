@@ -1,19 +1,5 @@
-.engineering-work {
-  max-width: var(--max-width);
-
-  margin: 0 auto;
-  padding: 0 var(--space-md) var(--space-xl);
-}
-
 .engineering-work h2 {
-  max-width: var(--content-width);
-
   margin-bottom: var(--space-sm);
-
-  font-size: 28px;
-  font-weight: 500;
-  line-height: 1.3;
-  letter-spacing: -0.4px;
 }
 
 .engineering-work-description,
@@ -85,14 +71,6 @@
 }
 
 @media (max-width: 768px) {
-  .engineering-work {
-    padding: 0 var(--space-sm) 3.5rem;
-  }
-
-  .engineering-work h2 {
-    font-size: 24px;
-  }
-
   .engineering-work-description,
   .engineering-work-summary {
     font-size: 1rem;

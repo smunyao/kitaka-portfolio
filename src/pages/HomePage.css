@@ -72,6 +72,45 @@
   background: linear-gradient(to bottom, transparent, var(--color-background));
 }
 
+.home-section {
+  --home-section-space: var(--space-xl);
+
+  max-width: var(--max-width);
+
+  margin: 0 auto;
+  padding: 0 var(--space-md) var(--home-section-space);
+}
+
+.home-section > h2 {
+  max-width: var(--content-width);
+
+  margin-bottom: var(--space-md);
+
+  font-size: var(--font-size-section-heading);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+
+.home-section--evidence {
+  --home-section-space: 7.5rem;
+}
+
+.home-section--principles {
+  --home-section-space: 6.5rem;
+}
+
+.home-section--feature,
+.home-section--compact {
+  --home-section-space: 5.5rem;
+}
+
+.home-section--closing {
+  padding-top: var(--space-lg);
+
+  border-top: 1px solid var(--color-border);
+}
+
 #experience,
 #how-i-work,
 #writing,
@@ -81,6 +120,34 @@
 }
 
 @media (max-width: 768px) {
+  .home-section {
+    --home-section-space: 3.5rem;
+
+    padding-right: var(--space-sm);
+    padding-left: var(--space-sm);
+  }
+
+  .home-section > h2 {
+    font-size: var(--font-size-section-heading-mobile);
+  }
+
+  .home-section--evidence {
+    --home-section-space: 4.5rem;
+  }
+
+  .home-section--principles {
+    --home-section-space: 4rem;
+  }
+
+  .home-section--feature,
+  .home-section--compact {
+    --home-section-space: 3.75rem;
+  }
+
+  .home-section--closing {
+    padding-top: var(--space-md);
+  }
+
   .home-hero-space {
     height: calc(100svh - var(--header-offset));
   }

@@ -12,7 +12,10 @@ function EngineeringWork() {
   }
 
   return (
-    <section id="engineering-work" className="engineering-work">
+    <section
+      id="engineering-work"
+      className="home-section home-section--compact engineering-work"
+    >
       <p className="section-eyebrow">Engineering work</p>
 
       <h2>{portfolio.title}</h2>

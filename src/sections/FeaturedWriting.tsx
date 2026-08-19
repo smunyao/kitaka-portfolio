@@ -13,7 +13,10 @@ function FeaturedWriting() {
   }
 
   return (
-    <section id="writing" className="featured-writing">
+    <section
+      id="writing"
+      className="home-section home-section--feature featured-writing"
+    >
       <p className="section-eyebrow">Writing</p>
 
       <h2>Notes on testing, quality and engineering work.</h2>

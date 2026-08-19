@@ -8,7 +8,10 @@ function Contact() {
   const resumeSubject = encodeURIComponent("[Portfolio] Résumé request");
 
   return (
-    <section id="contact" className="contact">
+    <section
+      id="contact"
+      className="home-section home-section--closing contact"
+    >
       <p className="section-eyebrow">{contactContent.eyebrow}</p>
 
       <h2>{contactContent.heading}</h2>
