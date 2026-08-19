@@ -8,17 +8,18 @@ function Contact() {
   const resumeSubject = encodeURIComponent("[Portfolio] Résumé request");
 
   return (
-    <section id="contact" className="contact">
+    <section
+      id="contact"
+      className="home-section home-section--closing contact"
+    >
       <p className="section-eyebrow">{contactContent.eyebrow}</p>
 
       <h2>{contactContent.heading}</h2>
 
-      <p>{contactContent.intro}</p>
-
-      <p className="contact-note">
-        Drop me an{" "}
+      <p className="contact-copy">
+        {contactContent.intro}{" "}
         <a href={`mailto:${site.contact.email}?subject=${emailSubject}`}>
-          email
+          Send me an email
         </a>{" "}
         to continue the conversation, or{" "}
         <a href={`mailto:${site.contact.email}?subject=${resumeSubject}`}>

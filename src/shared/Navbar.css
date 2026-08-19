@@ -24,7 +24,7 @@
   max-width: var(--max-width);
 
   margin: 0 auto;
-  padding: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
 }
 
 .navbar-logo {
