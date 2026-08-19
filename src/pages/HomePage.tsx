@@ -23,23 +23,38 @@ function HomePage() {
     if (!flow) return;
 
     const visualViewport = window.visualViewport;
+    let frameId = 0;
 
     const updateViewportHeight = () => {
       const viewportHeight = visualViewport?.height ?? window.innerHeight;
+      const viewportBottom =
+        viewportHeight + (visualViewport?.offsetTop ?? 0);
 
       flow.style.setProperty(
         "--home-viewport-height",
         `${Math.ceil(viewportHeight)}px`,
       );
+      flow.style.setProperty(
+        "--home-viewport-bottom",
+        `${Math.ceil(viewportBottom)}px`,
+      );
+    };
+
+    const scheduleViewportUpdate = () => {
+      cancelAnimationFrame(frameId);
+      frameId = requestAnimationFrame(updateViewportHeight);
     };
 
     updateViewportHeight();
-    visualViewport?.addEventListener("resize", updateViewportHeight);
-    window.addEventListener("resize", updateViewportHeight);
+    visualViewport?.addEventListener("resize", scheduleViewportUpdate);
+    visualViewport?.addEventListener("scroll", scheduleViewportUpdate);
+    window.addEventListener("resize", scheduleViewportUpdate);
 
     return () => {
-      visualViewport?.removeEventListener("resize", updateViewportHeight);
-      window.removeEventListener("resize", updateViewportHeight);
+      cancelAnimationFrame(frameId);
+      visualViewport?.removeEventListener("resize", scheduleViewportUpdate);
+      visualViewport?.removeEventListener("scroll", scheduleViewportUpdate);
+      window.removeEventListener("resize", scheduleViewportUpdate);
     };
   }, []);
 
@@ -77,7 +92,7 @@ function HomePage() {
 
     const updateHeroFade = () => {
       const contentTop = content.getBoundingClientRect().top;
-      const viewportHeight = window.innerHeight;
+      const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
       const isMobile = window.innerWidth <= 768;
 
       const fadeStart = viewportHeight * (isMobile ? 0.95 : 0.9);
