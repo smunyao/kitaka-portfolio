@@ -32,7 +32,7 @@ function Experience() {
                 className="experience-case-study-link"
                 data-company={experience.slug}
                 to={experience.caseStudyUrl}
-                aria-label={`Read the ${experience.company} case study`}
+                aria-label={`Read the case study for ${experience.company}`}
               >
                 <span>Read the case study</span>
 

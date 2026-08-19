@@ -14,6 +14,7 @@ interface CaseStudySectionProps {
 interface CaseStudyDetailsProps {
   caseStudy: CaseStudy;
   includeCompany?: boolean;
+  sectionHeadingLevel?: 2 | 3;
 }
 
 function CaseStudySection({ heading, paragraphs }: CaseStudySectionProps) {
@@ -31,7 +32,10 @@ function CaseStudySection({ heading, paragraphs }: CaseStudySectionProps) {
 function CaseStudyDetails({
   caseStudy,
   includeCompany = true,
+  sectionHeadingLevel = 3,
 }: CaseStudyDetailsProps) {
+  const SectionHeading = sectionHeadingLevel === 2 ? "h2" : "h3";
+
   return (
     <>
       {includeCompany && (
@@ -43,7 +47,7 @@ function CaseStudyDetails({
       )}
 
       <section className="case-study-sidebar-section">
-        <h3>Product ecosystem</h3>
+        <SectionHeading>Product ecosystem</SectionHeading>
 
         <ul>
           {caseStudy.productEcosystemItems.map((item) => (
@@ -53,7 +57,7 @@ function CaseStudyDetails({
       </section>
 
       <section className="case-study-sidebar-section">
-        <h3>Focus areas</h3>
+        <SectionHeading>Focus areas</SectionHeading>
 
         <ul>
           {caseStudy.focusAreas.map((focusArea) => (
@@ -104,7 +108,11 @@ function CaseStudyLayout({ caseStudy }: CaseStudyLayoutProps) {
           <summary>Product and focus details</summary>
 
           <div className="case-study-mobile-details-content">
-            <CaseStudyDetails caseStudy={caseStudy} includeCompany={false} />
+            <CaseStudyDetails
+              caseStudy={caseStudy}
+              includeCompany={false}
+              sectionHeadingLevel={2}
+            />
           </div>
         </details>
       </div>

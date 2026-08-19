@@ -33,10 +33,14 @@ for (const publicPath of publicPaths) {
     throw new Error(`Unsafe public route in sitemap: ${publicPath}`);
   }
 
-  const routeDirectory = path.join(outputDirectory, ...routeSegments);
+  const routeFile = path.join(
+    outputDirectory,
+    ...routeSegments.slice(0, -1),
+    `${routeSegments.at(-1)}.html`,
+  );
 
-  await mkdir(routeDirectory, { recursive: true });
-  await writeFile(path.join(routeDirectory, "index.html"), shell);
+  await mkdir(path.dirname(routeFile), { recursive: true });
+  await writeFile(routeFile, shell);
 }
 
 await writeFile(path.join(outputDirectory, "404.html"), shell);

@@ -37,7 +37,7 @@ const findFile = async (pathname) => {
   const decodedPath = decodeURIComponent(pathname);
   const relativePath = decodedPath.replace(/^\/+/, "");
   const candidates = relativePath
-    ? [relativePath, path.join(relativePath, "index.html")]
+    ? [relativePath, `${relativePath}.html`, path.join(relativePath, "index.html")]
     : ["index.html"];
 
   for (const candidate of candidates) {
