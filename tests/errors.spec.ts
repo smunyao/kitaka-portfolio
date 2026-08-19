@@ -32,7 +32,9 @@ test.describe("error states", () => {
     test(`${errorState.name} provides a complete recovery experience`, async ({
       page,
     }) => {
-      await page.goto(errorState.path);
+      const response = await page.goto(errorState.path);
+
+      expect(response?.status()).toBe(404);
 
       await expect(page).toHaveTitle(errorState.title);
       await expect(
@@ -52,6 +54,16 @@ test.describe("error states", () => {
       await expect(page.getByRole("main")).toBeVisible();
       await expect(page.getByRole("contentinfo")).toBeVisible();
       await expect(page.getByRole("navigation")).toHaveCount(0);
+
+      const reloadResponse = await page.reload();
+
+      expect(reloadResponse?.status()).toBe(404);
+      await expect(
+        page.getByRole("heading", {
+          level: 1,
+          name: errorState.heading,
+        }),
+      ).toBeVisible();
 
       const recoveryLink = page.getByRole("link", {
         name: errorState.recoveryLabel,
