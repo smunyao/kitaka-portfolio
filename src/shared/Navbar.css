@@ -1,11 +1,30 @@
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
 
   z-index: var(--z-header);
 
+  width: 100%;
+
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+
+  transition:
+    opacity var(--transition),
+    transform var(--transition);
+}
+
+.site-header.is-visible,
+.site-header:focus-within {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+
 }
 
 .navbar {
@@ -22,6 +41,8 @@
   align-items: center;
 
   max-width: var(--max-width);
+
+  box-sizing: border-box;
 
   margin: 0 auto;
   padding: var(--space-sm) var(--space-md);
@@ -235,6 +256,12 @@
   .navbar-menu-icon,
   .navbar-links,
   .navbar-links a {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header {
     transition: none;
   }
 }

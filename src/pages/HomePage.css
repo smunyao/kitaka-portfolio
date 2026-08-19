@@ -6,7 +6,7 @@
   --hero-fade: 0;
 
   position: fixed;
-  top: var(--header-offset);
+  top: 0;
   left: 0;
 
   z-index: 0;
@@ -46,7 +46,7 @@
 }
 
 .home-hero-space {
-  height: calc(100svh - var(--header-offset));
+  height: 100svh;
 }
 
 .home-content {
@@ -76,6 +76,8 @@
   --home-section-space: var(--space-xl);
 
   max-width: var(--max-width);
+
+  box-sizing: border-box;
 
   margin: 0 auto;
   padding: 0 var(--space-md) var(--home-section-space);
@@ -159,7 +161,7 @@
   }
 
   .home-hero-space {
-    height: calc(88svh - var(--header-offset));
+    height: 100svh;
   }
 
   .home-content::before {

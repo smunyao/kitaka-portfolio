@@ -34,6 +34,7 @@ const caseStudies = [
 test.describe("navigation", () => {
   test("primary navigation reaches each homepage section", async ({ page }) => {
     await page.goto("/");
+    await page.evaluate(() => window.scrollTo(0, 48));
 
     for (const item of primaryNavigation) {
       await page.getByRole("link", { name: item.name, exact: true }).click();
@@ -54,6 +55,23 @@ test.describe("navigation", () => {
     await expect
       .poll(() => page.evaluate(() => Math.round(window.scrollY)))
       .toBe(0);
+    await expect(page.locator(".site-header")).toHaveCSS("opacity", "0");
+  });
+
+  test("navigation hides at the top even when a section hash remains", async ({
+    page,
+  }) => {
+    await page.goto("/#contact");
+    await expect(page.locator("#contact")).toBeInViewport();
+    await expect(page.locator(".site-header")).toHaveCSS("opacity", "1");
+
+    await page.evaluate(() => window.scrollTo(0, 0));
+
+    await expect(page).toHaveURL("/#contact");
+    await expect
+      .poll(() => page.evaluate(() => Math.round(window.scrollY)))
+      .toBe(0);
+    await expect(page.locator(".site-header")).toHaveCSS("opacity", "0");
   });
 
   test("compact navigation reaches a section without obscuring it", async ({
@@ -61,6 +79,7 @@ test.describe("navigation", () => {
   }) => {
     await page.setViewportSize({ width: 320, height: 568 });
     await page.goto("/");
+    await page.evaluate(() => window.scrollTo(0, 48));
 
     const menuButton = page.getByRole("button", { name: "Menu" });
 
@@ -101,6 +120,7 @@ test.describe("navigation", () => {
   }) => {
     await page.setViewportSize({ width: 360, height: 800 });
     await page.goto("/");
+    await page.evaluate(() => window.scrollTo(0, 48));
 
     await expect(page.getByRole("button", { name: "Menu" })).toBeHidden();
 
