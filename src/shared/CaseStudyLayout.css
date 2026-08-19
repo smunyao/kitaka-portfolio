@@ -211,7 +211,8 @@
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px),
+  (max-width: 900px) and (max-height: 500px) {
   .case-study {
     padding: 3.5rem var(--space-sm);
   }

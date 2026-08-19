@@ -238,6 +238,57 @@ test.describe("accessibility", () => {
     await expect(caseStudyLink).toHaveCSS("outline-width", "3px");
   });
 
+  test("mobile case-study context is visible before optional details", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto("/case-studies/sitemate");
+
+    const mobileContext = page.locator(".case-study-mobile-context");
+
+    await expect(
+      mobileContext.getByText("QA Engineer and Lead", { exact: true }),
+    ).toBeVisible();
+    await expect(
+      mobileContext.getByText("2019–2022", { exact: true }),
+    ).toBeVisible();
+
+    const details = page.locator(".case-study-mobile-details");
+    const summary = page.getByText("Product and focus details", {
+      exact: true,
+    });
+
+    await expect(details).not.toHaveAttribute("open", "");
+    await summary.focus();
+    await expect(summary).toHaveCSS("outline-style", "solid");
+
+    await summary.press("Enter");
+
+    await expect(details).toHaveAttribute("open", "");
+    await expect(
+      details.getByRole("heading", { name: "Product ecosystem" }),
+    ).toBeVisible();
+    await expect(
+      details.getByRole("heading", { name: "Focus areas" }),
+    ).toBeVisible();
+  });
+
+  test("case-study details use the mobile treatment on a short landscape screen", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 844, height: 390 });
+    await page.goto("/case-studies/sitemate");
+
+    await expect(page.locator(".case-study-mobile-context")).toBeVisible();
+    await expect(page.locator(".case-study-sidebar")).toBeHidden();
+
+    const horizontalOverflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - window.innerWidth,
+    );
+
+    expect(horizontalOverflow).toBeLessThanOrEqual(0);
+  });
+
   test("engineering work remains usable at narrow widths", async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 720 });
     await page.goto("/#engineering-work");
