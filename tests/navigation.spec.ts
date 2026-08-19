@@ -99,7 +99,7 @@ test.describe("navigation", () => {
 
     const engineeringWork = page.locator("#engineering-work");
     const repositoryLink = engineeringWork.getByRole("link", {
-      name: "Explore this portfolio’s source and development history",
+      name: "View the source on GitHub",
     });
 
     await expect(

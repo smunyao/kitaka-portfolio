@@ -9,6 +9,15 @@ export const engineeringWork: EngineeringProject[] = [
     summary:
       "Its repository shows the decisions behind accessible interactions, content-driven routes and metadata, responsive layouts and Playwright checks for critical journeys.",
     repositoryUrl: "https://github.com/smunyao/kitaka-portfolio",
-    technologies: ["React", "TypeScript", "Playwright", "Cloudflare Pages"],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "React Router",
+      "Modern CSS",
+      "Playwright",
+      "GitHub Actions",
+      "Cloudflare Pages",
+    ],
   },
 ];

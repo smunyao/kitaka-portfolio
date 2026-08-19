@@ -37,7 +37,7 @@ function EngineeringWork() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>Explore this portfolio’s source and development history</span>
+          <span>View the source on GitHub</span>
           <span className="engineering-work-link-arrow" aria-hidden="true">
             ↗
           </span>

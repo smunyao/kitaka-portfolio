@@ -93,7 +93,7 @@ test.describe("accessibility", () => {
     await page.goto("/#engineering-work");
 
     const repositoryLink = page.getByRole("link", {
-      name: "Explore this portfolio’s source and development history",
+      name: "View the source on GitHub",
     });
 
     await repositoryLink.focus();
