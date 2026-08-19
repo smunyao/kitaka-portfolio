@@ -1,4 +1,4 @@
-import type { WorkingPrinciple } from "../types/workingPrinciple";
+import type { WorkingPrinciple } from "./types";
 
 export const workingPrinciples: WorkingPrinciple[] = [
   {

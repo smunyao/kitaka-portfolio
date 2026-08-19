@@ -1,9 +1,11 @@
-import { projects } from "../content/projects/projects";
+import { engineeringWork } from "../content/engineeringWork";
 
 import "./EngineeringWork.css";
 
 function EngineeringWork() {
-  const portfolio = projects.find((project) => project.slug === "portfolio");
+  const portfolio = engineeringWork.find(
+    (project) => project.slug === "portfolio",
+  );
 
   if (!portfolio) {
     return null;
@@ -13,14 +15,11 @@ function EngineeringWork() {
     <section id="engineering-work" className="engineering-work">
       <p className="section-eyebrow">Engineering work</p>
 
-      <h2>This portfolio, treated as a product.</h2>
+      <h2>{portfolio.title}</h2>
 
       <p className="engineering-work-description">{portfolio.description}</p>
 
-      <p className="engineering-work-summary">
-        Built and evolved in public through incremental releases, documented
-        decisions and automated checks for its critical user journeys.
-      </p>
+      <p className="engineering-work-summary">{portfolio.summary}</p>
 
       <ul
         className="engineering-work-technologies"
@@ -38,7 +37,7 @@ function EngineeringWork() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>Explore the source and development history</span>
+          <span>Explore this portfolio’s source and development history</span>
           <span className="engineering-work-link-arrow" aria-hidden="true">
             ↗
           </span>

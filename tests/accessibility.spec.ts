@@ -87,4 +87,25 @@ test.describe("accessibility", () => {
     await expect(caseStudyLink).toHaveCSS("outline-style", "solid");
     await expect(caseStudyLink).toHaveCSS("outline-width", "3px");
   });
+
+  test("engineering work remains usable at narrow widths", async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 720 });
+    await page.goto("/#engineering-work");
+
+    const repositoryLink = page.getByRole("link", {
+      name: "Explore this portfolio’s source and development history",
+    });
+
+    await repositoryLink.focus();
+
+    await expect(repositoryLink).toBeFocused();
+    await expect(repositoryLink).toHaveCSS("outline-style", "solid");
+    await expect(repositoryLink).toHaveCSS("outline-width", "3px");
+
+    const horizontalOverflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - window.innerWidth,
+    );
+
+    expect(horizontalOverflow).toBeLessThanOrEqual(0);
+  });
 });
