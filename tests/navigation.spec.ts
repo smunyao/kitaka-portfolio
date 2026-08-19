@@ -43,6 +43,19 @@ test.describe("navigation", () => {
     }
   });
 
+  test("the Kitaka home link returns to the true top of the homepage", async ({
+    page,
+  }) => {
+    await page.goto("/#contact");
+
+    await page.getByRole("link", { name: "Kitaka Munyao home" }).click();
+
+    await expect(page).toHaveURL("/#top");
+    await expect
+      .poll(() => page.evaluate(() => Math.round(window.scrollY)))
+      .toBe(0);
+  });
+
   test("homepage content links reach How I work and Writing", async ({
     page,
   }) => {

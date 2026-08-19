@@ -1,5 +1,8 @@
 .contact h2 {
+  max-width: 42rem;
+
   margin-bottom: var(--space-md);
+
   letter-spacing: -0.45px;
 }
 
@@ -11,45 +14,13 @@
   line-height: 1.7;
 }
 
-.contact-note {
-  color: var(--color-text);
+.contact-copy {
+  max-width: 42rem;
 
-  font-size: 0.95rem;
+  font-size: 1.0625rem;
 }
 
-.contact-note a {
-  color: var(--color-heading);
-  text-decoration: none;
-
-  border-bottom: 1px solid var(--color-border);
-
-  transition:
-    color var(--transition),
-    border-color var(--transition);
-}
-
-.contact-note a:hover {
-  color: var(--color-heading);
-  border-bottom-color: var(--color-accent);
-}
-
-.contact-note a:focus-visible {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 4px;
-
-  border-radius: 4px;
-  border-bottom-color: var(--color-accent);
-}
-
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: var(--space-md);
-
-  margin: 0;
-}
-
+.contact-copy a,
 .contact-links a {
   display: inline-flex;
   align-items: center;
@@ -69,6 +40,19 @@
   transition: border-color var(--transition);
 }
 
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-top: var(--space-md);
+
+  gap: var(--space-md);
+}
+
+.contact-copy a {
+  font-size: inherit;
+}
+
 .contact-link-arrow {
   color: currentColor;
 
@@ -77,6 +61,7 @@
     transform var(--transition);
 }
 
+.contact-copy a:hover,
 .contact-links a:hover {
   color: var(--color-heading);
 
@@ -89,6 +74,7 @@
   transform: translate(2px, -2px);
 }
 
+.contact-copy a:focus-visible,
 .contact-links a:focus-visible {
   outline: 3px solid var(--color-accent);
   outline-offset: 4px;

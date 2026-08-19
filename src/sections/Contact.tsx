@@ -16,12 +16,10 @@ function Contact() {
 
       <h2>{contactContent.heading}</h2>
 
-      <p>{contactContent.intro}</p>
-
-      <p className="contact-note">
-        Drop me an{" "}
+      <p className="contact-copy">
+        {contactContent.intro}{" "}
         <a href={`mailto:${site.contact.email}?subject=${emailSubject}`}>
-          email
+          Send me an email
         </a>{" "}
         to continue the conversation, or{" "}
         <a href={`mailto:${site.contact.email}?subject=${resumeSubject}`}>
