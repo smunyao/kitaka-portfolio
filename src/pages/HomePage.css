@@ -47,6 +47,7 @@
 
 .home-hero-space {
   height: 100svh;
+  height: 100dvh;
 }
 
 .home-content {
@@ -162,6 +163,7 @@
 
   .home-hero-space {
     height: 100svh;
+    height: 100dvh;
   }
 
   .home-content::before {

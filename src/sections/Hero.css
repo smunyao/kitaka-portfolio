@@ -12,6 +12,7 @@
 
   max-width: var(--max-width);
   min-height: 100svh;
+  min-height: 100dvh;
 
   box-sizing: border-box;
 
