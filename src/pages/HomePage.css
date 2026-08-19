@@ -159,7 +159,7 @@
   }
 
   .home-hero-space {
-    height: calc(100svh - var(--header-offset));
+    height: calc(88svh - var(--header-offset));
   }
 
   .home-content::before {

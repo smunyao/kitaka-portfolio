@@ -1,12 +1,26 @@
 .footer {
-  max-width: var(--max-width);
-  margin: 0 auto;
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
   padding: var(--space-lg) var(--space-md);
+
+  background: var(--color-background);
 
   text-align: center;
 
   color: var(--color-text);
   font-size: 0.95rem;
+}
+
+.footer p {
+  max-width: var(--max-width);
+
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {

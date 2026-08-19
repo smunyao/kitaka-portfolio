@@ -56,6 +56,61 @@ test.describe("navigation", () => {
       .toBe(0);
   });
 
+  test("compact navigation reaches a section without obscuring it", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 320, height: 568 });
+    await page.goto("/");
+
+    const menuButton = page.getByRole("button", { name: "Menu" });
+
+    await expect(menuButton).toBeVisible();
+    await expect(menuButton).toHaveAttribute("aria-expanded", "false");
+
+    await menuButton.click();
+
+    await expect(menuButton).toHaveAttribute("aria-expanded", "true");
+
+    const howIWorkLink = page.getByRole("link", {
+      name: "How I work",
+      exact: true,
+    });
+
+    await expect(howIWorkLink).toBeVisible();
+    await howIWorkLink.click();
+
+    await expect(page).toHaveURL("/#how-i-work");
+    await expect(menuButton).toHaveAttribute("aria-expanded", "false");
+
+    const targetPosition = await page.evaluate(() => ({
+      headerBottom: document
+        .querySelector(".site-header")!
+        .getBoundingClientRect().bottom,
+      sectionTop: document
+        .querySelector("#how-i-work")!
+        .getBoundingClientRect().top,
+    }));
+
+    expect(targetPosition.sectionTop).toBeGreaterThanOrEqual(
+      targetPosition.headerBottom,
+    );
+  });
+
+  test("full navigation remains visible above the compact breakpoint", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 360, height: 800 });
+    await page.goto("/");
+
+    await expect(page.getByRole("button", { name: "Menu" })).toBeHidden();
+
+    for (const item of primaryNavigation) {
+      await expect(
+        page.getByRole("link", { name: item.name, exact: true }),
+      ).toBeVisible();
+    }
+  });
+
   test("homepage content links reach How I work and Writing", async ({
     page,
   }) => {
