@@ -142,15 +142,22 @@ evidence.
 
 ### Local production build
 
-The default Playwright run builds the application and starts the Vite preview
-server automatically:
+The default Playwright run builds the application and starts the dependency-free
+static preview server automatically:
 
 ```bash
 npm run test:e2e
 ```
 
-This is the primary automated environment because it is deterministic and
-represents the generated application that will be deployed.
+This is the primary automated environment because it is deterministic,
+represents the generated application that will be deployed, and exercises the
+same `200` and `404` static-routing contract expected from Cloudflare Pages.
+
+The production build materialises every public route listed in `sitemap.xml`
+and generates a shared `404.html`. Update the sitemap whenever an indexable
+public route is added or removed. See
+[`server-level-404s.md`](./server-level-404s.md) for the architecture and its
+trade-offs.
 
 ### Cloudflare preview
 
@@ -432,9 +439,9 @@ and the quality of the evidence available.
 - Playwright currently runs Chromium only. Cross-browser visual review remains
   manual until Firefox or WebKit coverage provides enough value to justify its
   cost.
-- Cloudflare Pages currently serves the SPA shell with HTTP `200` for unknown
-  routes. React renders the correct error state, but true server-level `404`
-  responses are tracked separately.
+- Local automation verifies the generated static-routing contract. Cloudflare
+  preview and production checks remain necessary evidence that the hosting
+  platform serves the generated route shells and `404.html` as expected.
 - The suite does not validate third-party availability.
 - Automated visual comparison is intentionally excluded. Introduce it only for
   stable, high-value surfaces with a demonstrated regression history.

@@ -54,6 +54,16 @@ test.describe("core routes", () => {
 
       await expect(page.locator("h1")).toHaveCount(1);
 
+      const reloadResponse = await page.reload();
+
+      expect(reloadResponse?.status()).toBe(200);
+      await expect(
+        page.getByRole("heading", {
+          level: 1,
+          name: route.heading,
+        }),
+      ).toBeVisible();
+
       const horizontalOverflow = await page.evaluate(
         () => document.documentElement.scrollWidth - window.innerWidth,
       );

@@ -143,6 +143,11 @@ Preview the production build:
 npm run preview
 ```
 
+The production build generates static shells for every public route and a
+shared `404.html`, allowing Cloudflare Pages to preserve direct React route
+loading while returning a true `404` for invalid URLs. See the
+[server-level 404 decision record](docs/server-level-404s.md) for details.
+
 ---
 
 ## Testing
