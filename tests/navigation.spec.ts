@@ -216,7 +216,7 @@ test.describe("navigation", () => {
 
       await experience
         .getByRole("link", {
-          name: `Read the ${caseStudy.company} case study`,
+          name: `Read the case study for ${caseStudy.company}`,
         })
         .click();
 

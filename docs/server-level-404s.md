@@ -5,12 +5,17 @@
 The portfolio uses build-time route shells and Cloudflare Pages' static
 `404.html` behaviour.
 
-The production build creates an `index.html` file for every public route in
+The production build creates an HTML file for every public route in
 `sitemap.xml` and creates `dist/404.html` from the same React application shell.
 Cloudflare can therefore find a real file for every valid direct request and
 return `200`. Requests that do not match a generated file fall through to
 `404.html` and return `404` while React renders the appropriate contextual Not
 Found experience.
+
+Nested shells use Cloudflare's extensionless HTML convention—for example,
+`/how-i-work` is built as `how-i-work.html`. This preserves the site's
+trailing-slash-free URLs and keeps deployed URLs aligned with their canonical
+metadata.
 
 The sitemap is the deployment contract for indexable public routes. Adding or
 removing an article, case study or other public route requires updating the

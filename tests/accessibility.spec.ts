@@ -228,7 +228,7 @@ test.describe("accessibility", () => {
     await page.goto("/#experience");
 
     const caseStudyLink = page.getByRole("link", {
-      name: "Read the Harvest case study",
+      name: "Read the case study for Harvest",
     });
 
     await caseStudyLink.focus();
@@ -266,11 +266,60 @@ test.describe("accessibility", () => {
 
     await expect(details).toHaveAttribute("open", "");
     await expect(
-      details.getByRole("heading", { name: "Product ecosystem" }),
+      details.getByRole("heading", {
+        level: 2,
+        name: "Product ecosystem",
+      }),
     ).toBeVisible();
     await expect(
-      details.getByRole("heading", { name: "Focus areas" }),
+      details.getByRole("heading", { level: 2, name: "Focus areas" }),
     ).toBeVisible();
+  });
+
+  test("long case-study content remains usable with increased text size", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 320, height: 720 });
+    await page.goto("/case-studies/harvest");
+    await page.locator("html").evaluate((element) => {
+      element.style.fontSize = "200%";
+    });
+
+    await expect(
+      page.getByRole("heading", {
+        level: 1,
+        name: "Building confidence across a connected product ecosystem",
+      }),
+    ).toBeVisible();
+    await expect(page.locator(".case-study-mobile-meta")).toBeVisible();
+
+    const horizontalOverflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - window.innerWidth,
+    );
+
+    expect(horizontalOverflow).toBeLessThanOrEqual(0);
+  });
+
+  test("critical content and focus remain visible in forced colours", async ({
+    page,
+  }) => {
+    await page.emulateMedia({ forcedColors: "active" });
+    await page.goto("/this-page-does-not-exist");
+
+    const recoveryLink = page.getByRole("link", {
+      name: "Return to the homepage",
+    });
+
+    await recoveryLink.focus();
+
+    await expect(
+      page.getByRole("heading", {
+        level: 1,
+        name: "This page doesn’t exist.",
+      }),
+    ).toBeVisible();
+    await expect(recoveryLink).toBeFocused();
+    await expect(recoveryLink).toHaveCSS("outline-style", "solid");
   });
 
   test("case-study details use the mobile treatment on a short landscape screen", async ({
