@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import Navbar from "../shared/Navbar";
 import Footer from "../shared/Footer";
@@ -13,50 +13,8 @@ import Contact from "../sections/Contact";
 import "./HomePage.css";
 
 function HomePage() {
-  const flowRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-
-  useLayoutEffect(() => {
-    const flow = flowRef.current;
-
-    if (!flow) return;
-
-    const visualViewport = window.visualViewport;
-    let frameId = 0;
-
-    const updateViewportHeight = () => {
-      const viewportHeight = visualViewport?.height ?? window.innerHeight;
-      const viewportBottom =
-        viewportHeight + (visualViewport?.offsetTop ?? 0);
-
-      flow.style.setProperty(
-        "--home-viewport-height",
-        `${Math.ceil(viewportHeight)}px`,
-      );
-      flow.style.setProperty(
-        "--home-viewport-bottom",
-        `${Math.ceil(viewportBottom)}px`,
-      );
-    };
-
-    const scheduleViewportUpdate = () => {
-      cancelAnimationFrame(frameId);
-      frameId = requestAnimationFrame(updateViewportHeight);
-    };
-
-    updateViewportHeight();
-    visualViewport?.addEventListener("resize", scheduleViewportUpdate);
-    visualViewport?.addEventListener("scroll", scheduleViewportUpdate);
-    window.addEventListener("resize", scheduleViewportUpdate);
-
-    return () => {
-      cancelAnimationFrame(frameId);
-      visualViewport?.removeEventListener("resize", scheduleViewportUpdate);
-      visualViewport?.removeEventListener("scroll", scheduleViewportUpdate);
-      window.removeEventListener("resize", scheduleViewportUpdate);
-    };
-  }, []);
 
   useEffect(() => {
     if (window.location.hash) {
@@ -92,7 +50,7 @@ function HomePage() {
 
     const updateHeroFade = () => {
       const contentTop = content.getBoundingClientRect().top;
-      const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
+      const viewportHeight = window.innerHeight;
       const isMobile = window.innerWidth <= 768;
 
       const fadeStart = viewportHeight * (isMobile ? 0.95 : 0.9);
@@ -144,7 +102,7 @@ function HomePage() {
       <Navbar />
 
       <main id="main-content" tabIndex={-1}>
-        <div ref={flowRef} className="home-flow">
+        <div className="home-flow">
           <div ref={heroRef} className="home-hero-layer">
             <Hero />
           </div>
