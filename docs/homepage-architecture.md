@@ -264,6 +264,27 @@ to discover. Restoring the former full section would overstate a catalogue that
 currently contains one project. A compact Engineering Work section preserves
 the evidence while remaining honest about its scope.
 
+The portfolio is described as evolving rather than assigned a completion
+status. Status metadata will only return if multiple projects make that
+distinction useful. Likewise, selection metadata belongs in the model only when
+there is a real collection from which work is being selected.
+
+### Including future engineering work
+
+A future project should be included only when it:
+
+- has a working artefact or repository that a visitor can inspect;
+- demonstrates decisions, trade-offs or technical depth not already evidenced
+  elsewhere on the homepage;
+- has enough context to explain what was built and why the implementation is
+  worth examining;
+- uses an accurate, maintained destination; and
+- can be described honestly without invented outcomes or inflated scope.
+
+Technology names should be included only when they help a visitor understand
+or inspect the implementation. A second project does not, by itself, justify
+detail routes, filtering, categories or other collection infrastructure.
+
 ### Omitting hero actions
 
 Links to Experience and How I Work were tested and removed because they

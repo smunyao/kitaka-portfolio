@@ -92,6 +92,30 @@ test.describe("navigation", () => {
     ).toBeVisible();
   });
 
+  test("engineering work links to the inspectable portfolio repository", async ({
+    page,
+  }) => {
+    await page.goto("/#engineering-work");
+
+    const engineeringWork = page.locator("#engineering-work");
+    const repositoryLink = engineeringWork.getByRole("link", {
+      name: "View the source on GitHub",
+    });
+
+    await expect(
+      engineeringWork.getByRole("heading", {
+        level: 2,
+        name: "This portfolio, treated as a product.",
+      }),
+    ).toBeVisible();
+    await expect(repositoryLink).toHaveAttribute(
+      "href",
+      "https://github.com/smunyao/kitaka-portfolio",
+    );
+    await expect(repositoryLink).toHaveAttribute("target", "_blank");
+    await expect(repositoryLink).toHaveAttribute("rel", "noopener noreferrer");
+  });
+
   for (const caseStudy of caseStudies) {
     test(`${caseStudy.company} link opens the correct case study`, async ({
       page,
