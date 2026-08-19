@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 
 import Navbar from "../shared/Navbar";
 import Footer from "../shared/Footer";
@@ -13,8 +13,35 @@ import Contact from "../sections/Contact";
 import "./HomePage.css";
 
 function HomePage() {
+  const flowRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const flow = flowRef.current;
+
+    if (!flow) return;
+
+    const visualViewport = window.visualViewport;
+
+    const updateViewportHeight = () => {
+      const viewportHeight = visualViewport?.height ?? window.innerHeight;
+
+      flow.style.setProperty(
+        "--home-viewport-height",
+        `${Math.ceil(viewportHeight)}px`,
+      );
+    };
+
+    updateViewportHeight();
+    visualViewport?.addEventListener("resize", updateViewportHeight);
+    window.addEventListener("resize", updateViewportHeight);
+
+    return () => {
+      visualViewport?.removeEventListener("resize", updateViewportHeight);
+      window.removeEventListener("resize", updateViewportHeight);
+    };
+  }, []);
 
   useEffect(() => {
     if (window.location.hash) {
@@ -102,7 +129,7 @@ function HomePage() {
       <Navbar />
 
       <main id="main-content" tabIndex={-1}>
-        <div className="home-flow">
+        <div ref={flowRef} className="home-flow">
           <div ref={heroRef} className="home-hero-layer">
             <Hero />
           </div>
