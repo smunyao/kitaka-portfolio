@@ -1,7 +1,4 @@
 .home-flow {
-  --home-viewport-height: 100dvh;
-  --home-viewport-bottom: var(--home-viewport-height);
-
   position: relative;
 }
 
@@ -49,7 +46,8 @@
 }
 
 .home-hero-space {
-  height: var(--home-viewport-bottom, 100svh);
+  height: 100svh;
+  height: 100dvh;
 }
 
 .home-content {
@@ -164,7 +162,8 @@
   }
 
   .home-hero-space {
-    height: var(--home-viewport-bottom, 100svh);
+    height: 100svh;
+    height: 100dvh;
   }
 
   .home-content::before {

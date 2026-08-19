@@ -11,7 +11,8 @@
   justify-content: center;
 
   max-width: var(--max-width);
-  min-height: var(--home-viewport-height, 100svh);
+  min-height: 100svh;
+  min-height: 100dvh;
 
   box-sizing: border-box;
 
