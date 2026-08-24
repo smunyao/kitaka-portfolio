@@ -31,6 +31,17 @@ const caseStudies = [
   },
 ];
 
+const articles = [
+  {
+    title: "Testing connected workflows",
+    path: "/writing/testing-connected-workflows",
+  },
+  {
+    title: "Testing is information, not approval",
+    path: "/writing/testing-is-information-not-approval",
+  },
+];
+
 test.describe("navigation", () => {
   test("the hero continuation link reveals Experience", async ({ page }) => {
     await page.goto("/");
@@ -195,6 +206,36 @@ test.describe("navigation", () => {
     await expect(
       page.getByRole("heading", { level: 1, name: "Writing" }),
     ).toBeVisible();
+  });
+
+  test("homepage features the latest article", async ({ page }) => {
+    await page.goto("/#writing");
+
+    const writingSection = page.locator("#writing");
+    const featuredArticleLink = writingSection.getByRole("link", {
+      name: "Testing connected workflows",
+    });
+
+    await expect(featuredArticleLink).toHaveAttribute(
+      "href",
+      "/writing/testing-connected-workflows",
+    );
+  });
+
+  test("Writing index links to every published article", async ({ page }) => {
+    await page.goto("/writing");
+
+    for (const article of articles) {
+      const articleHeading = page.getByRole("heading", {
+        level: 2,
+        name: article.title,
+      });
+      const articleLink = articleHeading.getByRole("link", {
+        name: article.title,
+      });
+
+      await expect(articleLink).toHaveAttribute("href", article.path);
+    }
   });
 
   test("engineering work links to the inspectable portfolio repository", async ({

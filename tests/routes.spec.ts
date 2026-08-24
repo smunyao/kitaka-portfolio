@@ -17,9 +17,14 @@ const routes = [
     heading: "Writing",
   },
   {
-    name: "article",
+    name: "testing is information article",
     path: "/writing/testing-is-information-not-approval",
     heading: "Testing is information, not approval",
+  },
+  {
+    name: "connected workflows article",
+    path: "/writing/testing-connected-workflows",
+    heading: "Testing connected workflows",
   },
   {
     name: "Harvest case study",
@@ -94,5 +99,37 @@ test.describe("core routes", () => {
       "href",
       "https://kitakamunyao.com/",
     );
+  });
+
+  test("connected workflows article publishes its metadata and sources", async ({
+    page,
+  }) => {
+    await page.goto("/writing/testing-connected-workflows");
+
+    const description =
+      "A practical approach to testing customer journeys across APIs, integrations and external services without relying on end-to-end checks alone.";
+
+    await expect(page).toHaveTitle("Testing connected workflows | Kitaka");
+    await expect(page.locator('meta[name="description"]')).toHaveAttribute(
+      "content",
+      description,
+    );
+    await expect(page.locator('meta[property="og:description"]')).toHaveAttribute(
+      "content",
+      description,
+    );
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      "https://kitakamunyao.com/writing/testing-connected-workflows",
+    );
+
+    const sourceLinks = page.locator(".article-source-list").getByRole("link");
+
+    await expect(sourceLinks).toHaveCount(5);
+
+    for (const sourceLink of await sourceLinks.all()) {
+      await expect(sourceLink).toHaveAttribute("target", "_blank");
+      await expect(sourceLink).toHaveAttribute("rel", "noopener noreferrer");
+    }
   });
 });

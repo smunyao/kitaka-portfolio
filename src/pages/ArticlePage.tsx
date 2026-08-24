@@ -96,6 +96,33 @@ function ArticlePage() {
                 );
               }
 
+              if (section.type === "links") {
+                return (
+                  <section key={key} className="article-section">
+                    {section.heading && <h2>{section.heading}</h2>}
+
+                    <ul className="article-source-list">
+                      {section.links.map((link) => (
+                        <li key={link.href}>
+                          <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {link.label}
+                            <span className="article-source-new-tab">
+                              {" "}(opens in a new tab)
+                            </span>
+                          </a>
+
+                          {link.description && <p>{link.description}</p>}
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                );
+              }
+
               return (
                 <section key={key} className="article-section">
                   {section.heading && <h2>{section.heading}</h2>}
