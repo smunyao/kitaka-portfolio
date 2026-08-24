@@ -12,12 +12,6 @@ export const testingIsInformationNotApproval: Article = {
 
   readingTime: "6 min read",
 
-  seo: {
-    title: "Testing is information, not approval | Kitaka",
-    description:
-      "Why testing should provide useful information about behaviour and risk rather than act as the final approval step before release.",
-  },
-
   sections: [
     {
       type: "paragraphs",

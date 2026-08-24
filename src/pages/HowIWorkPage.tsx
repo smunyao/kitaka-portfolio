@@ -8,12 +8,7 @@ import "./HowIWorkPage.css";
 function HowIWorkPage() {
   return (
     <>
-      <Seo
-        title="How I work | Kitaka"
-        description="How I approach software quality, product understanding, risk, exploratory testing, automation, collaboration and building confidence."
-        canonical="/how-i-work"
-        type="article"
-      />
+      <Seo path="/how-i-work" />
 
       <a className="skip-link" href="#main-content">
         Skip to main content

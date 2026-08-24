@@ -36,9 +36,5 @@ export type Article = {
   description: string;
   publishedAt: string;
   readingTime: string;
-  seo: {
-    title: string;
-    description: string;
-  };
   sections: ArticleSection[];
 };

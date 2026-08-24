@@ -3,13 +3,6 @@ import type { CaseStudy } from "./types";
 export const harvestCaseStudy: CaseStudy = {
   slug: "harvest",
 
-  seo: {
-    title:
-      "Building confidence across a connected product ecosystem | Harvest | Kitaka",
-    description:
-      "How working across Harvest and Forecast shaped my approach to testing interconnected SaaS products, automation and collaborative quality engineering.",
-  },
-
   company: "Harvest",
   companyUrl: "https://www.getharvest.com",
 

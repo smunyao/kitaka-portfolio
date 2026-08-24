@@ -1,11 +1,6 @@
 export interface CaseStudy {
   slug: string;
 
-  seo: {
-    title: string;
-    description: string;
-  };
-
   company: string;
   companyUrl: string;
 

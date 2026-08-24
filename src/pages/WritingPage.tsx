@@ -12,11 +12,7 @@ import "./WritingPage.css";
 function WritingPage() {
   return (
     <>
-      <Seo
-        title="Writing | Kitaka"
-        description="Thoughts on quality engineering, testing, product understanding and engineering practice."
-        canonical="/writing"
-      />
+      <Seo path="/writing" />
 
       <a className="skip-link" href="#main-content">
         Skip to main content

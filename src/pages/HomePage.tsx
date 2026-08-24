@@ -89,11 +89,7 @@ function HomePage() {
     <>
       <div id="top" aria-hidden="true" />
 
-      <Seo
-        title="Kitaka Munyao | Quality Engineer"
-        description="Quality Engineer helping product and engineering teams understand complex systems, uncover risk early and ship with confidence. Explore experience and case studies."
-        canonical="/"
-      />
+      <Seo path="/" />
 
       <a className="skip-link" href="#main-content">
         Skip to main content

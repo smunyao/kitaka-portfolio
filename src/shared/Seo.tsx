@@ -1,70 +1,104 @@
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 
-interface SeoProps {
+import { getRouteMetadata } from "../content/routeMetadata";
+
+interface PublicPageSeoProps {
+  path: string;
+  noIndex?: false;
+}
+
+interface ErrorPageSeoProps {
   title: string;
   description: string;
-  canonical?: string;
-  type?: "website" | "article";
-  image?: string;
-  noIndex?: boolean;
+  noIndex: true;
 }
+
+type SeoProps = PublicPageSeoProps | ErrorPageSeoProps;
 
 const SITE_NAME = "Kitaka Munyao";
 const BASE_URL = "https://kitakamunyao.com";
-const DEFAULT_SOCIAL_IMAGE = "/og-image-v2.png";
 
-function Seo({
-  title,
-  description,
-  canonical,
-  type = "website",
-  image = DEFAULT_SOCIAL_IMAGE,
-  noIndex = false,
-}: SeoProps) {
-  const canonicalUrl = canonical ? `${BASE_URL}${canonical}` : undefined;
-  const imageUrl = `${BASE_URL}${image}`;
-
-  return (
-    <Helmet>
-      <title>{title}</title>
-
-      <meta name="description" content={description} />
-
-      <meta name="author" content="Kitaka Munyao" />
-
-      {noIndex && <meta name="robots" content="noindex, follow" />}
-
-      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-
-      <meta property="og:type" content={type} />
-
-      <meta property="og:site_name" content={SITE_NAME} />
-
-      <meta property="og:title" content={title} />
-
-      <meta property="og:description" content={description} />
-
-      {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
-
-      <meta property="og:image" content={imageUrl} />
-
-      <meta property="og:image:type" content="image/png" />
-
-      <meta property="og:image:width" content="1200" />
-
-      <meta property="og:image:height" content="630" />
-
-      <meta property="og:image:alt" content="Kitaka Munyao, Quality Engineer" />
-
-      <meta name="twitter:card" content="summary_large_image" />
-
-      <meta name="twitter:title" content={title} />
-
-      <meta name="twitter:description" content={description} />
-
-      <meta name="twitter:image" content={imageUrl} />
-    </Helmet>
+function upsertMeta(
+  attribute: "name" | "property",
+  key: string,
+  content: string,
+) {
+  let element = document.head.querySelector<HTMLMetaElement>(
+    `meta[${attribute}="${key}"]`,
   );
+
+  if (!element) {
+    element = document.createElement("meta");
+    element.setAttribute(attribute, key);
+    document.head.appendChild(element);
+  }
+
+  element.content = content;
+}
+
+function upsertCanonical(href: string) {
+  let element = document.head.querySelector<HTMLLinkElement>(
+    'link[rel="canonical"]',
+  );
+
+  if (!element) {
+    element = document.createElement("link");
+    element.rel = "canonical";
+    document.head.appendChild(element);
+  }
+
+  element.href = href;
+}
+
+function removeSocialMetadata() {
+  document.head
+    .querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]')
+    .forEach((element) => element.remove());
+}
+
+function Seo(props: SeoProps) {
+  useEffect(() => {
+    if (props.noIndex) {
+      document.title = props.title;
+      upsertMeta("name", "description", props.description);
+      upsertMeta("name", "robots", "noindex, follow");
+      document.head.querySelector('link[rel="canonical"]')?.remove();
+      removeSocialMetadata();
+      return;
+    }
+
+    const { title, description, type, image, imageAlt } = getRouteMetadata(
+      props.path,
+    );
+    const canonicalUrl = `${BASE_URL}${props.path}`;
+    const imageUrl = `${BASE_URL}${image}`;
+
+    document.title = title;
+    document.head.querySelector('meta[name="robots"]')?.remove();
+
+    upsertMeta("name", "description", description);
+    upsertMeta("name", "author", SITE_NAME);
+    upsertCanonical(canonicalUrl);
+
+    upsertMeta("property", "og:type", type);
+    upsertMeta("property", "og:site_name", SITE_NAME);
+    upsertMeta("property", "og:title", title);
+    upsertMeta("property", "og:description", description);
+    upsertMeta("property", "og:url", canonicalUrl);
+    upsertMeta("property", "og:image", imageUrl);
+    upsertMeta("property", "og:image:type", "image/png");
+    upsertMeta("property", "og:image:width", "1200");
+    upsertMeta("property", "og:image:height", "630");
+    upsertMeta("property", "og:image:alt", imageAlt);
+
+    upsertMeta("name", "twitter:card", "summary_large_image");
+    upsertMeta("name", "twitter:title", title);
+    upsertMeta("name", "twitter:description", description);
+    upsertMeta("name", "twitter:image", imageUrl);
+    upsertMeta("name", "twitter:image:alt", imageAlt);
+  }, [props]);
+
+  return null;
 }
 
 export default Seo;
