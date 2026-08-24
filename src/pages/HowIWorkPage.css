@@ -1,14 +1,16 @@
 .how-i-work {
-  max-width: var(--max-width);
+  max-width: var(--site-width);
+
+  box-sizing: border-box;
 
   margin: 0 auto;
   padding: var(--space-xl) var(--space-md);
 }
 
 .how-i-work-header {
-  max-width: 54rem;
+  max-width: 70rem;
 
-  margin-bottom: var(--space-xl);
+  margin: 0 auto var(--space-xl);
 }
 
 .how-i-work-header h1 {
@@ -18,10 +20,6 @@
   font-weight: 400;
   line-height: 1.08;
   letter-spacing: -0.8px;
-}
-
-.how-i-work-introduction {
-  max-width: var(--content-width);
 }
 
 .how-i-work-introduction p {
@@ -36,7 +34,9 @@
 }
 
 .how-i-work-content {
-  max-width: var(--content-width);
+  max-width: 70rem;
+
+  margin: 0 auto;
 }
 
 .how-i-work-section {

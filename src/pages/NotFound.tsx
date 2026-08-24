@@ -87,7 +87,7 @@ function NotFound({ variant = "page" }: NotFoundProps) {
         </section>
       </main>
 
-      <Footer />
+      <Footer showProfessionalLinks={false} compact />
     </>
   );
 }

@@ -1,8 +1,9 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-import { getArticleBySlug } from "../content/articles";
+import { articles, getArticleBySlug } from "../content/articles";
 import { formatDate } from "../utils/formatDate";
 
+import ContentEndNavigation from "../shared/ContentEndNavigation";
 import EditorialPageHeader from "../shared/EditorialPageHeader";
 import Footer from "../shared/Footer";
 import NotFound from "./NotFound";
@@ -18,6 +19,9 @@ function ArticlePage() {
   if (!article) {
     return <NotFound variant="article" />;
   }
+
+  const articleIndex = articles.findIndex((item) => item.slug === article.slug);
+  const nextArticle = articles[(articleIndex + 1) % articles.length];
 
   return (
     <>
@@ -106,7 +110,8 @@ function ArticlePage() {
                           >
                             {link.label}
                             <span className="article-source-new-tab">
-                              {" "}(opens in a new tab)
+                              {" "}
+                              (opens in a new tab)
                             </span>
                           </a>
 
@@ -137,14 +142,15 @@ function ArticlePage() {
               );
             })}
 
-            <footer className="article-footer">
-              <Link className="article-back-link" to="/writing">
-                <span className="article-back-link-arrow" aria-hidden="true">
-                  ←
-                </span>
-
-                <span>Back to writing</span>
-              </Link>
+            <footer>
+              <ContentEndNavigation
+                backTo="/writing"
+                backLabel="All writing"
+                nextTo={`/writing/${nextArticle.slug}`}
+                nextLabel="More writing"
+                nextTitle={nextArticle.title}
+                ariaLabel="Continue exploring writing"
+              />
             </footer>
           </div>
         </article>

@@ -1,14 +1,16 @@
 .article {
-  max-width: var(--max-width);
+  max-width: var(--site-width);
+
+  box-sizing: border-box;
 
   margin: 0 auto;
   padding: 6rem var(--space-md) var(--space-xl);
 }
 
 .article-header {
-  max-width: 54rem;
+  max-width: 70rem;
 
-  margin-bottom: 3rem;
+  margin: 0 auto 3rem;
 }
 
 .article-header .section-eyebrow {
@@ -16,8 +18,6 @@
 }
 
 .article-header h1 {
-  max-width: var(--content-width);
-
   margin-bottom: 1.5rem;
 
   font-family:
@@ -33,8 +33,6 @@
 }
 
 .article-description {
-  max-width: var(--content-width);
-
   margin-bottom: 1.5rem;
 
   color: var(--color-text);
@@ -65,7 +63,9 @@
 }
 
 .article-content {
-  max-width: var(--content-width);
+  max-width: 70rem;
+
+  margin: 0 auto;
 
   padding-top: 3rem;
 
@@ -241,68 +241,6 @@
   font-style: normal;
 }
 
-.article-footer {
-  margin-top: 5rem;
-  padding-top: var(--space-md);
-
-  border-top: 1px solid var(--color-border);
-
-  font-family: "Geist Variable", system-ui, sans-serif;
-}
-
-.article-back-link {
-  display: inline-flex;
-  align-items: center;
-
-  gap: 0.3rem;
-
-  padding-bottom: 0.2rem;
-
-  border-bottom: 1px solid var(--color-border);
-
-  color: var(--color-heading);
-  text-decoration: none;
-
-  font-size: 0.9rem;
-  font-weight: 500;
-
-  transition: border-color var(--transition);
-}
-
-.article-back-link-arrow {
-  color: currentColor;
-
-  transition:
-    color var(--transition),
-    transform var(--transition);
-}
-
-.article-back-link:hover {
-  color: var(--color-heading);
-
-  border-bottom-color: var(--color-accent);
-}
-
-.article-back-link:hover .article-back-link-arrow {
-  color: var(--color-accent);
-
-  transform: translateX(-2px);
-}
-
-.article-back-link:focus-visible {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 4px;
-
-  border-radius: 4px;
-  border-bottom-color: var(--color-accent);
-}
-
-.article-back-link:focus-visible .article-back-link-arrow {
-  color: var(--color-accent);
-
-  transform: translateX(-2px);
-}
-
 @media (max-width: 768px) {
   .article {
     padding: 4rem var(--space-sm);
@@ -377,9 +315,5 @@
 
   .article-quote p {
     font-size: 1.15rem;
-  }
-
-  .article-footer {
-    margin-top: var(--space-xl);
   }
 }

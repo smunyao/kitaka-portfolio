@@ -93,7 +93,7 @@
 .engineering-work-evidence {
   max-width: 32rem;
 
-  margin: 0 0 var(--space-md);
+  margin: var(--space-md) 0 0;
   padding: 1rem 1.1rem;
 
   border: 1px solid var(--color-border);
@@ -209,11 +209,11 @@
   }
 
   .engineering-work-item {
-    padding: var(--space-md) 0 var(--space-lg);
+    padding: 1.75rem 0 var(--space-md);
   }
 
   .engineering-work-item + .engineering-work-item {
-    padding-top: var(--space-lg);
+    padding-top: var(--space-md);
     padding-left: 0;
 
     border-top: 1px solid var(--color-border);
@@ -230,11 +230,43 @@
 
   .engineering-work-evidence {
     max-width: 100%;
+
+    margin-top: 1.5rem;
+    padding: 0.85rem 0.9rem;
+  }
+
+  .engineering-work-evidence figcaption {
+    margin-bottom: 0.6rem;
+  }
+
+  .engineering-work-evidence ol {
+    gap: 0.3rem;
+  }
+
+  .engineering-work-evidence li {
+    grid-template-columns: 5.25rem minmax(0, 1fr);
+
+    gap: 0.5rem;
+  }
+
+  .engineering-work-evidence p {
+    margin-top: 0.65rem;
+    padding-top: 0.65rem;
   }
 
   .engineering-work-description,
   .engineering-work-summary {
     font-size: 1rem;
     line-height: 1.65;
+  }
+
+  .engineering-work-description {
+    margin-bottom: 0.75rem;
+  }
+
+  .engineering-work-technologies {
+    margin-bottom: 1.25rem;
+
+    font-size: 0.8rem;
   }
 }

@@ -30,12 +30,11 @@
 
   pointer-events: none;
 
-  background:
-    radial-gradient(
-      circle at 50% 46%,
-      color-mix(in srgb, var(--color-accent) 5%, transparent) 0,
-      transparent 34%
-    );
+  background: radial-gradient(
+    circle at 50% 46%,
+    color-mix(in srgb, var(--color-accent) 5%, transparent) 0,
+    transparent 34%
+  );
 
   opacity: calc(1 - var(--hero-fade));
 }
@@ -71,7 +70,7 @@
 .home-section {
   --home-section-space: var(--space-xl);
 
-  max-width: var(--max-width);
+  max-width: var(--site-width);
 
   box-sizing: border-box;
 

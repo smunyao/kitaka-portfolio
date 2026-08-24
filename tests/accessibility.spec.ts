@@ -358,4 +358,57 @@ test.describe("accessibility", () => {
 
     expect(horizontalOverflow).toBeLessThanOrEqual(0);
   });
+
+  test("editorial and footer navigation remain usable at narrow widths", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 320, height: 720 });
+    await page.goto("/case-studies/harvest");
+
+    const relatedCaseStudy = page
+      .getByRole("navigation", { name: "Continue exploring case studies" })
+      .getByRole("link", { name: /Chili Piper/ });
+
+    await relatedCaseStudy.focus();
+
+    await expect(relatedCaseStudy).toBeFocused();
+    await expect(relatedCaseStudy).toHaveCSS("outline-style", "solid");
+    await expect(relatedCaseStudy).toHaveCSS("outline-width", "3px");
+
+    const footerEmail = page
+      .getByRole("navigation", { name: "Contact and professional profiles" })
+      .getByRole("link", { name: "Email" });
+
+    await footerEmail.focus();
+    await expect(footerEmail).toHaveCSS("outline-style", "solid");
+
+    const horizontalOverflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - window.innerWidth,
+    );
+
+    expect(horizontalOverflow).toBeLessThanOrEqual(0);
+  });
+
+  test("mobile footer places professional links after the copyright", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 320, height: 720 });
+    await page.goto("/writing");
+
+    const footerOrder = await page
+      .locator(".footer-inner")
+      .evaluate((footer) => {
+        const copyright = footer.querySelector("p")!.getBoundingClientRect();
+        const links = footer.querySelector("nav")!.getBoundingClientRect();
+
+        return {
+          copyrightBottom: Math.round(copyright.bottom),
+          linksTop: Math.round(links.top),
+        };
+      });
+
+    expect(footerOrder.linksTop).toBeGreaterThanOrEqual(
+      footerOrder.copyrightBottom,
+    );
+  });
 });

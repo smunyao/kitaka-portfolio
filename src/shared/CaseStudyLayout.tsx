@@ -1,9 +1,11 @@
 import type { CaseStudy } from "../content/caseStudies/types";
+import ContentEndNavigation from "./ContentEndNavigation";
 
 import "./CaseStudyLayout.css";
 
 interface CaseStudyLayoutProps {
   caseStudy: CaseStudy;
+  nextCaseStudy: CaseStudy;
 }
 
 interface CaseStudySectionProps {
@@ -83,7 +85,7 @@ function CaseStudyDetails({
   );
 }
 
-function CaseStudyLayout({ caseStudy }: CaseStudyLayoutProps) {
+function CaseStudyLayout({ caseStudy, nextCaseStudy }: CaseStudyLayoutProps) {
   return (
     <article className="case-study">
       <header className="case-study-header">
@@ -96,8 +98,7 @@ function CaseStudyLayout({ caseStudy }: CaseStudyLayoutProps) {
 
       <div className="case-study-mobile-context">
         <p className="case-study-mobile-meta">
-          <span>{caseStudy.role}</span>{" "}
-          <span aria-hidden="true">·</span>{" "}
+          <span>{caseStudy.role}</span> <span aria-hidden="true">·</span>{" "}
           <span>{caseStudy.period}</span>
         </p>
 
@@ -146,6 +147,15 @@ function CaseStudyLayout({ caseStudy }: CaseStudyLayoutProps) {
           <CaseStudyDetails caseStudy={caseStudy} />
         </aside>
       </div>
+
+      <ContentEndNavigation
+        backTo="/#experience"
+        backLabel="All experience"
+        nextTo={`/case-studies/${nextCaseStudy.slug}`}
+        nextLabel="Another case study"
+        nextTitle={`${nextCaseStudy.company} — ${nextCaseStudy.title}`}
+        ariaLabel="Continue exploring case studies"
+      />
     </article>
   );
 }
