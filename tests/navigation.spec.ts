@@ -258,6 +258,9 @@ test.describe("navigation", () => {
     const portfolioLink = engineeringWork.getByRole("link", {
       name: "View portfolio source on GitHub",
     });
+    const releaseLink = engineeringWork.getByRole("link", {
+      name: "View the v0.1.0 release",
+    });
 
     await expect(
       engineeringWork.getByRole("heading", {
@@ -280,8 +283,12 @@ test.describe("navigation", () => {
       "href",
       "https://github.com/smunyao/kitaka-portfolio",
     );
+    await expect(releaseLink).toHaveAttribute(
+      "href",
+      "https://github.com/smunyao/webhook-reliability-lab/releases/tag/v0.1.0",
+    );
 
-    for (const repositoryLink of [labLink, portfolioLink]) {
+    for (const repositoryLink of [labLink, releaseLink, portfolioLink]) {
       await expect(repositoryLink).toHaveAttribute("target", "_blank");
       await expect(repositoryLink).toHaveAttribute(
         "rel",

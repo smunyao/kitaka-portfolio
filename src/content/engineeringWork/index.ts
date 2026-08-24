@@ -8,8 +8,17 @@ export const engineeringWork: EngineeringProject[] = [
       "A small TypeScript system for investigating signed webhook delivery across an unreliable boundary.",
     summary:
       "It makes transient failures, retries, duplicates, invalid signatures and out-of-order events reproducible, with real HTTP integration tests and a documented account of the trade-offs.",
-    repositoryUrl: "https://github.com/smunyao/webhook-reliability-lab",
-    repositoryLabel: "View the lab on GitHub",
+    featured: true,
+    links: [
+      {
+        label: "View the lab on GitHub",
+        url: "https://github.com/smunyao/webhook-reliability-lab",
+      },
+      {
+        label: "View the v0.1.0 release",
+        url: "https://github.com/smunyao/webhook-reliability-lab/releases/tag/v0.1.0",
+      },
+    ],
     technologies: [
       "TypeScript",
       "Node.js",
@@ -23,11 +32,15 @@ export const engineeringWork: EngineeringProject[] = [
     slug: "portfolio",
     title: "This portfolio, treated as a product.",
     description:
-      "An evolving place for my experience, case studies and writing about software quality.",
+      "The portfolio itself, built and tested as an evolving product.",
     summary:
-      "Its repository shows the decisions behind accessible interactions, content-driven routes and metadata, responsive layouts and Playwright checks for critical journeys.",
-    repositoryUrl: "https://github.com/smunyao/kitaka-portfolio",
-    repositoryLabel: "View portfolio source on GitHub",
+      "Its source shows accessible interactions, content-driven routes and metadata, responsive layouts and Playwright coverage for critical journeys.",
+    links: [
+      {
+        label: "View portfolio source on GitHub",
+        url: "https://github.com/smunyao/kitaka-portfolio",
+      },
+    ],
     technologies: [
       "React",
       "TypeScript",
