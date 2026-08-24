@@ -4,5 +4,6 @@ export type EngineeringProject = {
   description: string;
   summary: string;
   repositoryUrl: string;
+  repositoryLabel: string;
   technologies: string[];
 };

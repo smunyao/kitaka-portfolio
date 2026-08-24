@@ -1,5 +1,30 @@
-.engineering-work h2 {
+.engineering-work > h2 {
+  margin-bottom: var(--space-md);
+}
+
+.engineering-work-list {
+  max-width: var(--content-width);
+}
+
+.engineering-work-item {
+  padding: var(--space-lg) 0;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.engineering-work-item:last-child {
+  padding-bottom: 0;
+}
+
+.engineering-work-item h3 {
+  max-width: 38rem;
+
   margin-bottom: var(--space-sm);
+
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.25px;
 }
 
 .engineering-work-description,
@@ -71,6 +96,14 @@
 }
 
 @media (max-width: 768px) {
+  .engineering-work-item {
+    padding: var(--space-md) 0;
+  }
+
+  .engineering-work-item h3 {
+    font-size: 1.2rem;
+  }
+
   .engineering-work-description,
   .engineering-work-summary {
     font-size: 1rem;

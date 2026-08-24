@@ -3,11 +3,7 @@ import { engineeringWork } from "../content/engineeringWork";
 import "./EngineeringWork.css";
 
 function EngineeringWork() {
-  const portfolio = engineeringWork.find(
-    (project) => project.slug === "portfolio",
-  );
-
-  if (!portfolio) {
+  if (engineeringWork.length === 0) {
     return null;
   }
 
@@ -16,34 +12,45 @@ function EngineeringWork() {
       id="engineering-work"
       className="home-section home-section--compact engineering-work"
     >
-      <h2>{portfolio.title}</h2>
+      <h2>Engineering work</h2>
 
-      <p className="engineering-work-description">{portfolio.description}</p>
+      <div className="engineering-work-list">
+        {engineeringWork.map((project) => (
+          <article key={project.slug} className="engineering-work-item">
+            <h3>{project.title}</h3>
 
-      <p className="engineering-work-summary">{portfolio.summary}</p>
+            <p className="engineering-work-description">
+              {project.description}
+            </p>
 
-      <ul
-        className="engineering-work-technologies"
-        aria-label="Portfolio technologies"
-      >
-        {portfolio.technologies.map((technology) => (
-          <li key={technology}>{technology}</li>
+            <p className="engineering-work-summary">{project.summary}</p>
+
+            <ul
+              className="engineering-work-technologies"
+              aria-label={`${project.title} technologies`}
+            >
+              {project.technologies.map((technology) => (
+                <li key={technology}>{technology}</li>
+              ))}
+            </ul>
+
+            <a
+              className="engineering-work-link"
+              href={project.repositoryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>{project.repositoryLabel}</span>
+              <span
+                className="engineering-work-link-arrow"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
+            </a>
+          </article>
         ))}
-      </ul>
-
-      {portfolio.repositoryUrl && (
-        <a
-          className="engineering-work-link"
-          href={portfolio.repositoryUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>View the source on GitHub</span>
-          <span className="engineering-work-link-arrow" aria-hidden="true">
-            ↗
-          </span>
-        </a>
-      )}
+      </div>
     </section>
   );
 }
