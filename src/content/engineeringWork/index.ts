@@ -20,7 +20,8 @@ export const engineeringWork: EngineeringProject[] = [
     },
     links: [
       {
-        label: "View the lab on GitHub",
+        label: "View repository on GitHub",
+        ariaLabel: "View Webhook Reliability Lab repository on GitHub",
         url: "https://github.com/smunyao/webhook-reliability-lab",
       },
     ],
@@ -42,7 +43,8 @@ export const engineeringWork: EngineeringProject[] = [
       "Its source shows accessible interactions, content-driven routes and metadata, responsive layouts and Playwright coverage for critical journeys.",
     links: [
       {
-        label: "View portfolio source on GitHub",
+        label: "View repository on GitHub",
+        ariaLabel: "View portfolio repository on GitHub",
         url: "https://github.com/smunyao/kitaka-portfolio",
       },
     ],

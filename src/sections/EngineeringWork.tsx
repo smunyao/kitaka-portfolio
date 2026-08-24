@@ -60,6 +60,7 @@ function EngineeringWork() {
                   key={link.url}
                   className="engineering-work-link"
                   href={link.url}
+                  aria-label={link.ariaLabel}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
