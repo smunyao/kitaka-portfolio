@@ -133,9 +133,8 @@ test.describe("navigation", () => {
       headerBottom: document
         .querySelector(".site-header")!
         .getBoundingClientRect().bottom,
-      sectionTop: document
-        .querySelector("#how-i-work")!
-        .getBoundingClientRect().top,
+      sectionTop: document.querySelector("#how-i-work")!.getBoundingClientRect()
+        .top,
     }));
 
     expect(targetPosition.sectionTop).toBeGreaterThanOrEqual(
@@ -336,6 +335,66 @@ test.describe("navigation", () => {
     await page.getByRole("link", { name: "Back to experience" }).click();
     await expect(page).toHaveURL("/#experience");
     await expect(page.locator("#experience")).toBeInViewport();
+  });
+
+  test("editorial endings continue to related content and parent indexes", async ({
+    page,
+  }) => {
+    await page.goto("/writing/testing-connected-workflows");
+
+    const writingNavigation = page.getByRole("navigation", {
+      name: "Continue exploring writing",
+    });
+
+    await expect(
+      writingNavigation.getByRole("link", { name: "All writing" }),
+    ).toHaveAttribute("href", "/writing");
+
+    await writingNavigation
+      .getByRole("link", {
+        name: /Testing is information, not approval/,
+      })
+      .click();
+
+    await expect(page).toHaveURL(
+      "/writing/testing-is-information-not-approval",
+    );
+
+    await page.goto("/case-studies/harvest");
+
+    const caseStudyNavigation = page.getByRole("navigation", {
+      name: "Continue exploring case studies",
+    });
+
+    await expect(
+      caseStudyNavigation.getByRole("link", { name: "All experience" }),
+    ).toHaveAttribute("href", "/#experience");
+
+    await caseStudyNavigation
+      .getByRole("link", { name: /Chili Piper/ })
+      .click();
+
+    await expect(page).toHaveURL("/case-studies/chili-piper");
+  });
+
+  test("footer provides contact and professional destinations", async ({
+    page,
+  }) => {
+    await page.goto("/writing");
+
+    const footerNavigation = page.getByRole("navigation", {
+      name: "Contact and professional profiles",
+    });
+
+    await expect(
+      footerNavigation.getByRole("link", { name: "Email" }),
+    ).toHaveAttribute("href", "mailto:sylv.munyao@gmail.com");
+    await expect(
+      footerNavigation.getByRole("link", { name: "LinkedIn" }),
+    ).toHaveAttribute("href", "https://www.linkedin.com/in/sylvester-munyao/");
+    await expect(
+      footerNavigation.getByRole("link", { name: "GitHub" }),
+    ).toHaveAttribute("href", "https://github.com/smunyao");
   });
 
   test("browser Back and Forward preserve navigation history", async ({

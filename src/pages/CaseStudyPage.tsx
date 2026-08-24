@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 
-import { getCaseStudyBySlug } from "../content/caseStudies";
+import { caseStudies, getCaseStudyBySlug } from "../content/caseStudies";
 
 import CaseStudyLayout from "../shared/CaseStudyLayout";
 import EditorialPageHeader from "../shared/EditorialPageHeader";
@@ -17,6 +17,11 @@ function CaseStudyPage() {
     return <NotFound variant="case-study" />;
   }
 
+  const caseStudyIndex = caseStudies.findIndex(
+    (item) => item.slug === caseStudy.slug,
+  );
+  const nextCaseStudy = caseStudies[(caseStudyIndex + 1) % caseStudies.length];
+
   return (
     <>
       <Seo path={`/case-studies/${caseStudy.slug}`} />
@@ -32,7 +37,7 @@ function CaseStudyPage() {
       />
 
       <main id="main-content" tabIndex={-1}>
-        <CaseStudyLayout caseStudy={caseStudy} />
+        <CaseStudyLayout caseStudy={caseStudy} nextCaseStudy={nextCaseStudy} />
       </main>
 
       <Footer />
