@@ -1,14 +1,16 @@
 .article {
-  max-width: var(--max-width);
+  max-width: var(--site-width);
+
+  box-sizing: border-box;
 
   margin: 0 auto;
   padding: 6rem var(--space-md) var(--space-xl);
 }
 
 .article-header {
-  max-width: 54rem;
+  max-width: 70rem;
 
-  margin-bottom: 3rem;
+  margin: 0 auto 3rem;
 }
 
 .article-header .section-eyebrow {
@@ -65,7 +67,9 @@
 }
 
 .article-content {
-  max-width: var(--content-width);
+  max-width: 70rem;
+
+  margin: 0 auto;
 
   padding-top: 3rem;
 
@@ -80,6 +84,8 @@
 }
 
 .article-section {
+  max-width: var(--content-width);
+
   margin-bottom: 4rem;
 }
 

@@ -42,7 +42,116 @@ const articles = [
   },
 ];
 
+const alignedPageFrames = [
+  {
+    name: "homepage",
+    path: "/",
+    navigation: ".navbar-inner",
+    content: ".home-section",
+  },
+  {
+    name: "Writing index",
+    path: "/writing",
+    navigation: ".editorial-page-header-content",
+    content: ".writing",
+  },
+  {
+    name: "article",
+    path: "/writing/testing-connected-workflows",
+    navigation: ".editorial-page-header-content",
+    content: ".article",
+  },
+  {
+    name: "How I work",
+    path: "/how-i-work",
+    navigation: ".editorial-page-header-content",
+    content: ".how-i-work",
+  },
+  {
+    name: "case study",
+    path: "/case-studies/harvest",
+    navigation: ".editorial-page-header-content",
+    content: ".case-study",
+  },
+];
+
 test.describe("navigation", () => {
+  for (const frame of alignedPageFrames) {
+    test(`${frame.name} navigation, content and footer share a frame`, async ({
+      page,
+    }) => {
+      await page.goto(frame.path);
+
+      const positions = await page.evaluate(({ navigation, content }) => {
+        const navigationRect = document
+          .querySelector(navigation)!
+          .getBoundingClientRect();
+        const contentRect = document
+          .querySelector(content)!
+          .getBoundingClientRect();
+        const footerRect = document
+          .querySelector(".footer-inner")!
+          .getBoundingClientRect();
+
+        return {
+          navigation: {
+            left: Math.round(navigationRect.left),
+            right: Math.round(navigationRect.right),
+          },
+          content: {
+            left: Math.round(contentRect.left),
+            right: Math.round(contentRect.right),
+          },
+          footer: {
+            left: Math.round(footerRect.left),
+            right: Math.round(footerRect.right),
+          },
+        };
+      }, frame);
+
+      expect(
+        Math.abs(positions.navigation.left - positions.content.left),
+      ).toBeLessThanOrEqual(1);
+      expect(
+        Math.abs(positions.navigation.right - positions.content.right),
+      ).toBeLessThanOrEqual(1);
+      expect(
+        Math.abs(positions.footer.left - positions.content.left),
+      ).toBeLessThanOrEqual(1);
+      expect(
+        Math.abs(positions.footer.right - positions.content.right),
+      ).toBeLessThanOrEqual(1);
+    });
+  }
+
+  test("Not Found content and footer retain the compact frame", async ({
+    page,
+  }) => {
+    await page.goto("/this-page-does-not-exist");
+
+    const positions = await page.evaluate(() => {
+      const content = document
+        .querySelector(".not-found")!
+        .getBoundingClientRect();
+      const footer = document
+        .querySelector(".footer-inner")!
+        .getBoundingClientRect();
+
+      return {
+        content: {
+          left: Math.round(content.left),
+          right: Math.round(content.right),
+        },
+        footer: {
+          left: Math.round(footer.left),
+          right: Math.round(footer.right),
+        },
+      };
+    });
+
+    expect(positions.footer).toEqual(positions.content);
+  });
+
   test("the hero continuation link reveals Experience", async ({ page }) => {
     await page.goto("/");
 

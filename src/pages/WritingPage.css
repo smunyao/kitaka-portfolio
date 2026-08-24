@@ -1,14 +1,16 @@
 .writing {
-  max-width: var(--max-width);
+  max-width: var(--site-width);
+
+  box-sizing: border-box;
 
   margin: 0 auto;
   padding: 6rem var(--space-md) var(--space-xl);
 }
 
 .writing-header {
-  max-width: 46rem;
+  max-width: 70rem;
 
-  margin-bottom: 4.5rem;
+  margin: 0 auto 4.5rem;
 }
 
 .writing-header .section-eyebrow {
@@ -41,14 +43,17 @@
 
 .writing-rule {
   width: 100%;
+  max-width: 70rem;
 
-  margin-bottom: 3rem;
+  margin: 0 auto 3rem;
 
   border-top: 2px solid var(--color-heading);
 }
 
 .writing-list {
-  max-width: 46rem;
+  max-width: 70rem;
+
+  margin: 0 auto;
 }
 
 .writing-item {

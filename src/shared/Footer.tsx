@@ -4,11 +4,15 @@ import { site } from "../content/site";
 
 interface FooterProps {
   showProfessionalLinks?: boolean;
+  compact?: boolean;
 }
 
-function Footer({ showProfessionalLinks = true }: FooterProps) {
+function Footer({
+  showProfessionalLinks = true,
+  compact = false,
+}: FooterProps) {
   return (
-    <footer className="footer">
+    <footer className={`footer${compact ? " footer--compact" : ""}`}>
       <div className="footer-inner">
         <p>© {new Date().getFullYear()} Kitaka Munyao</p>
 

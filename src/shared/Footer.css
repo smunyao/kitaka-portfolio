@@ -7,8 +7,6 @@
 
   box-sizing: border-box;
 
-  padding: var(--space-lg) var(--space-md);
-
   background: var(--color-background);
 
   color: var(--color-text);
@@ -21,9 +19,16 @@
   justify-content: space-between;
   gap: var(--space-md);
 
-  max-width: var(--max-width);
+  max-width: var(--site-width);
+
+  box-sizing: border-box;
 
   margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.footer--compact .footer-inner {
+  max-width: var(--max-width);
 }
 
 .footer p {
@@ -64,13 +69,15 @@
 
 @media (max-width: 768px) {
   .footer {
-    padding: 2rem var(--space-sm);
+    padding: 0;
   }
 
   .footer-inner {
     align-items: flex-start;
     flex-direction: column;
     gap: var(--space-sm);
+
+    padding: 2rem var(--space-sm);
   }
 
   .footer nav {
