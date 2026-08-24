@@ -13,6 +13,14 @@ function Hero() {
         I help product and engineering teams understand complex systems,
         uncover risk early and ship with confidence.
       </p>
+
+      <a
+        className="hero-continuation"
+        href="#experience"
+        aria-label="Continue to experience"
+      >
+        <span className="hero-continuation-track" aria-hidden="true" />
+      </a>
     </section>
   );
 }

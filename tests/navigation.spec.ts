@@ -32,6 +32,23 @@ const caseStudies = [
 ];
 
 test.describe("navigation", () => {
+  test("the hero continuation link reveals Experience", async ({ page }) => {
+    await page.goto("/");
+
+    const continuationLink = page.getByRole("link", {
+      name: "Continue to experience",
+    });
+
+    await expect(continuationLink).toBeVisible();
+    await expect(continuationLink).toHaveAttribute("href", "#experience");
+
+    await continuationLink.click();
+
+    await expect(page).toHaveURL(/#experience$/);
+    await expect(page.locator("#experience")).toBeInViewport();
+    await expect(page.locator(".site-header")).toHaveCSS("opacity", "1");
+  });
+
   test("primary navigation reaches each homepage section", async ({ page }) => {
     await page.goto("/");
     await page.evaluate(() => window.scrollTo(0, 48));
