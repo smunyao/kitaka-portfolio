@@ -14,6 +14,7 @@ export type EngineeringProject = {
   };
   links: {
     label: string;
+    ariaLabel: string;
     url: string;
   }[];
   technologies: string[];

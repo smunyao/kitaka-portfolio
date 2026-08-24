@@ -343,7 +343,7 @@ test.describe("accessibility", () => {
     await page.goto("/#engineering-work");
 
     const labLink = page.getByRole("link", {
-      name: "View the lab on GitHub",
+      name: "View Webhook Reliability Lab repository on GitHub",
     });
 
     await labLink.focus();

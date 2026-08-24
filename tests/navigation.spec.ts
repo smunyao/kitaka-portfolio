@@ -253,10 +253,10 @@ test.describe("navigation", () => {
     ).toBeVisible();
 
     const labLink = engineeringWork.getByRole("link", {
-      name: "View the lab on GitHub",
+      name: "View Webhook Reliability Lab repository on GitHub",
     });
     const portfolioLink = engineeringWork.getByRole("link", {
-      name: "View portfolio source on GitHub",
+      name: "View portfolio repository on GitHub",
     });
 
     await expect(
