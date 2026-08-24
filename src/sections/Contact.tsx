@@ -12,8 +12,6 @@ function Contact() {
       id="contact"
       className="home-section home-section--closing contact"
     >
-      <p className="section-eyebrow">{contactContent.eyebrow}</p>
-
       <h2>{contactContent.heading}</h2>
 
       <p className="contact-copy">

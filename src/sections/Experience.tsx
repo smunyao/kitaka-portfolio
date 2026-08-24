@@ -10,9 +10,7 @@ function Experience() {
       id="experience"
       className="home-section home-section--evidence experience"
     >
-      <p className="section-eyebrow">Experience</p>
-
-      <h2>Quality engineering across products, teams and stages of growth.</h2>
+      <h2>Experience across products, teams and stages of growth.</h2>
 
       <div className="experience-list">
         {experiences.map((experience) => (

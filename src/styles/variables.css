@@ -31,9 +31,6 @@
 
   --transition: 200ms ease;
 
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
   /* ========================================
      Colours
      ======================================== */
@@ -46,24 +43,10 @@
   /* Accent */
 
   --color-accent: #7b3a4d;
-
-  --accent-bg: rgba(123, 58, 77, 0.09);
-  --accent-border: rgba(123, 58, 77, 0.38);
-
-  /* Semantic */
-
-  --color-success: #6dbb75;
-
-  --color-success-soft: color-mix(
+  --color-editorial-marker: color-mix(
     in srgb,
-    var(--color-success) 10%,
-    transparent
-  );
-
-  --color-success-border: color-mix(
-    in srgb,
-    var(--color-success) 30%,
-    transparent
+    var(--color-accent) 58%,
+    var(--color-text)
   );
 
   /* Company */
@@ -95,27 +78,5 @@
     /* Accent */
 
     --color-accent: #d28a9d;
-
-    --accent-bg: rgba(210, 138, 157, 0.14);
-    --accent-border: rgba(210, 138, 157, 0.45);
-
-    /* Semantic */
-
-    --color-success: #7fcb87;
-
-    --color-success-soft: color-mix(
-      in srgb,
-      var(--color-success) 12%,
-      transparent
-    );
-
-    --color-success-border: color-mix(
-      in srgb,
-      var(--color-success) 35%,
-      transparent
-    );
-
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
 }

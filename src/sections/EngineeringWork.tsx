@@ -16,8 +16,6 @@ function EngineeringWork() {
       id="engineering-work"
       className="home-section home-section--compact engineering-work"
     >
-      <p className="section-eyebrow">Engineering work</p>
-
       <h2>{portfolio.title}</h2>
 
       <p className="engineering-work-description">{portfolio.description}</p>

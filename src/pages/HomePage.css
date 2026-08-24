@@ -33,12 +33,7 @@
   background:
     radial-gradient(
       circle at 50% 46%,
-      color-mix(in srgb, var(--color-accent) 9%, transparent) 0,
-      transparent 38%
-    ),
-    radial-gradient(
-      circle at 50% 58%,
-      color-mix(in srgb, var(--color-heading) 4%, transparent) 0,
+      color-mix(in srgb, var(--color-accent) 5%, transparent) 0,
       transparent 34%
     );
 
@@ -96,19 +91,29 @@
 }
 
 .home-section--evidence {
-  --home-section-space: 6.5rem;
+  --home-section-space: 3.5rem;
 }
 
 .home-section--principles {
-  --home-section-space: 5.5rem;
+  --home-section-space: 3rem;
 }
 
 .home-section--feature {
-  --home-section-space: 5rem;
+  --home-section-space: 2.5rem;
 }
 
 .home-section--compact {
-  --home-section-space: 4.5rem;
+  --home-section-space: 2.5rem;
+}
+
+.home-section + .home-section {
+  padding-top: 3rem;
+}
+
+#writing,
+#engineering-work,
+#contact {
+  border-top: 1px solid var(--color-border);
 }
 
 .home-section--closing {
@@ -140,19 +145,23 @@
   }
 
   .home-section--evidence {
-    --home-section-space: 4rem;
+    --home-section-space: 2rem;
   }
 
   .home-section--principles {
-    --home-section-space: 3.5rem;
+    --home-section-space: 1.75rem;
   }
 
   .home-section--feature {
-    --home-section-space: 3.25rem;
+    --home-section-space: 1.5rem;
   }
 
   .home-section--compact {
-    --home-section-space: 3rem;
+    --home-section-space: 1.5rem;
+  }
+
+  .home-section + .home-section {
+    padding-top: 2rem;
   }
 
   .home-section--closing {
@@ -172,6 +181,32 @@
     height: 3rem;
   }
 
+  .home-hero-layer::before {
+    background: radial-gradient(
+      circle at 50% 44%,
+      color-mix(in srgb, var(--color-accent) 5%, transparent) 0,
+      transparent 48%
+    );
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .home-hero-layer::before {
+    background:
+      radial-gradient(
+        circle at 50% 46%,
+        color-mix(in srgb, var(--color-accent) 9%, transparent) 0,
+        transparent 38%
+      ),
+      radial-gradient(
+        circle at 50% 58%,
+        color-mix(in srgb, var(--color-heading) 4%, transparent) 0,
+        transparent 34%
+      );
+  }
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
   .home-hero-layer::before {
     background: radial-gradient(
       circle at 50% 44%,
