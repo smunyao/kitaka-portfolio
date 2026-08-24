@@ -22,7 +22,9 @@ function ContentEndNavigation({
   return (
     <nav className="content-end-navigation" aria-label={ariaLabel}>
       <Link className="content-end-navigation-back" to={backTo}>
-        <span aria-hidden="true">←</span>
+        <span className="content-end-navigation-arrow" aria-hidden="true">
+          ←
+        </span>
         <span>{backLabel}</span>
       </Link>
 
@@ -30,7 +32,10 @@ function ContentEndNavigation({
         <span className="content-end-navigation-label">{nextLabel}</span>
         <span className="content-end-navigation-title">
           {nextTitle}
-          <span aria-hidden="true"> →</span>
+          <span className="content-end-navigation-arrow" aria-hidden="true">
+            {" "}
+            →
+          </span>
         </span>
       </Link>
     </nav>
