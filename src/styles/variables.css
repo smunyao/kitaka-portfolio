@@ -46,6 +46,11 @@
   /* Accent */
 
   --color-accent: #7b3a4d;
+  --color-editorial-marker: color-mix(
+    in srgb,
+    var(--color-accent) 58%,
+    var(--color-text)
+  );
 
   --accent-bg: rgba(123, 58, 77, 0.09);
   --accent-border: rgba(123, 58, 77, 0.38);

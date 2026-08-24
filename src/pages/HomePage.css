@@ -96,19 +96,29 @@
 }
 
 .home-section--evidence {
-  --home-section-space: 6.5rem;
+  --home-section-space: 3.5rem;
 }
 
 .home-section--principles {
-  --home-section-space: 5.5rem;
+  --home-section-space: 3rem;
 }
 
 .home-section--feature {
-  --home-section-space: 5rem;
+  --home-section-space: 2.5rem;
 }
 
 .home-section--compact {
-  --home-section-space: 4.5rem;
+  --home-section-space: 2.5rem;
+}
+
+.home-section + .home-section {
+  padding-top: 3rem;
+}
+
+#writing,
+#engineering-work,
+#contact {
+  border-top: 1px solid var(--color-border);
 }
 
 .home-section--closing {
@@ -140,19 +150,23 @@
   }
 
   .home-section--evidence {
-    --home-section-space: 4rem;
+    --home-section-space: 2rem;
   }
 
   .home-section--principles {
-    --home-section-space: 3.5rem;
+    --home-section-space: 1.75rem;
   }
 
   .home-section--feature {
-    --home-section-space: 3.25rem;
+    --home-section-space: 1.5rem;
   }
 
   .home-section--compact {
-    --home-section-space: 3rem;
+    --home-section-space: 1.5rem;
+  }
+
+  .home-section + .home-section {
+    padding-top: 2rem;
   }
 
   .home-section--closing {

@@ -32,6 +32,8 @@
 
   font-size: 0.95rem;
   letter-spacing: 0.065em;
+
+  color: var(--color-accent);
 }
 
 .hero .section-eyebrow::before,

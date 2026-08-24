@@ -17,9 +17,7 @@ function FeaturedWriting() {
       id="writing"
       className="home-section home-section--feature featured-writing"
     >
-      <p className="section-eyebrow">Writing</p>
-
-      <h2>Notes on testing, quality and engineering work.</h2>
+      <h2>Writing on testing, quality and engineering work.</h2>
 
       <article className="featured-writing-article">
         <p className="featured-writing-meta">
