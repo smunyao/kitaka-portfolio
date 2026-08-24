@@ -37,6 +37,23 @@ function EngineeringWork() {
               ))}
             </ul>
 
+            {project.evidence && (
+              <figure className="engineering-work-evidence">
+                <figcaption>{project.evidence.label}</figcaption>
+
+                <ol>
+                  {project.evidence.items.map((item) => (
+                    <li key={item.label}>
+                      <span>{item.label}</span>
+                      <span>{item.value}</span>
+                    </li>
+                  ))}
+                </ol>
+
+                <p>{project.evidence.summary}</p>
+              </figure>
+            )}
+
             <div className="engineering-work-links">
               {project.links.map((link) => (
                 <a

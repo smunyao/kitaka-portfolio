@@ -9,14 +9,19 @@ export const engineeringWork: EngineeringProject[] = [
     summary:
       "It makes transient failures, retries, duplicates, invalid signatures and out-of-order events reproducible, with real HTTP integration tests and a documented account of the trade-offs.",
     featured: true,
+    evidence: {
+      label: "Example delivery",
+      items: [
+        { label: "Attempt 01", value: "503 · transient failure" },
+        { label: "Attempt 02", value: "503 · transient failure" },
+        { label: "Attempt 03", value: "200 · processed" },
+      ],
+      summary: "Duplicate acknowledged · 1 event processed",
+    },
     links: [
       {
         label: "View the lab on GitHub",
         url: "https://github.com/smunyao/webhook-reliability-lab",
-      },
-      {
-        label: "View the v0.1.0 release",
-        url: "https://github.com/smunyao/webhook-reliability-lab/releases/tag/v0.1.0",
       },
     ],
     technologies: [

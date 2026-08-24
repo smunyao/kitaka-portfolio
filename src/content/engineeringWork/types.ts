@@ -4,6 +4,14 @@ export type EngineeringProject = {
   description: string;
   summary: string;
   featured?: boolean;
+  evidence?: {
+    label: string;
+    items: {
+      label: string;
+      value: string;
+    }[];
+    summary: string;
+  };
   links: {
     label: string;
     url: string;

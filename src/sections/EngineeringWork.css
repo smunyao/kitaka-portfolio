@@ -90,6 +90,73 @@
   content: " ·";
 }
 
+.engineering-work-evidence {
+  max-width: 32rem;
+
+  margin: 0 0 var(--space-md);
+  padding: 1rem 1.1rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+
+  background: color-mix(in srgb, var(--color-border) 14%, transparent);
+
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+}
+
+.engineering-work-evidence figcaption {
+  margin-bottom: 0.8rem;
+
+  color: var(--color-heading);
+
+  font-family: "Geist Variable", system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.engineering-work-evidence ol {
+  display: grid;
+
+  gap: 0.4rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  color: var(--color-text);
+
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.engineering-work-evidence li {
+  display: grid;
+
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+
+  gap: 0.75rem;
+}
+
+.engineering-work-evidence li span:first-child {
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+
+.engineering-work-evidence p {
+  margin: 0.8rem 0 0;
+  padding-top: 0.8rem;
+
+  border-top: 1px solid var(--color-border);
+
+  color: var(--color-heading);
+
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
 .engineering-work-links {
   display: flex;
   flex-wrap: wrap;
@@ -159,6 +226,10 @@
 
   .engineering-work-item--featured h3 {
     font-size: 1.45rem;
+  }
+
+  .engineering-work-evidence {
+    max-width: 100%;
   }
 
   .engineering-work-description,
