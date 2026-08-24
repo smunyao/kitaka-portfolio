@@ -3,12 +3,6 @@ import type { CaseStudy } from "./types";
 export const chiliPiperCaseStudy: CaseStudy = {
   slug: "chili-piper",
 
-  seo: {
-    title: "Understanding systems before testing them | Chili Piper | Kitaka",
-    description:
-      "How testing CRM integrations, calendars and AI-assisted scheduling reinforced the importance of understanding complex systems before designing a testing strategy.",
-  },
-
   company: "Chili Piper",
   companyUrl: "https://www.chilipiper.com",
 

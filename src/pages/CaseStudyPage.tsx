@@ -19,12 +19,7 @@ function CaseStudyPage() {
 
   return (
     <>
-      <Seo
-        title={caseStudy.seo.title}
-        description={caseStudy.seo.description}
-        canonical={`/case-studies/${caseStudy.slug}`}
-        type="article"
-      />
+      <Seo path={`/case-studies/${caseStudy.slug}`} />
 
       <a className="skip-link" href="#main-content">
         Skip to main content

@@ -1,0 +1,82 @@
+{
+  "/": {
+    "title": "Kitaka Munyao | Quality Engineer",
+    "description": "Quality Engineer helping product and engineering teams understand complex systems, uncover risk early and ship with confidence. Explore experience and case studies.",
+    "type": "website",
+    "image": "/social/kitaka-munyao.png",
+    "imageAlt": "Kitaka Munyao — quality engineering, product thinking and collaboration.",
+    "imageLabel": "Quality Engineer",
+    "imageTitle": "Quality engineering, product thinking and collaboration.",
+    "imageAccent": "#d28a9d"
+  },
+  "/how-i-work": {
+    "title": "How I work | Kitaka",
+    "description": "How I approach software quality, product understanding, risk, exploratory testing, automation, collaboration and building confidence.",
+    "type": "article",
+    "image": "/social/kitaka-munyao.png",
+    "imageAlt": "Kitaka Munyao — quality engineering, product thinking and collaboration.",
+    "imageLabel": "Quality Engineer",
+    "imageTitle": "Quality engineering, product thinking and collaboration.",
+    "imageAccent": "#d28a9d"
+  },
+  "/writing": {
+    "title": "Writing | Kitaka",
+    "description": "Thoughts on quality engineering, testing, product understanding and engineering practice.",
+    "type": "website",
+    "image": "/social/kitaka-munyao.png",
+    "imageAlt": "Kitaka Munyao — quality engineering, product thinking and collaboration.",
+    "imageLabel": "Quality Engineer",
+    "imageTitle": "Quality engineering, product thinking and collaboration.",
+    "imageAccent": "#d28a9d"
+  },
+  "/writing/testing-is-information-not-approval": {
+    "title": "Testing is information, not approval | Kitaka",
+    "description": "Why testing should provide useful information about behaviour and risk rather than act as the final approval step before release.",
+    "type": "article",
+    "image": "/social/testing-is-information-not-approval.png",
+    "imageAlt": "Testing is information, not approval — an article by Kitaka Munyao.",
+    "imageLabel": "Writing",
+    "imageTitle": "Testing is information, not approval",
+    "imageAccent": "#d28a9d"
+  },
+  "/writing/testing-connected-workflows": {
+    "title": "Testing connected workflows | Kitaka",
+    "description": "A practical approach to testing customer journeys across APIs, integrations and external services without relying on end-to-end checks alone.",
+    "type": "article",
+    "image": "/social/testing-connected-workflows.png",
+    "imageAlt": "Testing connected workflows — an article by Kitaka Munyao.",
+    "imageLabel": "Writing",
+    "imageTitle": "Testing connected workflows",
+    "imageAccent": "#d28a9d"
+  },
+  "/case-studies/harvest": {
+    "title": "Building confidence across a connected product ecosystem | Harvest | Kitaka",
+    "description": "How working across Harvest and Forecast shaped my approach to testing interconnected SaaS products, automation and collaborative quality engineering.",
+    "type": "article",
+    "image": "/social/harvest-case-study.png",
+    "imageAlt": "Building confidence across a connected product ecosystem — Kitaka Munyao's Harvest case study.",
+    "imageLabel": "Case study · Harvest",
+    "imageTitle": "Building confidence across a connected product ecosystem",
+    "imageAccent": "#fa5d00"
+  },
+  "/case-studies/chili-piper": {
+    "title": "Understanding systems before testing them | Chili Piper | Kitaka",
+    "description": "How testing CRM integrations, calendars and AI-assisted scheduling reinforced the importance of understanding complex systems before designing a testing strategy.",
+    "type": "article",
+    "image": "/social/chili-piper-case-study.png",
+    "imageAlt": "Quality begins with understanding the system — Kitaka Munyao's Chili Piper case study.",
+    "imageLabel": "Case study · Chili Piper",
+    "imageTitle": "Quality begins with understanding the system",
+    "imageAccent": "#ff5721"
+  },
+  "/case-studies/sitemate": {
+    "title": "Building quality practices that scale | Sitemate | Kitaka",
+    "description": "How building QA foundations, growing a QA team and supporting Dashpivot and Sitemate's product ecosystem shaped my approach to scalable quality engineering.",
+    "type": "article",
+    "image": "/social/sitemate-case-study.png",
+    "imageAlt": "Building quality from the ground up — Kitaka Munyao's Sitemate case study.",
+    "imageLabel": "Case study · Sitemate",
+    "imageTitle": "Building quality from the ground up",
+    "imageAccent": "#0085e8"
+  }
+}

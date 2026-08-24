@@ -3,12 +3,6 @@ import type { CaseStudy } from "./types";
 export const sitemateCaseStudy: CaseStudy = {
   slug: "sitemate",
 
-  seo: {
-    title: "Building quality practices that scale | Sitemate | Kitaka",
-    description:
-      "How building QA foundations, growing a QA team and supporting Dashpivot and Sitemate's product ecosystem shaped my approach to scalable quality engineering.",
-  },
-
   company: "Sitemate",
   companyUrl: "https://sitemate.com",
 

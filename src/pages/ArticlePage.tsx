@@ -21,12 +21,7 @@ function ArticlePage() {
 
   return (
     <>
-      <Seo
-        title={article.seo.title}
-        description={article.seo.description}
-        canonical={`/writing/${article.slug}`}
-        type="article"
-      />
+      <Seo path={`/writing/${article.slug}`} />
 
       <a className="skip-link" href="#main-content">
         Skip to main content

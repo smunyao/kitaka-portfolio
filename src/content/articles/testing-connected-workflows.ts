@@ -12,12 +12,6 @@ export const testingConnectedWorkflows: Article = {
 
   readingTime: "8 min read",
 
-  seo: {
-    title: "Testing connected workflows | Kitaka",
-    description:
-      "A practical approach to testing customer journeys across APIs, integrations and external services without relying on end-to-end checks alone.",
-  },
-
   sections: [
     {
       type: "paragraphs",
