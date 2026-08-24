@@ -19,6 +19,15 @@ export type ArticleSection =
       heading?: string;
       language?: string;
       code: string;
+    }
+  | {
+      type: "links";
+      heading?: string;
+      links: {
+        label: string;
+        href: string;
+        description?: string;
+      }[];
     };
 
 export type Article = {
