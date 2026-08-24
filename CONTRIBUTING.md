@@ -38,6 +38,13 @@ npm run build
 npm run test:e2e
 ```
 
+When changing social-preview copy or visual treatments, regenerate and review
+the committed images:
+
+```bash
+npm run generate:social-images
+```
+
 The Playwright suite builds and serves the production application
 automatically. On a first-time local setup, install its managed Chromium
 browser with:

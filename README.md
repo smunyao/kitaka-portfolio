@@ -24,7 +24,7 @@ The portfolio also includes long-form engineering case studies exploring real pr
 
 A dedicated **Writing** area provides space for longer-form articles about quality engineering, testing, product understanding and engineering practice.
 
-The homepage prioritises selected professional experience, concise working principles and technical writing. A compact engineering-work section also makes the portfolio's source and documented development history directly inspectable without competing with the stronger professional evidence.
+The homepage prioritises selected professional experience, concise working principles and technical writing. Its engineering-work section presents a focused reliability lab alongside the portfolio's source and documented development history, keeping both projects inspectable without competing with the stronger professional evidence.
 
 The project focuses on:
 
@@ -47,9 +47,9 @@ The repository documents the development process through GitHub Issues, feature 
 - TypeScript
 - React Router
 - Vite
-- React Helmet Async
 - Vanilla CSS
 - Playwright
+- Schema.org JSON-LD
 - Git & GitHub
 - GitHub Actions
 - GitHub Projects & Issues
@@ -75,9 +75,10 @@ The repository documents the development process through GitHub Issues, feature 
 - Sticky editorial sidebar
 - Active section tracking
 - Privacy-friendly site analytics
-- Open Graph & Twitter/X metadata
+- Content-specific Open Graph & Twitter/X metadata
+- Crawler-visible Schema.org structured data
 - Canonical URLs
-- robots.txt & sitemap.xml
+- robots.txt, sitemap.xml & server-level 404 responses
 - Custom domain
 - Automatic Cloudflare deployments
 
@@ -85,14 +86,13 @@ The repository documents the development process through GitHub Issues, feature 
 
 ## Performance
 
-Reference Lighthouse audit (Production):
+Reference Lighthouse performance audits (Production):
 
-| Metric         |   Score |
-| :------------- | ------: |
-| Performance    | **100** |
-| Accessibility  | **100** |
-| Best Practices | **100** |
-| SEO            | **100** |
+| Representative route | Mobile | Desktop |
+| :------------------- | -----: | ------: |
+| Homepage median      | **97** | **100** |
+| Connected workflows | **97** | **100** |
+| Harvest case study   | **98** | **100** |
 
 > Lighthouse scores are periodically reviewed as the portfolio evolves. Scores
 > vary between routes, devices and individual runs, so regressions are assessed
@@ -125,6 +125,8 @@ Install dependencies:
 npm install
 ```
 
+Node.js 24 or newer is required.
+
 Start the development server:
 
 ```bash
@@ -147,6 +149,18 @@ The production build generates static shells for every public route and a
 shared `404.html`, allowing Cloudflare Pages to preserve direct React route
 loading while returning a true `404` for invalid URLs. See the
 [server-level 404 decision record](docs/server-level-404s.md) for details.
+
+Route shells include crawler-visible social metadata and proportionate
+structured data. See the [social metadata](docs/social-metadata.md) and
+[search discoverability](docs/search-discoverability.md) records for the
+content model and validation approach.
+
+When social-preview copy or visual treatments change, regenerate the committed
+images with:
+
+```bash
+npm run generate:social-images
+```
 
 ---
 
@@ -178,9 +192,11 @@ The site is automatically deployed through **Cloudflare Pages** whenever changes
 
 Planned improvements include:
 
-- Dedicated Open Graph images for individual case studies
-- Additional personal engineering projects
+- Additional experience-driven technical writing
+- Additional inspectable engineering work when a project is mature enough
 - Potential long-form project pages for larger projects
+- Stronger relationships between articles, case studies and projects as the
+  content collection grows
 - Continued accessibility improvements
 - Ongoing design refinements
 
