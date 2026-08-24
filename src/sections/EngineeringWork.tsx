@@ -3,11 +3,7 @@ import { engineeringWork } from "../content/engineeringWork";
 import "./EngineeringWork.css";
 
 function EngineeringWork() {
-  const portfolio = engineeringWork.find(
-    (project) => project.slug === "portfolio",
-  );
-
-  if (!portfolio) {
+  if (engineeringWork.length === 0) {
     return null;
   }
 
@@ -16,34 +12,70 @@ function EngineeringWork() {
       id="engineering-work"
       className="home-section home-section--compact engineering-work"
     >
-      <h2>{portfolio.title}</h2>
+      <h2>Engineering work</h2>
 
-      <p className="engineering-work-description">{portfolio.description}</p>
+      <div className="engineering-work-list">
+        {engineeringWork.map((project) => (
+          <article
+            key={project.slug}
+            className={`engineering-work-item${project.featured ? " engineering-work-item--featured" : ""}`}
+          >
+            <h3>{project.title}</h3>
 
-      <p className="engineering-work-summary">{portfolio.summary}</p>
+            <p className="engineering-work-description">
+              {project.description}
+            </p>
 
-      <ul
-        className="engineering-work-technologies"
-        aria-label="Portfolio technologies"
-      >
-        {portfolio.technologies.map((technology) => (
-          <li key={technology}>{technology}</li>
+            <p className="engineering-work-summary">{project.summary}</p>
+
+            <ul
+              className="engineering-work-technologies"
+              aria-label={`${project.title} technologies`}
+            >
+              {project.technologies.map((technology) => (
+                <li key={technology}>{technology}</li>
+              ))}
+            </ul>
+
+            {project.evidence && (
+              <figure className="engineering-work-evidence">
+                <figcaption>{project.evidence.label}</figcaption>
+
+                <ol>
+                  {project.evidence.items.map((item) => (
+                    <li key={item.label}>
+                      <span>{item.label}</span>
+                      <span>{item.value}</span>
+                    </li>
+                  ))}
+                </ol>
+
+                <p>{project.evidence.summary}</p>
+              </figure>
+            )}
+
+            <div className="engineering-work-links">
+              {project.links.map((link) => (
+                <a
+                  key={link.url}
+                  className="engineering-work-link"
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>{link.label}</span>
+                  <span
+                    className="engineering-work-link-arrow"
+                    aria-hidden="true"
+                  >
+                    ↗
+                  </span>
+                </a>
+              ))}
+            </div>
+          </article>
         ))}
-      </ul>
-
-      {portfolio.repositoryUrl && (
-        <a
-          className="engineering-work-link"
-          href={portfolio.repositoryUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>View the source on GitHub</span>
-          <span className="engineering-work-link-arrow" aria-hidden="true">
-            ↗
-          </span>
-        </a>
-      )}
+      </div>
     </section>
   );
 }

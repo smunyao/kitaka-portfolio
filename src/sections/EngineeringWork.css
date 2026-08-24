@@ -1,5 +1,62 @@
-.engineering-work h2 {
+.engineering-work > h2 {
+  margin-bottom: var(--space-md);
+}
+
+.engineering-work-list {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+
+  gap: clamp(2rem, 4vw, 3rem);
+
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.engineering-work-item {
+  padding: var(--space-lg) 0 var(--space-xl);
+}
+
+.engineering-work-item + .engineering-work-item {
+  padding-left: clamp(2rem, 4vw, 3rem);
+
+  border-left: 1px solid var(--color-border);
+}
+
+.engineering-work-item--featured {
+  position: relative;
+}
+
+.engineering-work-item--featured::before {
+  position: absolute;
+  top: -1px;
+  left: 0;
+
+  width: 4rem;
+  height: 2px;
+
+  background: var(--color-accent);
+
+  content: "";
+}
+
+.engineering-work-item h3 {
+  max-width: 38rem;
+
   margin-bottom: var(--space-sm);
+
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.25px;
+}
+
+.engineering-work-item--featured h3 {
+  max-width: 42rem;
+
+  font-size: 1.75rem;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
 }
 
 .engineering-work-description,
@@ -31,6 +88,80 @@
 
 .engineering-work-technologies li:not(:last-child)::after {
   content: " ·";
+}
+
+.engineering-work-evidence {
+  max-width: 32rem;
+
+  margin: 0 0 var(--space-md);
+  padding: 1rem 1.1rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+
+  background: color-mix(in srgb, var(--color-border) 14%, transparent);
+
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+}
+
+.engineering-work-evidence figcaption {
+  margin-bottom: 0.8rem;
+
+  color: var(--color-heading);
+
+  font-family: "Geist Variable", system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.engineering-work-evidence ol {
+  display: grid;
+
+  gap: 0.4rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  color: var(--color-text);
+
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.engineering-work-evidence li {
+  display: grid;
+
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+
+  gap: 0.75rem;
+}
+
+.engineering-work-evidence li span:first-child {
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+
+.engineering-work-evidence p {
+  margin: 0.8rem 0 0;
+  padding-top: 0.8rem;
+
+  border-top: 1px solid var(--color-border);
+
+  color: var(--color-heading);
+
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.engineering-work-links {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.8rem 1.25rem;
 }
 
 .engineering-work-link {
@@ -71,6 +202,36 @@
 }
 
 @media (max-width: 768px) {
+  .engineering-work-list {
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 0;
+  }
+
+  .engineering-work-item {
+    padding: var(--space-md) 0 var(--space-lg);
+  }
+
+  .engineering-work-item + .engineering-work-item {
+    padding-top: var(--space-lg);
+    padding-left: 0;
+
+    border-top: 1px solid var(--color-border);
+    border-left: 0;
+  }
+
+  .engineering-work-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .engineering-work-item--featured h3 {
+    font-size: 1.45rem;
+  }
+
+  .engineering-work-evidence {
+    max-width: 100%;
+  }
+
   .engineering-work-description,
   .engineering-work-summary {
     font-size: 1rem;

@@ -238,28 +238,60 @@ test.describe("navigation", () => {
     }
   });
 
-  test("engineering work links to the inspectable portfolio repository", async ({
+  test("engineering work links to each inspectable repository", async ({
     page,
   }) => {
     await page.goto("/#engineering-work");
 
     const engineeringWork = page.locator("#engineering-work");
-    const repositoryLink = engineeringWork.getByRole("link", {
-      name: "View the source on GitHub",
-    });
 
     await expect(
       engineeringWork.getByRole("heading", {
         level: 2,
+        name: "Engineering work",
+      }),
+    ).toBeVisible();
+
+    const labLink = engineeringWork.getByRole("link", {
+      name: "View the lab on GitHub",
+    });
+    const portfolioLink = engineeringWork.getByRole("link", {
+      name: "View portfolio source on GitHub",
+    });
+
+    await expect(
+      engineeringWork.getByRole("heading", {
+        level: 3,
+        name: "Webhook Reliability Lab",
+      }),
+    ).toBeVisible();
+    await expect(
+      engineeringWork.getByRole("heading", {
+        level: 3,
         name: "This portfolio, treated as a product.",
       }),
     ).toBeVisible();
-    await expect(repositoryLink).toHaveAttribute(
+
+    await expect(labLink).toHaveAttribute(
+      "href",
+      "https://github.com/smunyao/webhook-reliability-lab",
+    );
+    await expect(portfolioLink).toHaveAttribute(
       "href",
       "https://github.com/smunyao/kitaka-portfolio",
     );
-    await expect(repositoryLink).toHaveAttribute("target", "_blank");
-    await expect(repositoryLink).toHaveAttribute("rel", "noopener noreferrer");
+
+    await expect(
+      engineeringWork.getByText("Duplicate acknowledged · 1 event processed"),
+    ).toBeVisible();
+
+    for (const repositoryLink of [labLink, portfolioLink]) {
+      await expect(repositoryLink).toHaveAttribute("target", "_blank");
+      await expect(repositoryLink).toHaveAttribute(
+        "rel",
+        "noopener noreferrer",
+      );
+    }
   });
 
   for (const caseStudy of caseStudies) {

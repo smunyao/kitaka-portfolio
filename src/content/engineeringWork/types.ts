@@ -3,6 +3,18 @@ export type EngineeringProject = {
   title: string;
   description: string;
   summary: string;
-  repositoryUrl: string;
+  featured?: boolean;
+  evidence?: {
+    label: string;
+    items: {
+      label: string;
+      value: string;
+    }[];
+    summary: string;
+  };
+  links: {
+    label: string;
+    url: string;
+  }[];
   technologies: string[];
 };
