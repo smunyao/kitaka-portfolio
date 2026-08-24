@@ -342,15 +342,15 @@ test.describe("accessibility", () => {
     await page.setViewportSize({ width: 320, height: 720 });
     await page.goto("/#engineering-work");
 
-    const repositoryLink = page.getByRole("link", {
-      name: "View the source on GitHub",
+    const labLink = page.getByRole("link", {
+      name: "View the lab on GitHub",
     });
 
-    await repositoryLink.focus();
+    await labLink.focus();
 
-    await expect(repositoryLink).toBeFocused();
-    await expect(repositoryLink).toHaveCSS("outline-style", "solid");
-    await expect(repositoryLink).toHaveCSS("outline-width", "3px");
+    await expect(labLink).toBeFocused();
+    await expect(labLink).toHaveCSS("outline-style", "solid");
+    await expect(labLink).toHaveCSS("outline-width", "3px");
 
     const horizontalOverflow = await page.evaluate(
       () => document.documentElement.scrollWidth - window.innerWidth,
