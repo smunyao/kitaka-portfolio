@@ -9,6 +9,15 @@ export interface RouteMetadata {
   imageLabel: string;
   imageTitle: string;
   imageAccent: string;
+  structuredData?:
+    | {
+        kind: "profile";
+      }
+    | {
+        kind: "article" | "blog-posting";
+        headline: string;
+        datePublished?: string;
+      };
 }
 
 export const routeMetadata = metadata as Record<string, RouteMetadata>;

@@ -347,6 +347,8 @@ assistive-technology review remains necessary.
 - [ ] Confirm article and case-study metadata matches visible content.
 - [ ] Confirm error pages use `noindex` and do not declare invalid canonicals.
 - [ ] Check Open Graph data and the social image after metadata changes.
+- [ ] Confirm structured data matches content that is visible on the page.
+- [ ] Inspect raw HTML when crawler-visible metadata or JSON-LD changes.
 - [ ] Confirm `robots.txt` and `sitemap.xml` remain reachable and accurate.
 
 Do not use an error page's Lighthouse SEO score as a release target. Lighthouse
@@ -373,7 +375,7 @@ is the intended behaviour for these pages.
 - [ ] Inspect the browser console for new errors or warnings.
 - [ ] Confirm expected response headers and status codes where hosting behaviour
       matters.
-- [ ] Confirm preview deployments include indexing protection.
+- [ ] Confirm preview deployments return `X-Robots-Tag: noindex`.
 
 ## Exploratory testing
 

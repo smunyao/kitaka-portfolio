@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+import { buildStructuredData } from "../content/buildStructuredData";
 import { getRouteMetadata } from "../content/routeMetadata";
 
 interface PublicPageSeoProps {
@@ -56,6 +57,27 @@ function removeSocialMetadata() {
     .forEach((element) => element.remove());
 }
 
+function updateStructuredData(data: object | undefined) {
+  const existing = document.head.querySelector<HTMLScriptElement>(
+    "#structured-data",
+  );
+
+  if (!data) {
+    existing?.remove();
+    return;
+  }
+
+  const element = existing ?? document.createElement("script");
+
+  element.id = "structured-data";
+  element.type = "application/ld+json";
+  element.textContent = JSON.stringify(data);
+
+  if (!existing) {
+    document.head.appendChild(element);
+  }
+}
+
 function Seo(props: SeoProps) {
   useEffect(() => {
     if (props.noIndex) {
@@ -64,12 +86,12 @@ function Seo(props: SeoProps) {
       upsertMeta("name", "robots", "noindex, follow");
       document.head.querySelector('link[rel="canonical"]')?.remove();
       removeSocialMetadata();
+      updateStructuredData(undefined);
       return;
     }
 
-    const { title, description, type, image, imageAlt } = getRouteMetadata(
-      props.path,
-    );
+    const metadata = getRouteMetadata(props.path);
+    const { title, description, type, image, imageAlt } = metadata;
     const canonicalUrl = `${BASE_URL}${props.path}`;
     const imageUrl = `${BASE_URL}${image}`;
 
@@ -96,6 +118,8 @@ function Seo(props: SeoProps) {
     upsertMeta("name", "twitter:description", description);
     upsertMeta("name", "twitter:image", imageUrl);
     upsertMeta("name", "twitter:image:alt", imageAlt);
+
+    updateStructuredData(buildStructuredData(props.path, metadata));
   }, [props]);
 
   return null;
