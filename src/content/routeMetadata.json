@@ -7,7 +7,10 @@
     "imageAlt": "Kitaka Munyao — quality engineering, product thinking and collaboration.",
     "imageLabel": "Quality Engineer",
     "imageTitle": "Quality engineering, product thinking and collaboration.",
-    "imageAccent": "#d28a9d"
+    "imageAccent": "#d28a9d",
+    "structuredData": {
+      "kind": "profile"
+    }
   },
   "/how-i-work": {
     "title": "How I work | Kitaka",
@@ -37,7 +40,12 @@
     "imageAlt": "Testing is information, not approval — an article by Kitaka Munyao.",
     "imageLabel": "Writing",
     "imageTitle": "Testing is information, not approval",
-    "imageAccent": "#d28a9d"
+    "imageAccent": "#d28a9d",
+    "structuredData": {
+      "kind": "blog-posting",
+      "headline": "Testing is information, not approval",
+      "datePublished": "2026-08-13"
+    }
   },
   "/writing/testing-connected-workflows": {
     "title": "Testing connected workflows | Kitaka",
@@ -47,7 +55,12 @@
     "imageAlt": "Testing connected workflows — an article by Kitaka Munyao.",
     "imageLabel": "Writing",
     "imageTitle": "Testing connected workflows",
-    "imageAccent": "#d28a9d"
+    "imageAccent": "#d28a9d",
+    "structuredData": {
+      "kind": "blog-posting",
+      "headline": "Testing connected workflows",
+      "datePublished": "2026-08-24"
+    }
   },
   "/case-studies/harvest": {
     "title": "Building confidence across a connected product ecosystem | Harvest | Kitaka",
@@ -57,7 +70,11 @@
     "imageAlt": "Building confidence across a connected product ecosystem — Kitaka Munyao's Harvest case study.",
     "imageLabel": "Case study · Harvest",
     "imageTitle": "Building confidence across a connected product ecosystem",
-    "imageAccent": "#fa5d00"
+    "imageAccent": "#fa5d00",
+    "structuredData": {
+      "kind": "article",
+      "headline": "Building confidence across a connected product ecosystem"
+    }
   },
   "/case-studies/chili-piper": {
     "title": "Understanding systems before testing them | Chili Piper | Kitaka",
@@ -67,7 +84,11 @@
     "imageAlt": "Quality begins with understanding the system — Kitaka Munyao's Chili Piper case study.",
     "imageLabel": "Case study · Chili Piper",
     "imageTitle": "Quality begins with understanding the system",
-    "imageAccent": "#ff5721"
+    "imageAccent": "#ff5721",
+    "structuredData": {
+      "kind": "article",
+      "headline": "Quality begins with understanding the system"
+    }
   },
   "/case-studies/sitemate": {
     "title": "Building quality practices that scale | Sitemate | Kitaka",
@@ -77,6 +98,10 @@
     "imageAlt": "Building quality from the ground up — Kitaka Munyao's Sitemate case study.",
     "imageLabel": "Case study · Sitemate",
     "imageTitle": "Building quality from the ground up",
-    "imageAccent": "#0085e8"
+    "imageAccent": "#0085e8",
+    "structuredData": {
+      "kind": "article",
+      "headline": "Building quality from the ground up"
+    }
   }
 }

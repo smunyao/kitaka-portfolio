@@ -2,6 +2,8 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { buildStructuredData } from "../src/content/buildStructuredData.ts";
+
 const projectRoot = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
   "..",
@@ -34,8 +36,9 @@ const renderPublicMetadata = (publicPath) => {
 
   const canonicalUrl = `${baseUrl}${publicPath}`;
   const imageUrl = `${baseUrl}${metadata.image}`;
+  const structuredData = buildStructuredData(publicPath, metadata);
 
-  return [
+  const tags = [
     `<meta name="description" content="${escapeAttribute(metadata.description)}" />`,
     '<meta name="author" content="Kitaka Munyao" />',
     `<link rel="canonical" href="${escapeAttribute(canonicalUrl)}" />`,
@@ -54,7 +57,17 @@ const renderPublicMetadata = (publicPath) => {
     `<meta name="twitter:description" content="${escapeAttribute(metadata.description)}" />`,
     `<meta name="twitter:image" content="${escapeAttribute(imageUrl)}" />`,
     `<meta name="twitter:image:alt" content="${escapeAttribute(metadata.imageAlt)}" />`,
-  ].join("\n    ");
+  ];
+
+  if (structuredData) {
+    const json = JSON.stringify(structuredData).replaceAll("<", "\\u003c");
+
+    tags.push(
+      `<script id="structured-data" type="application/ld+json">${json}</script>`,
+    );
+  }
+
+  return tags.join("\n    ");
 };
 
 const injectMetadata = (html, title, metadata) =>

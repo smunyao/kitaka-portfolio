@@ -44,6 +44,33 @@ const publicRoutes = [
   },
 ];
 
+const structuredRoutes = [
+  {
+    path: "/",
+    type: "ProfilePage",
+  },
+  {
+    path: "/writing/testing-is-information-not-approval",
+    type: "BlogPosting",
+  },
+  {
+    path: "/writing/testing-connected-workflows",
+    type: "BlogPosting",
+  },
+  {
+    path: "/case-studies/harvest",
+    type: "Article",
+  },
+  {
+    path: "/case-studies/chili-piper",
+    type: "Article",
+  },
+  {
+    path: "/case-studies/sitemate",
+    type: "Article",
+  },
+];
+
 test.describe("crawler-visible metadata", () => {
   for (const route of publicRoutes) {
     test(`${route.path} includes social metadata in its HTML response`, async ({
@@ -87,6 +114,86 @@ test.describe("crawler-visible metadata", () => {
     expect(html).not.toContain('rel="canonical"');
     expect(html).not.toContain('property="og:');
     expect(html).not.toContain('name="twitter:');
+    expect(html).not.toContain('type="application/ld+json"');
+  });
+
+  for (const route of structuredRoutes) {
+    test(`${route.path} includes supported structured data in its HTML response`, async ({
+      request,
+    }) => {
+      const response = await request.get(route.path);
+      const html = await response.text();
+      const match = html.match(
+        /<script id="structured-data" type="application\/ld\+json">(.*?)<\/script>/,
+      );
+
+      expect(match).not.toBeNull();
+
+      const data = JSON.parse(match![1]);
+
+      expect(data["@context"]).toBe("https://schema.org");
+
+      if (route.type === "ProfilePage") {
+        const profile = data["@graph"].find(
+          (item: { "@type": string }) => item["@type"] === "ProfilePage",
+        );
+
+        expect(profile.mainEntity).toMatchObject({
+          "@type": "Person",
+          name: "Kitaka Munyao",
+          jobTitle: "Quality Engineer",
+        });
+        expect(profile.mainEntity.sameAs).toEqual([
+          "https://www.linkedin.com/in/sylvester-munyao/",
+          "https://github.com/smunyao",
+        ]);
+      } else {
+        expect(data["@type"]).toBe(route.type);
+        expect(data.mainEntityOfPage).toBe(
+          `https://kitakamunyao.com${route.path}`,
+        );
+        expect(data.author).toMatchObject({
+          "@type": "Person",
+          name: "Kitaka Munyao",
+          url: "https://kitakamunyao.com/",
+        });
+        expect(data.headline).toBeTruthy();
+        expect(data.description).toBeTruthy();
+        expect(data.image).toMatch(/^https:\/\/kitakamunyao\.com\/social\//);
+      }
+    });
+  }
+
+  test("index routes omit unsupported structured data", async ({ request }) => {
+    for (const path of ["/how-i-work", "/writing"]) {
+      const html = await request.get(path).then((response) => response.text());
+
+      expect(html).not.toContain('type="application/ld+json"');
+    }
+  });
+
+  test("robots and sitemap describe the complete public search surface", async ({
+    request,
+  }) => {
+    const robots = await request.get("/robots.txt");
+    const sitemap = await request.get("/sitemap.xml");
+    const sitemapXml = await sitemap.text();
+    const sitemapUrls = [...sitemapXml.matchAll(/<loc>(.*?)<\/loc>/g)].map(
+      ([, url]) => url,
+    );
+
+    expect(robots.status()).toBe(200);
+    await expect(robots.text()).resolves.toContain("User-agent: *\nAllow: /");
+    await expect(robots.text()).resolves.toContain(
+      "Sitemap: https://kitakamunyao.com/sitemap.xml",
+    );
+    expect(sitemap.status()).toBe(200);
+    expect(sitemapUrls.toSorted()).toEqual(
+      publicRoutes
+        .map((route) => `https://kitakamunyao.com${route.path}`)
+        .toSorted(),
+    );
+    expect(new Set(sitemapUrls).size).toBe(sitemapUrls.length);
   });
 });
 
@@ -113,6 +220,9 @@ test("client navigation updates and restores social metadata", async ({
     "content",
     "Testing connected workflows | Kitaka",
   );
+  await expect
+    .poll(() => page.locator("#structured-data").textContent())
+    .toContain('"@type":"BlogPosting"');
   await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
     "content",
     "https://kitakamunyao.com/social/testing-connected-workflows.png",
@@ -125,6 +235,7 @@ test("client navigation updates and restores social metadata", async ({
     "noindex, follow",
   );
   await expect(page.locator('meta[property^="og:"]')).toHaveCount(0);
+  await expect(page.locator("#structured-data")).toHaveCount(0);
 
   await page.getByRole("link", { name: "Return to the homepage" }).click();
   await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
@@ -136,4 +247,7 @@ test("client navigation updates and restores social metadata", async ({
     "href",
     "https://kitakamunyao.com/",
   );
+  await expect
+    .poll(() => page.locator("#structured-data").textContent())
+    .toContain('"@type":"ProfilePage"');
 });
