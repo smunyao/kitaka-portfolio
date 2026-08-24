@@ -40,8 +40,6 @@
 .experience-headline {
   grid-column: 1 / -1;
 
-  max-width: 52rem;
-
   margin: 0 0 var(--space-xs);
 
   color: var(--color-text);
@@ -55,8 +53,6 @@
 .experience-context {
   grid-column: 1 / -1;
 
-  max-width: 52rem;
-
   margin-bottom: var(--space-sm);
 
   color: var(--color-text);
@@ -67,8 +63,6 @@
 
 .experience-summary {
   grid-column: 1 / -1;
-
-  max-width: 52rem;
 
   margin-bottom: var(--space-sm);
 

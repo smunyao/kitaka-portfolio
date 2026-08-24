@@ -33,8 +33,6 @@
 }
 
 .writing-summary {
-  max-width: 38rem;
-
   color: var(--color-text);
 
   font-size: 1.2rem;
@@ -96,8 +94,6 @@
 }
 
 .writing-item h2 {
-  max-width: 43rem;
-
   margin-bottom: 1rem;
 
   font-family:
@@ -132,8 +128,6 @@
 }
 
 .writing-item-description {
-  max-width: 39rem;
-
   margin-bottom: 1.5rem;
 
   font-size: 1rem;

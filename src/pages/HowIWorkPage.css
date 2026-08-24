@@ -22,10 +22,6 @@
   letter-spacing: -0.8px;
 }
 
-.how-i-work-introduction {
-  max-width: var(--content-width);
-}
-
 .how-i-work-introduction p {
   margin-bottom: var(--space-md);
 
@@ -44,8 +40,6 @@
 }
 
 .how-i-work-section {
-  max-width: var(--content-width);
-
   margin-bottom: var(--space-xl);
 }
 
