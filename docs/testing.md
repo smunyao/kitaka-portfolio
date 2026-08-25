@@ -95,17 +95,24 @@ change the result.
 The Playwright suite currently covers:
 
 - direct loading of every public route;
-- the homepage, How I work, Writing, the current article, and every case study;
+- the homepage, How I work, Writing, every published article, and every case
+  study;
 - expected primary headings and a single `<h1>` per page;
 - primary navigation and hash navigation;
-- directional links and browser Back and Forward behaviour;
+- directional and contextual continuation links;
+- browser Back and Forward behaviour;
 - links from each experience entry to the correct internal case study;
+- inspectable engineering-work repositories;
+- direct email, résumé-request, and professional-profile destinations;
 - unknown top-level, article, and case-study routes;
 - contextual error headings, metadata, and recovery links;
+- crawler-visible social metadata, structured data, sitemap, and robots
+  behaviour;
 - skip-link order and focus movement;
-- visible keyboard focus on critical recovery navigation;
+- visible keyboard focus on critical recovery, contact, and content navigation;
 - reduced-motion behaviour for the homepage hero;
-- horizontal overflow at representative viewports.
+- horizontal overflow and shared page-frame alignment at representative
+  viewports.
 
 The suite does not request external company websites. External availability is
 outside the portfolio's control and would introduce false failures. Where an
