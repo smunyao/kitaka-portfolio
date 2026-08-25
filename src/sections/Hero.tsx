@@ -19,7 +19,11 @@ function Hero() {
         href="#experience"
         aria-label="Continue to experience"
       >
-        <span className="hero-continuation-track" aria-hidden="true" />
+        <span className="hero-continuation-track" aria-hidden="true">
+          <span className="hero-continuation-chevron" />
+          <span className="hero-continuation-chevron" />
+          <span className="hero-continuation-chevron" />
+        </span>
       </a>
     </section>
   );
