@@ -506,6 +506,27 @@ test.describe("navigation", () => {
     ).toHaveAttribute("href", "https://github.com/smunyao");
   });
 
+  test("contact provides direct email and résumé-request routes", async ({
+    page,
+  }) => {
+    await page.goto("/#contact");
+
+    const contact = page.locator("#contact");
+
+    await expect(
+      contact.getByRole("link", { name: "Send me an email" }),
+    ).toHaveAttribute(
+      "href",
+      "mailto:sylv.munyao@gmail.com?subject=%5BPortfolio%5D%20Let's%20connect",
+    );
+    await expect(
+      contact.getByRole("link", { name: "request a copy of my résumé" }),
+    ).toHaveAttribute(
+      "href",
+      "mailto:sylv.munyao@gmail.com?subject=%5BPortfolio%5D%20R%C3%A9sum%C3%A9%20request",
+    );
+  });
+
   test("browser Back and Forward preserve navigation history", async ({
     page,
   }) => {
