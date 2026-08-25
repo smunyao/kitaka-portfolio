@@ -34,7 +34,10 @@
 }
 
 .featured-writing-article h3 a:hover {
-  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
 }
 
 .featured-writing-description {

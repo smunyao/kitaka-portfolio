@@ -18,33 +18,13 @@ function Contact() {
         {contactContent.intro}{" "}
         <a href={`mailto:${site.contact.email}?subject=${emailSubject}`}>
           Send me an email
-        </a>{" "}
-        to continue the conversation, or{" "}
+        </a>
+        {", or "}
         <a href={`mailto:${site.contact.email}?subject=${resumeSubject}`}>
           request a copy of my résumé
         </a>
         .
       </p>
-
-      <div className="contact-links" aria-label="Professional profiles">
-        <a
-          href={site.social.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>LinkedIn</span>
-          <span className="contact-link-arrow" aria-hidden="true">
-            ↗
-          </span>
-        </a>
-
-        <a href={site.social.github} target="_blank" rel="noopener noreferrer">
-          <span>GitHub</span>
-          <span className="contact-link-arrow" aria-hidden="true">
-            ↗
-          </span>
-        </a>
-      </div>
     </section>
   );
 }

@@ -155,11 +155,19 @@ the visitor receives a direct invitation to continue the conversation.
 
 ### Contact
 
-**Purpose:** Convert interest into a professional conversation.
+**Purpose:** Give interested visitors a clear, human route into a professional
+conversation.
 
-The section provides direct email and résumé-request actions, together with
-LinkedIn and GitHub profiles. Later positioning work may make availability for
-opportunities more explicit without changing the section's structural role.
+The section supports conversations about the work, collaboration and
+professional opportunities. Email remains the primary route, with a separate
+email request for the résumé so access stays intentional. LinkedIn and GitHub
+remain available in the footer rather than being repeated in the closing
+section.
+
+A contact form is not currently justified by an observed visitor problem. It
+would introduce spam prevention, privacy, data-retention and service-failure
+requirements without improving on the direct email route. This decision can be
+revisited if real contact behaviour demonstrates a need.
 
 ## Content audit
 

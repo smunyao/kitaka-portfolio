@@ -1,31 +1,22 @@
 .contact h2 {
-  max-width: 42rem;
-
   margin-bottom: var(--space-md);
 
   letter-spacing: -0.45px;
 }
 
-.contact p:not(.section-eyebrow) {
-  max-width: var(--content-width);
-
-  margin-bottom: var(--space-md);
-
+.contact p {
   line-height: 1.7;
 }
 
 .contact-copy {
-  max-width: 42rem;
+  margin-bottom: var(--space-md);
 
   font-size: 1.0625rem;
 }
 
-.contact-copy a,
-.contact-links a {
+.contact-copy a {
   display: inline-flex;
   align-items: center;
-
-  gap: 0.3rem;
 
   padding-bottom: 0.2rem;
 
@@ -34,48 +25,19 @@
   color: var(--color-heading);
   text-decoration: none;
 
-  font-size: 0.9rem;
+  font-size: inherit;
   font-weight: 500;
 
   transition: border-color var(--transition);
 }
 
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
-
-  margin-top: var(--space-md);
-
-  gap: var(--space-md);
-}
-
-.contact-copy a {
-  font-size: inherit;
-}
-
-.contact-link-arrow {
-  color: currentColor;
-
-  transition:
-    color var(--transition),
-    transform var(--transition);
-}
-
-.contact-copy a:hover,
-.contact-links a:hover {
+.contact-copy a:hover {
   color: var(--color-heading);
 
   border-bottom-color: var(--color-accent);
 }
 
-.contact-links a:hover .contact-link-arrow {
-  color: var(--color-accent);
-
-  transform: translate(2px, -2px);
-}
-
-.contact-copy a:focus-visible,
-.contact-links a:focus-visible {
+.contact-copy a:focus-visible {
   outline: 3px solid var(--color-accent);
   outline-offset: 4px;
 
@@ -83,25 +45,13 @@
   border-bottom-color: var(--color-accent);
 }
 
-.contact-links a:focus-visible .contact-link-arrow {
-  color: var(--color-accent);
-
-  transform: translate(2px, -2px);
-}
-
 @media (max-width: 768px) {
   .contact h2 {
     margin-bottom: var(--space-sm);
   }
 
-  .contact p:not(.section-eyebrow) {
-    margin-bottom: var(--space-sm);
-
+  .contact-copy {
     font-size: 1rem;
     line-height: 1.65;
-  }
-
-  .contact-links {
-    gap: var(--space-sm);
   }
 }

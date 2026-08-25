@@ -4,7 +4,6 @@ export const site = {
 
   contact: {
     email: "sylv.munyao@gmail.com",
-    preferredMethod: "Email is usually the quickest way to reach me.",
   },
 
   social: {

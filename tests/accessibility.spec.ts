@@ -389,6 +389,30 @@ test.describe("accessibility", () => {
     expect(horizontalOverflow).toBeLessThanOrEqual(0);
   });
 
+  test("contact routes retain visible focus and a logical tab order", async ({
+    page,
+  }) => {
+    await page.goto("/#contact");
+
+    const contact = page.locator("#contact");
+    const email = contact.getByRole("link", { name: "Send me an email" });
+    const resume = contact.getByRole("link", {
+      name: "request a copy of my résumé",
+    });
+
+    await email.focus();
+
+    await expect(email).toBeFocused();
+    await expect(email).toHaveCSS("outline-style", "solid");
+    await expect(email).toHaveCSS("outline-width", "3px");
+
+    await page.keyboard.press("Tab");
+
+    await expect(resume).toBeFocused();
+    await expect(resume).toHaveCSS("outline-style", "solid");
+    await expect(resume).toHaveCSS("outline-width", "3px");
+  });
+
   test("mobile footer places professional links after the copyright", async ({
     page,
   }) => {

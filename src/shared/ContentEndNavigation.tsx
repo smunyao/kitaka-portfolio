@@ -21,13 +21,6 @@ function ContentEndNavigation({
 }: ContentEndNavigationProps) {
   return (
     <nav className="content-end-navigation" aria-label={ariaLabel}>
-      <Link className="content-end-navigation-back" to={backTo}>
-        <span className="content-end-navigation-arrow" aria-hidden="true">
-          ←
-        </span>
-        <span>{backLabel}</span>
-      </Link>
-
       <Link className="content-end-navigation-next" to={nextTo}>
         <span className="content-end-navigation-label">{nextLabel}</span>
         <span className="content-end-navigation-title">
@@ -37,6 +30,13 @@ function ContentEndNavigation({
             →
           </span>
         </span>
+      </Link>
+
+      <Link className="content-end-navigation-back" to={backTo}>
+        <span className="content-end-navigation-arrow" aria-hidden="true">
+          ←
+        </span>
+        <span>{backLabel}</span>
       </Link>
     </nav>
   );
