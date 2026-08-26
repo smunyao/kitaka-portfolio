@@ -58,8 +58,12 @@
   animation-delay: 160ms;
 }
 
-.hero-continuation {
+.hero-signature {
   animation-delay: 240ms;
+}
+
+.hero-continuation {
+  animation-delay: 320ms;
 }
 
 .hero h1 {
@@ -74,12 +78,22 @@
 .hero-intro {
   max-width: 44rem;
 
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.875rem;
 
   font-size: 22px;
   font-weight: 400;
   line-height: 1.35;
   letter-spacing: -0.15px;
+}
+
+.hero-signature {
+  margin: 0 0 1.125rem;
+
+  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+
+  font-size: 0.95rem;
+  line-height: 1.4;
+  letter-spacing: 0.015em;
 }
 
 .hero-continuation {
@@ -223,6 +237,10 @@
     line-height: 1.4;
   }
 
+  .hero-signature {
+    margin-bottom: 1rem;
+  }
+
 }
 
 @media (max-height: 500px) and (orientation: landscape) {
@@ -245,12 +263,18 @@
   .hero-intro {
     max-width: 40rem;
 
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
 
     font-size: 18px;
   }
 
+  .hero-signature {
+    margin-bottom: 0.25rem;
+
+    font-size: 0.875rem;
+  }
+
   .hero-continuation {
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
   }
 }
