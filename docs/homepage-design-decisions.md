@@ -1,10 +1,10 @@
-# Homepage architecture
+# Homepage design decisions
 
 ## Purpose
 
 This document records the agreed information architecture for the portfolio
-homepage and the content decisions behind it. It provides the structural
-foundation for the remaining Milestone 4 stories.
+homepage and the development decisions behind it. It describes the current
+structural baseline rather than an active milestone plan.
 
 The homepage should establish Kitaka's quality-engineering position once,
 support it with credible professional evidence, offer deeper material for
@@ -58,9 +58,10 @@ The agreed homepage journey is:
 The primary on-page action is to read a relevant case study. The intended
 visitor outcome is to make contact about a professional opportunity.
 
-The hero does not require a call-to-action. Experience is the next section in
-the document, primary navigation provides direct access to it, and additional
-hero links would duplicate those routes.
+The Hero includes one restrained continuation control. It reveals that content
+follows and links directly to Experience without presenting competing calls to
+action. Primary navigation provides the same destination after the visitor
+begins interacting with the page.
 
 The journey must remain complete when animation is disabled. The fixed hero
 fade enhances the transition but does not communicate unique information or
@@ -139,12 +140,12 @@ technical that can be inspected directly.
 
 ### Engineering Work
 
-**Purpose:** Make the portfolio's source and development history discoverable
-without presenting one project as a mature project catalogue.
+**Purpose:** Make a small set of substantive, inspectable engineering work
+discoverable without presenting it as a mature project catalogue.
 
-The compact section replaces the former long Projects treatment. It links to
-the repository but does not link back to the live site the visitor is already
-using.
+The compact section replaces the former long Projects treatment. It currently
+links to the Webhook Reliability Lab and the portfolio repository, without
+adding project-detail routes that the available content does not justify.
 
 The section can grow when substantive additional projects justify it. It does
 not anticipate filtering, categories, project routes or other infrastructure
@@ -212,18 +213,17 @@ different parts of the practice.
 - Accessibility, responsive design and maintainable engineering are supported
   by the portfolio implementation and repository history.
 
-### Claims requiring stronger evidence
+### Evidence boundaries
 
-- Professional experience entries should communicate contributions and
-  outcomes more clearly.
-- Working-principle claims should be connected to concrete examples where
-  appropriate.
-- Future projects should demonstrate meaningful engineering depth rather than
-  being added to increase apparent volume.
+- Professional contributions and qualitative outcomes are supported through
+  the case studies rather than compressed into unsupported homepage claims.
+- Working principles remain connected to observable practice without turning
+  the homepage into a competency inventory.
+- Engineering work qualifies for inclusion only when it provides inspectable
+  technical depth not already demonstrated elsewhere.
 
-These gaps are assigned to follow-up stories. Unsupported metrics,
-confidential information and invented outcomes must not be introduced to fill
-them.
+Unsupported metrics, confidential information and invented outcomes must not
+be introduced to make the evidence appear stronger.
 
 ## Accessibility and usability decisions
 
@@ -253,8 +253,9 @@ without allowing the next section to intrude. Experience then begins as a clear
 new chapter. Homepage sections use the same order at every viewport; no content
 is reordered visually through CSS.
 
-The primary navigation remains usable at current content volumes. Its mobile
-treatment will receive a dedicated review in Story 4.7.
+The primary navigation remains usable at current content volumes. At narrow
+widths it uses an accessible compact menu rather than allowing links to wrap or
+removing destinations.
 
 ## Visual hierarchy decisions
 
@@ -270,25 +271,19 @@ visual weight.
   below the professional evidence.
 - Writing uses an editorial rule above and below the featured article to make
   the recommendation distinct without introducing a decorative container.
-- Engineering Work remains deliberately compact and uses a quieter heading so
-  one inspectable artefact does not compete with professional experience.
+- Engineering Work remains deliberately compact so the small project set does
+  not compete with professional experience.
 - Contact uses a section rule and closing space to read as the conclusion of
   the homepage journey.
 
-No new evidence component was introduced. The experience summaries and
-descriptive case-study links already communicate the available evidence; a new
-callout would repeat it rather than reveal something useful. This decision
-should be revisited only when a distinct outcome or artefact needs a repeated
-presentation pattern.
+Evidence components are introduced only when they expose useful information.
+The Webhook Reliability Lab delivery example qualifies because it makes a
+technical behaviour inspectable; decorative cards and generic callouts do not.
 
 The hierarchy is communicated through heading scale, spacing, borders and
-document position rather than colour alone. No imagery, shadows, additional
-gradients, animation or JavaScript were added.
-
-The comparative production Lighthouse review is deferred to Story 4.9, where
-the complete milestone will be measured against the established baseline.
-Story 4.6 remains responsible for avoiding new asset or JavaScript weight,
-layout shift and observable responsive regressions.
+document position rather than colour alone. Motion and gradients remain
+restrained enhancements rather than sources of unique information. Release
+measurement is recorded separately in the milestone regression documents.
 
 ## Trade-offs
 
@@ -301,10 +296,10 @@ case studies.
 
 ### Keeping the portfolio as engineering work
 
-Removing Projects entirely made the inspectable repository unnecessarily hard
-to discover. Restoring the former full section would overstate a catalogue that
-currently contains one project. A compact Engineering Work section preserves
-the evidence while remaining honest about its scope.
+Removing Projects entirely made inspectable repositories unnecessarily hard to
+discover. Restoring the former full treatment would overstate the current
+catalogue. A compact Engineering Work section preserves the evidence while
+remaining honest about its scope.
 
 The portfolio is described as evolving rather than assigned a completion
 status. Status metadata will only return if multiple projects make that
@@ -327,11 +322,12 @@ Technology names should be included only when they help a visitor understand
 or inspect the implementation. A second project does not, by itself, justify
 detail routes, filtering, categories or other collection infrastructure.
 
-### Omitting hero actions
+### Limiting hero actions
 
-Links to Experience and How I Work were tested and removed because they
-duplicated the document flow, primary navigation and contextual links. The
-cleaner Hero establishes the position without creating unnecessary choices.
+Competing text links to Experience and How I Work were tested and removed
+because they duplicated the document flow and primary navigation. A single
+animated continuation control now communicates that meaningful content follows
+and links to Experience without turning the Hero into a choice of destinations.
 
 ### Using motion as enhancement
 
@@ -339,34 +335,12 @@ The centred fixed Hero, ambient gradient and fade create a deliberate opening,
 but the architecture does not depend on them. This preserves the experience for
 reduced-motion users and environments where animation is unavailable.
 
-## Follow-up stories
-
-The architecture informs the following Milestone 4 work:
-
-- **4.2 Hero and positioning rewrite:** validate and refine the final
-  positioning language and metadata.
-- **4.3 Experience and outcomes:** strengthen professional evidence and make
-  contributions and outcomes clearer.
-- **4.4 About and working principles:** refine the consolidated principles and
-  the relationship with the dedicated page.
-- **4.5 Projects section direction:** define what qualifies as substantive
-  inspectable engineering work and how the section should grow.
-- **4.6 Homepage visual hierarchy:** refine section rhythm and visual emphasis
-  across the complete page.
-- **4.7 Mobile navigation and hero refinement:** revisit navigation behaviour
-  and complete focused mobile review.
-- **4.9 Milestone regression and measurement:** perform final accessibility,
-  responsive, performance and behavioural verification.
-
-No remaining implementation story is blocked by an unresolved homepage
-structural decision.
-
 ## Navigation, routing and analytics implications
 
 - The homepage hash-navigation targets changed to match the revised sections.
 - No new route is required for the homepage architecture.
 - Existing How I Work, Writing, article and case-study routes remain unchanged.
-- Engineering Work links directly to the existing external repository.
+- Engineering Work links directly to the relevant external repositories.
 - If section-level analytics are introduced later, events should measure useful
   actions such as case-study selection, article selection, repository visits
   and contact actions rather than passive section visibility.
