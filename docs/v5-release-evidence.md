@@ -1,4 +1,4 @@
-# Milestone 5 regression and reach measurement
+# v5.0.0 release evidence
 
 ## Purpose
 
@@ -13,10 +13,10 @@ approval.
 - **Regression branch:** `feature/story-5-9-milestone-regression`
 - **Baseline release:** `v4.0.0`
 - **Merged Milestone 5 candidate:** `5f8fbaa1fab7366d02b6cd9f3578823e2c66d4fc`
-- **Approved commit:** To be recorded after the regression pull request is
-  approved
+- **Approved commit:** `514ed752a28a5ff528e61fa948c444bf52cdf2c6`
 - **Cloudflare preview:** `https://52959957.kitaka-portfolio.pages.dev`
-- **Production commit:** To be recorded after deployment
+- **Production commit:** `514ed752a28a5ff528e61fa948c444bf52cdf2c6`
+- **Release:** `v5.0.0 — Content and Reach`
 
 ## Scope
 
@@ -150,7 +150,7 @@ viewport-dependent content loss.
 - [x] `robots.txt` and `sitemap.xml` describe the intended public surface.
 - [x] Error pages remain `noindex` without invalid canonicals.
 - [x] Cloudflare preview responses include `X-Robots-Tag: noindex`.
-- [ ] The deployed commit matches the approved commit.
+- [x] The deployed commit matches the approved commit.
 
 ## Performance and asset evidence
 
@@ -208,4 +208,4 @@ Milestone 5 is ready to close only when:
 - manual and automated evidence is complete; and
 - follow-up work is captured in explicit issues.
 
-**Decision:** Pending
+**Decision:** Approved and released as `v5.0.0`.

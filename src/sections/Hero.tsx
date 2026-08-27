@@ -14,6 +14,8 @@ function Hero() {
         uncover risk early and ship with confidence.
       </p>
 
+      <p className="hero-signature">— Kitaka</p>
+
       <a
         className="hero-continuation"
         href="#experience"
