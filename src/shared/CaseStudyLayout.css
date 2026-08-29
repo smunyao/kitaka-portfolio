@@ -104,16 +104,6 @@
   line-height: 1.55;
 }
 
-.case-study-company p + p {
-  margin-top: 0.2rem;
-}
-
-.case-study-company p:last-child {
-  color: color-mix(in srgb, var(--color-text) 72%, transparent);
-
-  font-size: 0.85rem;
-}
-
 .case-study-sidebar-section {
   padding-top: var(--space-md);
 

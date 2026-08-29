@@ -7,7 +7,6 @@ export const chiliPiperCaseStudy: CaseStudy = {
   companyUrl: "https://www.chilipiper.com",
 
   role: "QA Analyst",
-  period: "2022–2024",
 
   title: "Quality begins with understanding the system",
 

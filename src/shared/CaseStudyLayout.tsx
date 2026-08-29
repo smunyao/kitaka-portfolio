@@ -44,7 +44,6 @@ function CaseStudyDetails({
         <div className="case-study-company">
           <h2>{caseStudy.company}</h2>
           <p>{caseStudy.role}</p>
-          <p>{caseStudy.period}</p>
         </div>
       )}
 
@@ -97,10 +96,7 @@ function CaseStudyLayout({ caseStudy, nextCaseStudy }: CaseStudyLayoutProps) {
       </header>
 
       <div className="case-study-mobile-context">
-        <p className="case-study-mobile-meta">
-          <span>{caseStudy.role}</span> <span aria-hidden="true">·</span>{" "}
-          <span>{caseStudy.period}</span>
-        </p>
+        <p className="case-study-mobile-meta">{caseStudy.role}</p>
 
         <details
           className="case-study-mobile-details"
