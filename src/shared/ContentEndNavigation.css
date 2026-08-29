@@ -114,6 +114,11 @@
   color: var(--color-accent);
 }
 
+.content-end-navigation-next:hover .content-end-navigation-arrow,
+.content-end-navigation-next:focus-visible .content-end-navigation-arrow {
+  color: var(--content-end-next-accent);
+}
+
 .content-end-navigation-back:hover .content-end-navigation-arrow,
 .content-end-navigation-back:focus-visible .content-end-navigation-arrow {
   transform: translateX(-2px);
