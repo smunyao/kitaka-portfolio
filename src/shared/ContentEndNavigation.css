@@ -38,6 +38,8 @@
 }
 
 .content-end-navigation-next {
+  --content-end-next-accent: var(--color-accent);
+
   display: flex;
   flex-direction: column;
   grid-column: 2;
@@ -48,6 +50,18 @@
   max-width: 24rem;
 
   text-align: right;
+}
+
+.content-end-navigation-next[data-accent="harvest"] {
+  --content-end-next-accent: var(--company-harvest);
+}
+
+.content-end-navigation-next[data-accent="chili-piper"] {
+  --content-end-next-accent: var(--company-chili-piper);
+}
+
+.content-end-navigation-next[data-accent="sitemate"] {
+  --content-end-next-accent: var(--company-sitemate);
 }
 
 .content-end-navigation-label {
@@ -90,7 +104,7 @@
   .content-end-navigation-title
   .content-end-navigation-arrow {
   text-decoration: underline;
-  text-decoration-color: var(--color-accent);
+  text-decoration-color: var(--content-end-next-accent);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.16em;
 }

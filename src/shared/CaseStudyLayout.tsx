@@ -150,6 +150,7 @@ function CaseStudyLayout({ caseStudy, nextCaseStudy }: CaseStudyLayoutProps) {
         nextTo={`/case-studies/${nextCaseStudy.slug}`}
         nextLabel="Another case study"
         nextTitle={`${nextCaseStudy.company} — ${nextCaseStudy.title}`}
+        nextAccent={nextCaseStudy.slug}
         ariaLabel="Continue exploring case studies"
       />
     </article>
