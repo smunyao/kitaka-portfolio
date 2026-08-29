@@ -39,6 +39,7 @@
 
 .content-end-navigation-next {
   --content-end-next-accent: var(--color-accent);
+  --content-end-link-accent: var(--content-end-next-accent);
 
   display: flex;
   flex-direction: column;
@@ -111,12 +112,7 @@
 
 .content-end-navigation a:hover .content-end-navigation-arrow,
 .content-end-navigation a:focus-visible .content-end-navigation-arrow {
-  color: var(--color-accent);
-}
-
-.content-end-navigation-next:hover .content-end-navigation-arrow,
-.content-end-navigation-next:focus-visible .content-end-navigation-arrow {
-  color: var(--content-end-next-accent);
+  color: var(--content-end-link-accent, var(--color-accent));
 }
 
 .content-end-navigation-back:hover .content-end-navigation-arrow,
