@@ -7,7 +7,6 @@ export const harvestCaseStudy: CaseStudy = {
   companyUrl: "https://www.getharvest.com",
 
   role: "Quality Engineer",
-  period: "2019–2025",
 
   title: "Building confidence across a connected product ecosystem",
 

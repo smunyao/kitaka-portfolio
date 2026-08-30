@@ -249,9 +249,6 @@ test.describe("accessibility", () => {
     await expect(
       mobileContext.getByText("QA Engineer and Lead", { exact: true }),
     ).toBeVisible();
-    await expect(
-      mobileContext.getByText("2019–2022", { exact: true }),
-    ).toBeVisible();
 
     const details = page.locator(".case-study-mobile-details");
     const summary = page.getByText("Product and focus details", {

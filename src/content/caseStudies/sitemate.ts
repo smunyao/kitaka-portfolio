@@ -7,7 +7,6 @@ export const sitemateCaseStudy: CaseStudy = {
   companyUrl: "https://sitemate.com",
 
   role: "QA Engineer and Lead",
-  period: "2019–2022",
 
   title: "Building quality from the ground up",
 

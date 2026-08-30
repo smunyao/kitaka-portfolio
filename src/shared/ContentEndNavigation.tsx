@@ -8,6 +8,7 @@ interface ContentEndNavigationProps {
   nextTo: string;
   nextLabel: string;
   nextTitle: string;
+  nextAccent?: string;
   ariaLabel: string;
 }
 
@@ -17,11 +18,16 @@ function ContentEndNavigation({
   nextTo,
   nextLabel,
   nextTitle,
+  nextAccent,
   ariaLabel,
 }: ContentEndNavigationProps) {
   return (
     <nav className="content-end-navigation" aria-label={ariaLabel}>
-      <Link className="content-end-navigation-next" to={nextTo}>
+      <Link
+        className="content-end-navigation-next"
+        data-accent={nextAccent}
+        to={nextTo}
+      >
         <span className="content-end-navigation-label">{nextLabel}</span>
         <span className="content-end-navigation-title">
           {nextTitle}
