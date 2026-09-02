@@ -62,6 +62,21 @@
       "datePublished": "2026-08-24"
     }
   },
+  "/writing/what-an-mvp-should-refuse": {
+    "title": "What an MVP should refuse to do | Kitaka",
+    "description": "Why building a useful first product means making deliberate decisions about what it will not do yet.",
+    "type": "article",
+    "image": "/social/what-an-mvp-should-refuse.png",
+    "imageAlt": "What an MVP should refuse to do — an article by Kitaka Munyao.",
+    "imageLabel": "Writing",
+    "imageTitle": "What an MVP should refuse to do",
+    "imageAccent": "#d28a9d",
+    "structuredData": {
+      "kind": "blog-posting",
+      "headline": "What an MVP should refuse to do",
+      "datePublished": "2026-09-02"
+    }
+  },
   "/case-studies/harvest": {
     "title": "Building confidence across a connected product ecosystem | Harvest | Kitaka",
     "description": "How working across Harvest and Forecast shaped my approach to testing interconnected SaaS products, automation and collaborative quality engineering.",

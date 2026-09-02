@@ -27,6 +27,11 @@ const publicRoutes = [
     image: "/social/testing-connected-workflows.png",
   },
   {
+    path: "/writing/what-an-mvp-should-refuse",
+    title: "What an MVP should refuse to do | Kitaka",
+    image: "/social/what-an-mvp-should-refuse.png",
+  },
+  {
     path: "/case-studies/harvest",
     title:
       "Building confidence across a connected product ecosystem | Harvest | Kitaka",
@@ -55,6 +60,10 @@ const structuredRoutes = [
   },
   {
     path: "/writing/testing-connected-workflows",
+    type: "BlogPosting",
+  },
+  {
+    path: "/writing/what-an-mvp-should-refuse",
     type: "BlogPosting",
   },
   {

@@ -27,6 +27,11 @@ const routes = [
     heading: "Testing connected workflows",
   },
   {
+    name: "MVP scope article",
+    path: "/writing/what-an-mvp-should-refuse",
+    heading: "What an MVP should refuse to do",
+  },
+  {
     name: "Harvest case study",
     path: "/case-studies/harvest",
     heading: "Building confidence across a connected product ecosystem",
