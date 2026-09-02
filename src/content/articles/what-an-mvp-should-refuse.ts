@@ -10,7 +10,7 @@ export const whatAnMvpShouldRefuse: Article = {
 
   publishedAt: "2026-09-02",
 
-  readingTime: "5 min read",
+  readingTime: "6 min read",
 
   sections: [
     {

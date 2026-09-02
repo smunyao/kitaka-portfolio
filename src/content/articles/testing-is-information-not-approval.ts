@@ -3,22 +3,22 @@ import type { Article } from "./types";
 export const testingIsInformationNotApproval: Article = {
   slug: "testing-is-information-not-approval",
 
-  title: "Testing is information, not approval",
+  title: "Are we good to go?",
 
   description:
-    "Why testing should inform release decisions rather than turning QA into the final gatekeeper.",
+    "What testing can tell a team when a release needs a decision.",
 
   publishedAt: "2026-08-13",
 
-  readingTime: "6 min read",
+  readingTime: "4 min read",
 
   sections: [
     {
       type: "paragraphs",
       paragraphs: [
-        "One of the most uncomfortable responsibilities that can quietly fall onto a quality engineer is the idea that software becomes safe to release only when QA approves it.",
-        "It often sounds reasonable. Testing usually happens towards the end of a piece of work, QA has often explored more of the product's behaviour by that point, and someone needs to decide whether the release should proceed.",
-        "But I think that framing creates the wrong kind of responsibility.",
+        "Near the end of a release, that question often lands with QA.",
+        "I understand why. Testing usually happens towards the end of a piece of work, the quality engineer may have explored more of the complete change than anyone else, and the team needs to decide whether the release should proceed.",
+        "The question becomes uncomfortable when “good to go” means that the software is safe because QA has approved it.",
         "Testing can tell a team what has been observed, what has not been explored, which behaviours appear reliable, where uncertainty remains, and what risks may still matter. It can provide evidence. It cannot turn uncertainty into certainty.",
       ],
     },
@@ -30,7 +30,7 @@ export const testingIsInformationNotApproval: Article = {
         "When QA becomes the final sign-off point, release responsibility can gradually move away from the people who actually own the product and the engineering decisions behind it.",
         "A release may contain a known limitation, an unresolved edge case, or a dependency that behaves unpredictably. Those things do not automatically mean the product cannot be released. They mean the team needs to understand the consequences and decide whether the remaining risk is acceptable.",
         "That decision usually involves more than testing. Product may understand the customer impact. Engineering may understand the technical exposure. Support may know whether a workaround is realistic. Quality engineering contributes another important perspective, but it is still one perspective.",
-        "If QA alone is expected to approve the release, the team can end up asking the wrong question: 'Did QA pass it?' rather than 'Do we understand this well enough to release it?'",
+        "If QA alone is expected to approve the release, the team can end up asking whether QA passed it rather than whether everyone understands it well enough to release it.",
       ],
     },
 
@@ -39,8 +39,7 @@ export const testingIsInformationNotApproval: Article = {
       heading: "Testing should reduce uncertainty",
       paragraphs: [
         "Useful testing changes what the team knows.",
-        "Sometimes that means confirming that an important workflow still behaves as expected. Sometimes it means discovering an unexpected interaction between systems. Sometimes the outcome of testing is that we still do not understand something well enough and need more investigation.",
-        "That is why I prefer to think about testing in terms of confidence rather than approval.",
+        "That may mean confirming that an important workflow still behaves as expected, discovering an unexpected interaction between systems, or finding that something still needs more investigation.",
         "Confidence can increase when repeated checks show that important behaviour remains stable. It can decrease when exploratory testing reveals assumptions we had not considered. Either outcome is useful because the team now knows more than it did before.",
       ],
     },
@@ -83,8 +82,7 @@ export const testingIsInformationNotApproval: Article = {
       heading: "Approval is attractive because certainty is attractive",
       paragraphs: [
         "I understand why teams fall into approval workflows. A clear gate feels safer. It gives everyone a moment where somebody can say the work is finished and ready.",
-        "Software rarely offers that level of certainty.",
-        "Real users have different environments, data, and workflows. External services change. Production reveals combinations and behaviours that are difficult to reproduce beforehand.",
+        "Software rarely offers that level of certainty. Real users have different environments, data, and workflows. External services change. Production reveals combinations and behaviours that are difficult to reproduce beforehand.",
         "That does not mean we should release carelessly and wait for users to find the problems. It means we should do the work appropriate to the risk, understand the evidence we have, acknowledge what we do not know, and make the release decision deliberately.",
       ],
     },

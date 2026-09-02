@@ -18,7 +18,7 @@ const publicRoutes = [
   },
   {
     path: "/writing/testing-is-information-not-approval",
-    title: "Testing is information, not approval | Kitaka",
+    title: "Are we good to go? | Kitaka",
     image: "/social/testing-is-information-not-approval.png",
   },
   {
