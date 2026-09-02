@@ -29,7 +29,7 @@ const routes = [
   {
     name: "MVP scope article",
     path: "/writing/what-an-mvp-should-refuse",
-    heading: "What an MVP should refuse to do",
+    heading: "A first version takes shape",
   },
   {
     name: "Harvest case study",

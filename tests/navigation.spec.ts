@@ -33,7 +33,7 @@ const caseStudies = [
 
 const articles = [
   {
-    title: "What an MVP should refuse to do",
+    title: "A first version takes shape",
     path: "/writing/what-an-mvp-should-refuse",
   },
   {

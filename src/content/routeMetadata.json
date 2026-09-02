@@ -63,17 +63,17 @@
     }
   },
   "/writing/what-an-mvp-should-refuse": {
-    "title": "What an MVP should refuse to do | Kitaka",
-    "description": "Why building a useful first product means making deliberate decisions about what it will not do yet.",
+    "title": "A first version takes shape | Kitaka",
+    "description": "Notes from building a private product around one accountability loop before its first pilot.",
     "type": "article",
     "image": "/social/what-an-mvp-should-refuse.png",
-    "imageAlt": "What an MVP should refuse to do — an article by Kitaka Munyao.",
+    "imageAlt": "A first version takes shape — an article by Kitaka Munyao.",
     "imageLabel": "Writing",
-    "imageTitle": "What an MVP should refuse to do",
+    "imageTitle": "A first version takes shape",
     "imageAccent": "#d28a9d",
     "structuredData": {
       "kind": "blog-posting",
-      "headline": "What an MVP should refuse to do",
+      "headline": "A first version takes shape",
       "datePublished": "2026-09-02"
     }
   },

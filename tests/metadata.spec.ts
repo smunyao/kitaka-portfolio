@@ -28,7 +28,7 @@ const publicRoutes = [
   },
   {
     path: "/writing/what-an-mvp-should-refuse",
-    title: "What an MVP should refuse to do | Kitaka",
+    title: "A first version takes shape | Kitaka",
     image: "/social/what-an-mvp-should-refuse.png",
   },
   {
