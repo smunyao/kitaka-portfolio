@@ -19,12 +19,17 @@ const routes = [
   {
     name: "testing is information article",
     path: "/writing/testing-is-information-not-approval",
-    heading: "Testing is information, not approval",
+    heading: "Are we good to go?",
   },
   {
     name: "connected workflows article",
     path: "/writing/testing-connected-workflows",
     heading: "Testing connected workflows",
+  },
+  {
+    name: "MVP scope article",
+    path: "/writing/what-an-mvp-should-refuse",
+    heading: "A first version takes shape",
   },
   {
     name: "Harvest case study",

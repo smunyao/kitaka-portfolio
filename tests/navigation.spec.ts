@@ -33,11 +33,15 @@ const caseStudies = [
 
 const articles = [
   {
+    title: "A first version takes shape",
+    path: "/writing/what-an-mvp-should-refuse",
+  },
+  {
     title: "Testing connected workflows",
     path: "/writing/testing-connected-workflows",
   },
   {
-    title: "Testing is information, not approval",
+    title: "Are we good to go?",
     path: "/writing/testing-is-information-not-approval",
   },
 ];
@@ -321,12 +325,12 @@ test.describe("navigation", () => {
 
     const writingSection = page.locator("#writing");
     const featuredArticleLink = writingSection.getByRole("link", {
-      name: "Testing connected workflows",
+      name: "A first version takes shape",
     });
 
     await expect(featuredArticleLink).toHaveAttribute(
       "href",
-      "/writing/testing-connected-workflows",
+      "/writing/what-an-mvp-should-refuse",
     );
   });
 
@@ -461,7 +465,7 @@ test.describe("navigation", () => {
 
     await writingNavigation
       .getByRole("link", {
-        name: /Testing is information, not approval/,
+        name: /Are we good to go\?/,
       })
       .click();
 

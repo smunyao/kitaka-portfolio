@@ -18,13 +18,18 @@ const publicRoutes = [
   },
   {
     path: "/writing/testing-is-information-not-approval",
-    title: "Testing is information, not approval | Kitaka",
+    title: "Are we good to go? | Kitaka",
     image: "/social/testing-is-information-not-approval.png",
   },
   {
     path: "/writing/testing-connected-workflows",
     title: "Testing connected workflows | Kitaka",
     image: "/social/testing-connected-workflows.png",
+  },
+  {
+    path: "/writing/what-an-mvp-should-refuse",
+    title: "A first version takes shape | Kitaka",
+    image: "/social/what-an-mvp-should-refuse.png",
   },
   {
     path: "/case-studies/harvest",
@@ -55,6 +60,10 @@ const structuredRoutes = [
   },
   {
     path: "/writing/testing-connected-workflows",
+    type: "BlogPosting",
+  },
+  {
+    path: "/writing/what-an-mvp-should-refuse",
     type: "BlogPosting",
   },
   {

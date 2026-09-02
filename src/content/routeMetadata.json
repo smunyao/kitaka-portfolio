@@ -33,17 +33,17 @@
     "imageAccent": "#d28a9d"
   },
   "/writing/testing-is-information-not-approval": {
-    "title": "Testing is information, not approval | Kitaka",
-    "description": "Why testing should provide useful information about behaviour and risk rather than act as the final approval step before release.",
+    "title": "Are we good to go? | Kitaka",
+    "description": "What testing can tell a team when a release needs a decision.",
     "type": "article",
     "image": "/social/testing-is-information-not-approval.png",
-    "imageAlt": "Testing is information, not approval — an article by Kitaka Munyao.",
+    "imageAlt": "Are we good to go? — an article by Kitaka Munyao.",
     "imageLabel": "Writing",
-    "imageTitle": "Testing is information, not approval",
+    "imageTitle": "Are we good to go?",
     "imageAccent": "#d28a9d",
     "structuredData": {
       "kind": "blog-posting",
-      "headline": "Testing is information, not approval",
+      "headline": "Are we good to go?",
       "datePublished": "2026-08-13"
     }
   },
@@ -60,6 +60,21 @@
       "kind": "blog-posting",
       "headline": "Testing connected workflows",
       "datePublished": "2026-08-24"
+    }
+  },
+  "/writing/what-an-mvp-should-refuse": {
+    "title": "A first version takes shape | Kitaka",
+    "description": "Notes from building a private product around one accountability loop before its first pilot.",
+    "type": "article",
+    "image": "/social/what-an-mvp-should-refuse.png",
+    "imageAlt": "A first version takes shape — an article by Kitaka Munyao.",
+    "imageLabel": "Writing",
+    "imageTitle": "A first version takes shape",
+    "imageAccent": "#d28a9d",
+    "structuredData": {
+      "kind": "blog-posting",
+      "headline": "A first version takes shape",
+      "datePublished": "2026-09-02"
     }
   },
   "/case-studies/harvest": {
