@@ -17,7 +17,7 @@ const routes = [
     heading: "Writing",
   },
   {
-    name: "testing is information article",
+    name: "release decision article",
     path: "/writing/testing-is-information-not-approval",
     heading: "Are we good to go?",
   },

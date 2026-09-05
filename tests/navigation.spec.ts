@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 const primaryNavigation = [
   { name: "Experience", hash: "#experience" },
-  { name: "How I work", hash: "#how-i-work" },
+  { name: "Engineering", hash: "#engineering-work" },
   { name: "Writing", hash: "#writing" },
   { name: "Contact", hash: "#contact" },
 ];
@@ -173,6 +173,24 @@ test.describe("navigation", () => {
     await expect(page.locator(".site-header")).toHaveCSS("opacity", "1");
   });
 
+  test("homepage evidence follows the agreed narrative order", async ({
+    page,
+  }) => {
+    await page.goto("/");
+
+    const sectionOrder = await page
+      .locator(".home-content > section")
+      .evaluateAll((sections) => sections.map((section) => section.id));
+
+    expect(sectionOrder).toEqual([
+      "experience",
+      "how-i-work",
+      "engineering-work",
+      "writing",
+      "contact",
+    ]);
+  });
+
   test("primary navigation reaches each homepage section", async ({ page }) => {
     await page.goto("/");
     await page.evaluate(() => window.scrollTo(0, 48));
@@ -183,6 +201,17 @@ test.describe("navigation", () => {
       await expect(page).toHaveURL(item.hash);
       await expect(page.locator(item.hash)).toBeInViewport();
     }
+  });
+
+  test("Experience remains active through the contextual How I work section", async ({
+    page,
+  }) => {
+    await page.goto("/#how-i-work");
+
+    await expect(page.locator("#how-i-work")).toBeInViewport();
+    await expect(
+      page.getByRole("link", { name: "Experience", exact: true }),
+    ).toHaveAttribute("aria-current", "location");
   });
 
   test("the Kitaka home link returns to the true top of the homepage", async ({
@@ -231,23 +260,24 @@ test.describe("navigation", () => {
 
     await expect(menuButton).toHaveAttribute("aria-expanded", "true");
 
-    const howIWorkLink = page.getByRole("link", {
-      name: "How I work",
+    const engineeringLink = page.getByRole("link", {
+      name: "Engineering",
       exact: true,
     });
 
-    await expect(howIWorkLink).toBeVisible();
-    await howIWorkLink.click();
+    await expect(engineeringLink).toBeVisible();
+    await engineeringLink.click();
 
-    await expect(page).toHaveURL("/#how-i-work");
+    await expect(page).toHaveURL("/#engineering-work");
     await expect(menuButton).toHaveAttribute("aria-expanded", "false");
 
     const targetPosition = await page.evaluate(() => ({
       headerBottom: document
         .querySelector(".site-header")!
         .getBoundingClientRect().bottom,
-      sectionTop: document.querySelector("#how-i-work")!.getBoundingClientRect()
-        .top,
+      sectionTop: document
+        .querySelector("#engineering-work")!
+        .getBoundingClientRect().top,
     }));
 
     expect(targetPosition.sectionTop).toBeGreaterThanOrEqual(

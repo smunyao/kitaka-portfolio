@@ -4,7 +4,12 @@ import { useActiveSection } from "../hooks/useActiveSection";
 
 import "./Navbar.css";
 
-const SECTION_IDS = ["experience", "how-i-work", "writing", "contact"];
+const SECTION_IDS = [
+  "experience",
+  "engineering-work",
+  "writing",
+  "contact",
+];
 
 function Navbar() {
   const activeSection = useActiveSection(SECTION_IDS);
@@ -150,14 +155,18 @@ function Navbar() {
 
             <li>
               <a
-                href="#how-i-work"
+                href="#engineering-work"
                 onClick={closeMenu}
-                className={activeSection === "how-i-work" ? "active" : ""}
+                className={
+                  activeSection === "engineering-work" ? "active" : ""
+                }
                 aria-current={
-                  activeSection === "how-i-work" ? "location" : undefined
+                  activeSection === "engineering-work"
+                    ? "location"
+                    : undefined
                 }
               >
-                How I work
+                Engineering
               </a>
             </li>
 
