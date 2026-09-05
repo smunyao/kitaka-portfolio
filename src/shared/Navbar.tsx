@@ -7,7 +7,6 @@ import "./Navbar.css";
 const SECTION_IDS = [
   "experience",
   "engineering-work",
-  "how-i-work",
   "writing",
   "contact",
 ];

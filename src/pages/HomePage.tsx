@@ -107,8 +107,8 @@ function HomePage() {
 
           <div ref={contentRef} className="home-content">
             <Experience />
-            <EngineeringWork />
             <WorkingPrinciples />
+            <EngineeringWork />
             <FeaturedWriting />
             <Contact />
           </div>

@@ -185,6 +185,17 @@ test.describe("navigation", () => {
     }
   });
 
+  test("Experience remains active through the contextual How I work section", async ({
+    page,
+  }) => {
+    await page.goto("/#how-i-work");
+
+    await expect(page.locator("#how-i-work")).toBeInViewport();
+    await expect(
+      page.getByRole("link", { name: "Experience", exact: true }),
+    ).toHaveAttribute("aria-current", "location");
+  });
+
   test("the Kitaka home link returns to the true top of the homepage", async ({
     page,
   }) => {
