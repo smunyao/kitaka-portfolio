@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 const primaryNavigation = [
   { name: "Experience", hash: "#experience" },
-  { name: "How I work", hash: "#how-i-work" },
+  { name: "Engineering", hash: "#engineering-work" },
   { name: "Writing", hash: "#writing" },
   { name: "Contact", hash: "#contact" },
 ];
@@ -231,23 +231,24 @@ test.describe("navigation", () => {
 
     await expect(menuButton).toHaveAttribute("aria-expanded", "true");
 
-    const howIWorkLink = page.getByRole("link", {
-      name: "How I work",
+    const engineeringLink = page.getByRole("link", {
+      name: "Engineering",
       exact: true,
     });
 
-    await expect(howIWorkLink).toBeVisible();
-    await howIWorkLink.click();
+    await expect(engineeringLink).toBeVisible();
+    await engineeringLink.click();
 
-    await expect(page).toHaveURL("/#how-i-work");
+    await expect(page).toHaveURL("/#engineering-work");
     await expect(menuButton).toHaveAttribute("aria-expanded", "false");
 
     const targetPosition = await page.evaluate(() => ({
       headerBottom: document
         .querySelector(".site-header")!
         .getBoundingClientRect().bottom,
-      sectionTop: document.querySelector("#how-i-work")!.getBoundingClientRect()
-        .top,
+      sectionTop: document
+        .querySelector("#engineering-work")!
+        .getBoundingClientRect().top,
     }));
 
     expect(targetPosition.sectionTop).toBeGreaterThanOrEqual(
