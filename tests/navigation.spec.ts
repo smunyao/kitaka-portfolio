@@ -173,6 +173,24 @@ test.describe("navigation", () => {
     await expect(page.locator(".site-header")).toHaveCSS("opacity", "1");
   });
 
+  test("homepage evidence follows the agreed narrative order", async ({
+    page,
+  }) => {
+    await page.goto("/");
+
+    const sectionOrder = await page
+      .locator(".home-content > section")
+      .evaluateAll((sections) => sections.map((section) => section.id));
+
+    expect(sectionOrder).toEqual([
+      "experience",
+      "how-i-work",
+      "engineering-work",
+      "writing",
+      "contact",
+    ]);
+  });
+
   test("primary navigation reaches each homepage section", async ({ page }) => {
     await page.goto("/");
     await page.evaluate(() => window.scrollTo(0, 48));
