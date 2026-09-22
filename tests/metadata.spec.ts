@@ -19,7 +19,7 @@ const publicRoutes = [
   {
     path: "/writing/before-the-release-decision",
     title: "Before the release decision | Kitaka",
-    image: "/social/kitaka-munyao.png",
+    image: "/social/before-the-release-decision.png",
   },
   {
     path: "/writing/testing-is-information-not-approval",
