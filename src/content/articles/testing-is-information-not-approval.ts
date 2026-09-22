@@ -5,8 +5,7 @@ export const testingIsInformationNotApproval: Article = {
 
   title: "Are we good to go?",
 
-  description:
-    "What testing can tell a team when a release needs a decision.",
+  description: "What testing can tell a team when a release needs a decision.",
 
   publishedAt: "2026-08-13",
 

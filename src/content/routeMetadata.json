@@ -32,6 +32,21 @@
     "imageTitle": "Quality engineering, product thinking and collaboration.",
     "imageAccent": "#d28a9d"
   },
+  "/writing/before-the-release-decision": {
+    "title": "Before the release decision | Kitaka",
+    "description": "How shared context, exploratory testing, and clear recommendations help a team understand what it is about to ship.",
+    "type": "article",
+    "image": "/social/kitaka-munyao.png",
+    "imageAlt": "Before the release decision — an article by Kitaka Munyao.",
+    "imageLabel": "Writing",
+    "imageTitle": "Before the release decision",
+    "imageAccent": "#d28a9d",
+    "structuredData": {
+      "kind": "blog-posting",
+      "headline": "Before the release decision",
+      "datePublished": "2026-09-22"
+    }
+  },
   "/writing/testing-is-information-not-approval": {
     "title": "Are we good to go? | Kitaka",
     "description": "What testing can tell a team when a release needs a decision.",
