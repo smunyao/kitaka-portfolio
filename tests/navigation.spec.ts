@@ -33,6 +33,10 @@ const caseStudies = [
 
 const articles = [
   {
+    title: "Before the release decision",
+    path: "/writing/before-the-release-decision",
+  },
+  {
     title: "A first version takes shape",
     path: "/writing/what-an-mvp-should-refuse",
   },
@@ -355,12 +359,12 @@ test.describe("navigation", () => {
 
     const writingSection = page.locator("#writing");
     const featuredArticleLink = writingSection.getByRole("link", {
-      name: "A first version takes shape",
+      name: "Before the release decision",
     });
 
     await expect(featuredArticleLink).toHaveAttribute(
       "href",
-      "/writing/what-an-mvp-should-refuse",
+      "/writing/before-the-release-decision",
     );
   });
 
@@ -502,6 +506,13 @@ test.describe("navigation", () => {
     await expect(page).toHaveURL(
       "/writing/testing-is-information-not-approval",
     );
+
+    await page
+      .getByRole("navigation", { name: "Continue exploring writing" })
+      .getByRole("link", { name: /Before the release decision/ })
+      .click();
+
+    await expect(page).toHaveURL("/writing/before-the-release-decision");
 
     await page.goto("/case-studies/harvest");
 

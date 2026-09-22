@@ -17,6 +17,11 @@ const routes = [
     heading: "Writing",
   },
   {
+    name: "release confidence article",
+    path: "/writing/before-the-release-decision",
+    heading: "Before the release decision",
+  },
+  {
     name: "release decision article",
     path: "/writing/testing-is-information-not-approval",
     heading: "Are we good to go?",
