@@ -2,8 +2,8 @@
 
 ## Search audit
 
-The portfolio has eight indexable routes: the homepage, How I Work, the Writing
-index, two articles and three case studies. Every route has a unique title,
+The portfolio has ten indexable routes: the homepage, How I Work, the Writing
+index, four articles and three case studies. Every route has a unique title,
 description and canonical URL and appears once in `sitemap.xml`.
 
 The existing search snippets are accurate and defensible. Some case-study
@@ -52,7 +52,7 @@ Published articles use `BlogPosting` with the visible headline, description,
 publication date, author, canonical page and social image.
 
 The Writing index has no structured data. `CollectionPage` or `ItemList` would
-be technically possible, but neither adds enough value for two articles to
+be technically possible, but neither adds enough value for four articles to
 justify maintaining more markup.
 
 ### Case studies
