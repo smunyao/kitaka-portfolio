@@ -17,6 +17,11 @@ const publicRoutes = [
     image: "/social/kitaka-munyao.png",
   },
   {
+    path: "/writing/before-the-release-decision",
+    title: "Before the release decision | Kitaka",
+    image: "/social/kitaka-munyao.png",
+  },
+  {
     path: "/writing/testing-is-information-not-approval",
     title: "Are we good to go? | Kitaka",
     image: "/social/testing-is-information-not-approval.png",
@@ -53,6 +58,10 @@ const structuredRoutes = [
   {
     path: "/",
     type: "ProfilePage",
+  },
+  {
+    path: "/writing/before-the-release-decision",
+    type: "BlogPosting",
   },
   {
     path: "/writing/testing-is-information-not-approval",

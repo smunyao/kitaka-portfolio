@@ -37,6 +37,12 @@
   </url>
 
   <url>
+    <loc>https://kitakamunyao.com/writing/before-the-release-decision</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://kitakamunyao.com/writing/testing-is-information-not-approval</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
