@@ -109,6 +109,10 @@
   padding-top: 3rem;
 }
 
+.home-work-group > .home-section:first-child {
+  padding-top: 3rem;
+}
+
 #writing,
 #engineering-work,
 #contact {
@@ -125,6 +129,7 @@
 
 #experience,
 #how-i-work,
+#work,
 #writing,
 #engineering-work,
 #contact {
@@ -160,6 +165,10 @@
   }
 
   .home-section + .home-section {
+    padding-top: 2rem;
+  }
+
+  .home-work-group > .home-section:first-child {
     padding-top: 2rem;
   }
 

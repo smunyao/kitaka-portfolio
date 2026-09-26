@@ -2,8 +2,7 @@ import { expect, test } from "@playwright/test";
 
 const primaryNavigation = [
   { name: "Experience", hash: "#experience" },
-  { name: "Engineering", hash: "#engineering-work" },
-  { name: "Writing", hash: "#writing" },
+  { name: "Work", hash: "#work" },
   { name: "Contact", hash: "#contact" },
 ];
 
@@ -182,17 +181,17 @@ test.describe("navigation", () => {
   }) => {
     await page.goto("/");
 
-    const sectionOrder = await page
-      .locator(".home-content > section")
+    const regionOrder = await page
+      .locator(".home-content > :is(section, .home-work-group)")
+      .evaluateAll((regions) => regions.map((region) => region.id));
+
+    expect(regionOrder).toEqual(["experience", "how-i-work", "work", "contact"]);
+
+    const workSectionOrder = await page
+      .locator("#work > section")
       .evaluateAll((sections) => sections.map((section) => section.id));
 
-    expect(sectionOrder).toEqual([
-      "experience",
-      "how-i-work",
-      "engineering-work",
-      "writing",
-      "contact",
-    ]);
+    expect(workSectionOrder).toEqual(["engineering-work", "writing"]);
   });
 
   test("primary navigation reaches each homepage section", async ({ page }) => {
@@ -213,15 +212,12 @@ test.describe("navigation", () => {
     }
   });
 
-  test("Writing remains active when Contact is also visible", async ({
-    page,
-  }) => {
+  test("Work remains active through the Writing section", async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "reduce" });
-    await page.goto("/");
-    await page.evaluate(() => window.scrollTo(0, 48));
+    await page.goto("/#writing");
 
-    const writingLink = page.getByRole("link", {
-      name: "Writing",
+    const workLink = page.getByRole("link", {
+      name: "Work",
       exact: true,
     });
     const contactLink = page.getByRole("link", {
@@ -229,12 +225,10 @@ test.describe("navigation", () => {
       exact: true,
     });
 
-    await writingLink.click();
-
     await expect(page).toHaveURL(/#writing$/);
     await expect(page.locator("#writing")).toBeInViewport();
     await expect(page.locator("#contact")).toBeInViewport();
-    await expect(writingLink).toHaveAttribute("aria-current", "location");
+    await expect(workLink).toHaveAttribute("aria-current", "location");
     await expect(contactLink).not.toHaveAttribute("aria-current", "location");
   });
 
@@ -247,6 +241,29 @@ test.describe("navigation", () => {
     await expect(
       page.getByRole("link", { name: "Contact", exact: true }),
     ).toHaveAttribute("aria-current", "location");
+  });
+
+  test("Contact becomes active after scrolling beyond a selected Work region", async ({
+    page,
+  }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.goto("/");
+    await page.evaluate(() => window.scrollTo(0, 48));
+
+    const workLink = page.getByRole("link", { name: "Work", exact: true });
+    const contactLink = page.getByRole("link", {
+      name: "Contact",
+      exact: true,
+    });
+
+    await workLink.click();
+    await expect(workLink).toHaveAttribute("aria-current", "location");
+
+    await page.keyboard.press("End");
+
+    await expect(page.locator("#contact")).toBeInViewport();
+    await expect(contactLink).toHaveAttribute("aria-current", "location");
+    await expect(workLink).not.toHaveAttribute("aria-current", "location");
   });
 
   test("Experience remains active through the contextual How I work section", async ({
@@ -306,15 +323,15 @@ test.describe("navigation", () => {
 
     await expect(menuButton).toHaveAttribute("aria-expanded", "true");
 
-    const engineeringLink = page.getByRole("link", {
-      name: "Engineering",
+    const workLink = page.getByRole("link", {
+      name: "Work",
       exact: true,
     });
 
-    await expect(engineeringLink).toBeVisible();
-    await engineeringLink.click();
+    await expect(workLink).toBeVisible();
+    await workLink.click();
 
-    await expect(page).toHaveURL("/#engineering-work");
+    await expect(page).toHaveURL("/#work");
     await expect(menuButton).toHaveAttribute("aria-expanded", "false");
 
     const targetPosition = await page.evaluate(() => ({
@@ -322,7 +339,7 @@ test.describe("navigation", () => {
         .querySelector(".site-header")!
         .getBoundingClientRect().bottom,
       sectionTop: document
-        .querySelector("#engineering-work")!
+        .querySelector("#work")!
         .getBoundingClientRect().top,
     }));
 
