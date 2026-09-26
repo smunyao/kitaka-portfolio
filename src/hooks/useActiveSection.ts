@@ -22,7 +22,21 @@ export function useActiveSection(sectionIds: string[]) {
       let currentSection = "";
 
       if (isAtBottom) {
-        currentSection = sectionIds.at(-1) ?? "";
+        const hashSection = decodeURIComponent(
+          window.location.hash.replace(/^#/, ""),
+        );
+        const hashTarget = sectionIds.includes(hashSection)
+          ? document.getElementById(hashSection)
+          : null;
+        const hashTargetBounds = hashTarget?.getBoundingClientRect();
+        const isHashTargetVisible =
+          hashTargetBounds &&
+          hashTargetBounds.bottom > navbarHeight &&
+          hashTargetBounds.top < window.innerHeight;
+
+        currentSection = isHashTargetVisible
+          ? hashSection
+          : (sectionIds.at(-1) ?? "");
       } else {
         for (const id of sectionIds) {
           const section = document.getElementById(id);
@@ -51,10 +65,12 @@ export function useActiveSection(sectionIds: string[]) {
     });
 
     window.addEventListener("resize", updateActiveSection);
+    window.addEventListener("hashchange", updateActiveSection);
 
     return () => {
       window.removeEventListener("scroll", updateActiveSection);
       window.removeEventListener("resize", updateActiveSection);
+      window.removeEventListener("hashchange", updateActiveSection);
     };
   }, [sectionIds]);
 

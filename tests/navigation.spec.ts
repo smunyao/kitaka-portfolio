@@ -200,11 +200,53 @@ test.describe("navigation", () => {
     await page.evaluate(() => window.scrollTo(0, 48));
 
     for (const item of primaryNavigation) {
-      await page.getByRole("link", { name: item.name, exact: true }).click();
+      const link = page.getByRole("link", {
+        name: item.name,
+        exact: true,
+      });
+
+      await link.click();
 
       await expect(page).toHaveURL(item.hash);
       await expect(page.locator(item.hash)).toBeInViewport();
+      await expect(link).toHaveAttribute("aria-current", "location");
     }
+  });
+
+  test("Writing remains active when Contact is also visible", async ({
+    page,
+  }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.goto("/");
+    await page.evaluate(() => window.scrollTo(0, 48));
+
+    const writingLink = page.getByRole("link", {
+      name: "Writing",
+      exact: true,
+    });
+    const contactLink = page.getByRole("link", {
+      name: "Contact",
+      exact: true,
+    });
+
+    await writingLink.click();
+
+    await expect(page).toHaveURL(/#writing$/);
+    await expect(page.locator("#writing")).toBeInViewport();
+    await expect(page.locator("#contact")).toBeInViewport();
+    await expect(writingLink).toHaveAttribute("aria-current", "location");
+    await expect(contactLink).not.toHaveAttribute("aria-current", "location");
+  });
+
+  test("Contact becomes active when scrolling naturally to the page end", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+
+    await expect(
+      page.getByRole("link", { name: "Contact", exact: true }),
+    ).toHaveAttribute("aria-current", "location");
   });
 
   test("Experience remains active through the contextual How I work section", async ({
