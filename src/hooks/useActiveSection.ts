@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function useActiveSection(sectionIds: string[]) {
   const [activeSection, setActiveSection] = useState("");
+  const selectedHashTargetRef = useRef(
+    decodeURIComponent(window.location.hash.replace(/^#/, "")),
+  );
 
   useEffect(() => {
     const updateActiveSection = () => {
@@ -22,7 +25,25 @@ export function useActiveSection(sectionIds: string[]) {
       let currentSection = "";
 
       if (isAtBottom) {
-        currentSection = sectionIds.at(-1) ?? "";
+        const hashTargetId = selectedHashTargetRef.current;
+        const hashTarget = document.getElementById(hashTargetId);
+        const hashSection = hashTarget
+          ? sectionIds.find((id) => {
+              const section = document.getElementById(id);
+
+              return section === hashTarget || section?.contains(hashTarget);
+            })
+          : undefined;
+        const hashTargetBounds = hashTarget?.getBoundingClientRect();
+        const isHashTargetVisible =
+          hashSection &&
+          hashTargetBounds &&
+          hashTargetBounds.bottom > navbarHeight &&
+          hashTargetBounds.top < window.innerHeight;
+
+        currentSection = isHashTargetVisible
+          ? hashSection
+          : (sectionIds.at(-1) ?? "");
       } else {
         for (const id of sectionIds) {
           const section = document.getElementById(id);
@@ -44,6 +65,28 @@ export function useActiveSection(sectionIds: string[]) {
       );
     };
 
+    const handleHashChange = () => {
+      selectedHashTargetRef.current = decodeURIComponent(
+        window.location.hash.replace(/^#/, ""),
+      );
+      updateActiveSection();
+    };
+
+    const releaseHashPreference = () => {
+      selectedHashTargetRef.current = "";
+      updateActiveSection();
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (
+        ["ArrowDown", "ArrowUp", "End", "Home", "PageDown", "PageUp", " "].includes(
+          event.key,
+        )
+      ) {
+        releaseHashPreference();
+      }
+    };
+
     updateActiveSection();
 
     window.addEventListener("scroll", updateActiveSection, {
@@ -51,10 +94,20 @@ export function useActiveSection(sectionIds: string[]) {
     });
 
     window.addEventListener("resize", updateActiveSection);
+    window.addEventListener("hashchange", handleHashChange);
+    window.addEventListener("wheel", releaseHashPreference, { passive: true });
+    window.addEventListener("touchmove", releaseHashPreference, {
+      passive: true,
+    });
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
       window.removeEventListener("scroll", updateActiveSection);
       window.removeEventListener("resize", updateActiveSection);
+      window.removeEventListener("hashchange", handleHashChange);
+      window.removeEventListener("wheel", releaseHashPreference);
+      window.removeEventListener("touchmove", releaseHashPreference);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [sectionIds]);
 
