@@ -1,0 +1,12 @@
+.brand-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+
+  letter-spacing: -0.04em;
+}
+
+.brand-wordmark-dot {
+  color: var(--color-accent);
+
+  transition: color var(--transition);
+}
