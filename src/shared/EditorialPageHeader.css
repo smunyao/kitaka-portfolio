@@ -35,13 +35,16 @@
 
   font-size: 1.25rem;
   font-weight: 500;
-  letter-spacing: -0.3px;
 
   transition: color var(--transition);
 }
 
 .editorial-page-home-link:hover {
-  color: var(--color-accent);
+  color: var(--color-heading);
+}
+
+.editorial-page-home-link:hover .brand-wordmark-dot {
+  color: var(--color-heading);
 }
 
 .editorial-page-back-link {

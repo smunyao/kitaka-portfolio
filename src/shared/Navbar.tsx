@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import { useActiveSection } from "../hooks/useActiveSection";
+import BrandWordmark from "./BrandWordmark";
 
 import "./Navbar.css";
 
@@ -114,7 +115,7 @@ function Navbar() {
             aria-label="Kitaka Munyao home"
             onClick={closeMenu}
           >
-            Kitaka
+            <BrandWordmark />
           </a>
 
           <button

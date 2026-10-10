@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import BrandWordmark from "./BrandWordmark";
+
 import "./EditorialPageHeader.css";
 
 interface EditorialPageHeaderProps {
@@ -22,7 +24,7 @@ function EditorialPageHeader({
             to="/"
             aria-label="Kitaka Munyao home"
           >
-            Kitaka
+            <BrandWordmark />
           </Link>
 
           <Link className="editorial-page-back-link" to={backTo}>
