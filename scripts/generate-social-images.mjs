@@ -108,15 +108,15 @@ for (const [imagePath, definition] of imageDefinitions) {
             text-transform: uppercase;
           }
 
-          .mark {
+          .identity {
             margin: 0;
             color: #f3f0ed;
-            font-size: 36px;
-            font-weight: 620;
+            font-size: 29px;
+            font-weight: 520;
             letter-spacing: -0.04em;
           }
 
-          .mark span { color: ${definition.accent}; }
+          .identity span { color: ${definition.accent}; }
 
           .content {
             display: grid;
@@ -157,7 +157,7 @@ for (const [imagePath, definition] of imageDefinitions) {
         <main>
           <div class="topline">
             <p class="label">${escapeHtml(definition.label)}</p>
-            <p class="mark">K<span>.</span></p>
+            <p class="identity">Kitaka Munyao<span>.</span></p>
           </div>
 
           <div class="content">
@@ -165,7 +165,7 @@ for (const [imagePath, definition] of imageDefinitions) {
             <h1>${escapeHtml(definition.title)}</h1>
           </div>
 
-          <footer>Kitaka Munyao</footer>
+          <footer>kitakamunyao.com</footer>
         </main>
       </body>
     </html>`;
