@@ -32,6 +32,21 @@
     "imageTitle": "Quality engineering, product thinking and collaboration.",
     "imageAccent": "#d28a9d"
   },
+  "/writing/when-testing-changed-release-conversation": {
+    "title": "When testing changed the release conversation | Kitaka",
+    "description": "Two anonymised situations where testing changed what a team understood about a release, without pretending to make the decision for them.",
+    "type": "article",
+    "image": "/social/when-testing-changed-release-conversation.png",
+    "imageAlt": "When testing changed the release conversation — an article by Kitaka Munyao.",
+    "imageLabel": "Writing",
+    "imageTitle": "When testing changed the release conversation",
+    "imageAccent": "#d28a9d",
+    "structuredData": {
+      "kind": "blog-posting",
+      "headline": "When testing changed the release conversation",
+      "datePublished": "2026-10-12"
+    }
+  },
   "/writing/before-the-release-decision": {
     "title": "Before the release decision | Kitaka",
     "description": "How shared context, exploratory testing, and clear recommendations help a team understand what it is about to ship.",
