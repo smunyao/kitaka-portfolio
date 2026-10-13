@@ -8,7 +8,7 @@ export const whenTestingChangedReleaseConversation: Article = {
   description:
     "Two anonymised situations where testing changed what a team understood about a release and made the decision in front of it clearer.",
 
-  publishedAt: "2026-10-12",
+  publishedAt: "2026-10-13",
 
   readingTime: "7 min read",
 
