@@ -32,6 +32,10 @@ const caseStudies = [
 
 const articles = [
   {
+    title: "When testing changed the release conversation",
+    path: "/writing/when-testing-changed-release-conversation",
+  },
+  {
     title: "Before the release decision",
     path: "/writing/before-the-release-decision",
   },
@@ -185,7 +189,12 @@ test.describe("navigation", () => {
       .locator(".home-content > :is(section, .home-work-group)")
       .evaluateAll((regions) => regions.map((region) => region.id));
 
-    expect(regionOrder).toEqual(["experience", "how-i-work", "work", "contact"]);
+    expect(regionOrder).toEqual([
+      "experience",
+      "how-i-work",
+      "work",
+      "contact",
+    ]);
 
     const workSectionOrder = await page
       .locator("#work > section")
@@ -338,9 +347,7 @@ test.describe("navigation", () => {
       headerBottom: document
         .querySelector(".site-header")!
         .getBoundingClientRect().bottom,
-      sectionTop: document
-        .querySelector("#work")!
-        .getBoundingClientRect().top,
+      sectionTop: document.querySelector("#work")!.getBoundingClientRect().top,
     }));
 
     expect(targetPosition.sectionTop).toBeGreaterThanOrEqual(
@@ -418,12 +425,12 @@ test.describe("navigation", () => {
 
     const writingSection = page.locator("#writing");
     const featuredArticleLink = writingSection.getByRole("link", {
-      name: "Before the release decision",
+      name: "When testing changed the release conversation",
     });
 
     await expect(featuredArticleLink).toHaveAttribute(
       "href",
-      "/writing/before-the-release-decision",
+      "/writing/when-testing-changed-release-conversation",
     );
   });
 
@@ -568,10 +575,14 @@ test.describe("navigation", () => {
 
     await page
       .getByRole("navigation", { name: "Continue exploring writing" })
-      .getByRole("link", { name: /Before the release decision/ })
+      .getByRole("link", {
+        name: /When testing changed the release conversation/,
+      })
       .click();
 
-    await expect(page).toHaveURL("/writing/before-the-release-decision");
+    await expect(page).toHaveURL(
+      "/writing/when-testing-changed-release-conversation",
+    );
 
     await page.goto("/case-studies/harvest");
 

@@ -17,7 +17,11 @@ function HomePage() {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window.location.hash) {
+    const scrollToHash = () => {
+      if (!window.location.hash) {
+        return;
+      }
+
       const element = document.querySelector(window.location.hash);
 
       if (element) {
@@ -25,7 +29,14 @@ function HomePage() {
           behavior: "smooth",
         });
       }
-    }
+    };
+
+    scrollToHash();
+    window.addEventListener("hashchange", scrollToHash);
+
+    return () => {
+      window.removeEventListener("hashchange", scrollToHash);
+    };
   }, []);
 
   useEffect(() => {

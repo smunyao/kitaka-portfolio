@@ -17,6 +17,11 @@ const publicRoutes = [
     image: "/social/kitaka-munyao.png",
   },
   {
+    path: "/writing/when-testing-changed-release-conversation",
+    title: "When testing changed the release conversation | Kitaka",
+    image: "/social/when-testing-changed-release-conversation.png",
+  },
+  {
     path: "/writing/before-the-release-decision",
     title: "Before the release decision | Kitaka",
     image: "/social/before-the-release-decision.png",
@@ -58,6 +63,10 @@ const structuredRoutes = [
   {
     path: "/",
     type: "ProfilePage",
+  },
+  {
+    path: "/writing/when-testing-changed-release-conversation",
+    type: "BlogPosting",
   },
   {
     path: "/writing/before-the-release-decision",
@@ -105,7 +114,9 @@ test.describe("crawler-visible metadata", () => {
       expect(html).toContain(`property="og:title" content="${route.title}"`);
       expect(html).toContain(`property="og:url" content="${canonical}"`);
       expect(html).toContain(`property="og:image" content="${image}"`);
-      expect(html).toContain('name="twitter:card" content="summary_large_image"');
+      expect(html).toContain(
+        'name="twitter:card" content="summary_large_image"',
+      );
       expect(html).toContain(`name="twitter:image" content="${image}"`);
       expect(html).toContain('name="twitter:image:alt"');
 

@@ -17,6 +17,11 @@ const routes = [
     heading: "Writing",
   },
   {
+    name: "release conversation article",
+    path: "/writing/when-testing-changed-release-conversation",
+    heading: "When testing changed the release conversation",
+  },
+  {
     name: "release confidence article",
     path: "/writing/before-the-release-decision",
     heading: "Before the release decision",
@@ -87,7 +92,9 @@ test.describe("core routes", () => {
     });
   }
 
-  test("homepage metadata reflects the visible positioning", async ({ page }) => {
+  test("homepage metadata reflects the visible positioning", async ({
+    page,
+  }) => {
     await page.goto("/");
 
     const description =
@@ -97,14 +104,10 @@ test.describe("core routes", () => {
     const metaDescription = page.locator('meta[name="description"]');
 
     await expect(metaDescription).toHaveCount(1);
-    await expect(metaDescription).toHaveAttribute(
-      "content",
-      description,
-    );
-    await expect(page.locator('meta[property="og:description"]')).toHaveAttribute(
-      "content",
-      description,
-    );
+    await expect(metaDescription).toHaveAttribute("content", description);
+    await expect(
+      page.locator('meta[property="og:description"]'),
+    ).toHaveAttribute("content", description);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       "href",
       "https://kitakamunyao.com/",
@@ -124,10 +127,9 @@ test.describe("core routes", () => {
       "content",
       description,
     );
-    await expect(page.locator('meta[property="og:description"]')).toHaveAttribute(
-      "content",
-      description,
-    );
+    await expect(
+      page.locator('meta[property="og:description"]'),
+    ).toHaveAttribute("content", description);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       "href",
       "https://kitakamunyao.com/writing/testing-connected-workflows",
