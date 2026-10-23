@@ -25,7 +25,7 @@ export const experiences: ExperienceItem[] = [
     headline: "Building quality from the ground up",
     context: "Startup · QA Foundations · Team Growth",
     summary:
-      "At Sitemate, I remained hands-on across Dashpivot and Sitemate ID while helping establish QA practices and starting the automation effort. As the organisation grew, I began building the QA team by hiring and mentoring its first additional engineer.",
+      "At Sitemate, I remained hands-on across Dashpivot and Sitemate ID while helping establish QA practices and starting the automation effort. As the organisation grew, I helped build the QA team by hiring, onboarding and mentoring engineers.",
     caseStudyUrl: "/case-studies/sitemate",
   },
 ];

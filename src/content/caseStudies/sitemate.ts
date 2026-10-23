@@ -11,7 +11,7 @@ export const sitemateCaseStudy: CaseStudy = {
   title: "Building quality from the ground up",
 
   summary:
-    "At Sitemate, I combined hands-on testing with establishing QA practices and starting the automation effort, then began building the QA team by hiring and mentoring its first additional engineer.",
+    "At Sitemate, I combined hands-on testing with establishing QA practices and starting the automation effort, then helped build the QA team by hiring, onboarding and mentoring engineers.",
 
   productEcosystem: [
     "My work centred on Dashpivot, Sitemate's platform for digitising operational and field workflows. Its web and mobile applications supported configurable forms, document management, inspections, data collection and reporting for work carried out both in the office and in the field.",
@@ -28,19 +28,21 @@ export const sitemateCaseStudy: CaseStudy = {
   approach: [
     "I remained involved in day-to-day testing across Dashpivot, Sitemate ID and the connections developing between them. That kept decisions about process and automation grounded in the behaviour of the products and the constraints faced by the engineering teams.",
     "Alongside that work, I helped establish QA practices that involved engineers and product colleagues during development rather than concentrating testing at the end of a release. The aim was to make questions about risk, expected behaviour and testability part of the work as it developed.",
-    "I started the automation effort by identifying repeatable checks where earlier feedback would be useful. Automation complemented exploratory investigation and product understanding; it was a means of supporting delivery, not a measure of progress by itself.",
-    "I later hired and mentored Sitemate's first additional QA engineer. Building the team included sharing product context, developing ways of working together and creating room for another person to contribute their own judgement rather than simply inherit a list of checks.",
+    "I evaluated automation approaches for different web and mobile needs, then introduced Cypress coverage for repeatable web workflows. Automation complemented exploratory investigation and product understanding; it was a means of supporting delivery, not a measure of progress by itself.",
+    "I helped hire, onboard and mentor QA engineers, sharing product context while coordinating product and automation initiatives. Building the team meant creating room for other people to contribute their own judgement rather than simply inherit a list of checks.",
+    "I also reorganised test cases in a test-management system and coordinated test plans, regression cycles and user-acceptance testing. The structure helped the growing team understand what needed attention without turning the process into an end in itself.",
   ],
 
   impact: [
-    "The QA function no longer depended on a single engineer. Hiring and mentoring another QA engineer increased the perspectives available during testing and created a basis for the team to continue developing beyond its original shape.",
-    "The initial automation work introduced repeatable feedback for selected workflows while preserving hands-on investigation for changes where context and judgement mattered more.",
+    "The QA function no longer depended on a single engineer. Hiring, onboarding and mentoring other QA engineers increased the perspectives available during testing and created a basis for the team to continue developing beyond its original shape.",
+    "The initial Cypress automation introduced repeatable feedback for selected web workflows while preserving hands-on investigation for changes where context and judgement mattered more.",
+    "More deliberate test planning and regression coordination gave the team a clearer shared view of coverage and release readiness as the products and organisation grew.",
     "Bringing quality conversations into development also made testing less isolated from Engineering and Product. Questions about risk and expected behaviour could be raised while work was taking shape, rather than being deferred entirely to the end of a release.",
   ],
 
   reflection: [
     "Sitemate showed me that growing a quality practice is not the same as accumulating more process. It requires deciding which habits genuinely help a team understand its product and which merely add distance from the work.",
-    "Hiring and mentoring another QA engineer also changed my understanding of leadership. It involved sharing context and responsibility while remaining open to another person's questions, methods and judgement.",
+    "Hiring, onboarding and mentoring other QA engineers also changed my understanding of leadership. It involved sharing context and responsibility while remaining open to other people's questions, methods and judgement.",
     "The experience left me with a practical view of scale: stay close to the product, build feedback where it is useful and create conditions in which quality does not rely on a single role or person.",
   ],
 
@@ -51,6 +53,8 @@ export const sitemateCaseStudy: CaseStudy = {
     "Hiring",
     "Mentoring",
     "Automation strategy",
+    "Test planning",
+    "User-acceptance testing",
     "Cross-functional collaboration",
     "Continuous improvement",
   ],
