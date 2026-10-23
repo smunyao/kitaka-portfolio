@@ -6,7 +6,7 @@ export const chiliPiperCaseStudy: CaseStudy = {
   company: "Chili Piper",
   companyUrl: "https://www.chilipiper.com",
 
-  role: "QA Analyst",
+  role: "Senior QA Analyst",
 
   title: "Quality begins with understanding the system",
 
@@ -28,6 +28,7 @@ export const chiliPiperCaseStudy: CaseStudy = {
   approach: [
     "I began by mapping the customer workflow: what the person was trying to achieve, which systems participated, how information moved between them and which configuration or business rules affected the result. That model guided the questions I asked before it became a list of tests.",
     "I used exploratory testing to investigate unfamiliar behaviour and varied configurations, alongside API and integration validation to follow what was happening beyond the interface. End-to-end checks were useful for selected repeatable journeys, but they could not represent every meaningful combination of customer data and connected services.",
+    "I evaluated Cypress against the product's automation needs and maintained structured regression coverage for new features and workflow changes. The useful question was not how much could be automated, but which repeatable checks could provide reliable feedback without disguising the variability introduced by customer configuration and external systems.",
     "When behaviour was unexpected, I traced the workflow through its dependencies rather than treating the visible symptom as the whole problem. This helped separate product defects from configuration and integration issues while retaining the customer experience as the starting point for the investigation.",
     "I worked with engineers and product managers to surface assumptions while features were being developed and to share what testing revealed about the surrounding system. The conversation was not limited to whether a check passed; it included whether the expected behaviour still made sense for the workflow being supported.",
     "As AI-powered capabilities entered the product, I applied the same discipline: understand the intended outcome, identify the data and systems influencing it, and investigate behaviour that could not be evaluated through a simple deterministic assertion.",
@@ -53,6 +54,7 @@ export const chiliPiperCaseStudy: CaseStudy = {
     "API validation",
     "Exploratory testing",
     "End-to-end testing",
+    "Automation evaluation",
     "Customer workflows",
     "Cross-functional collaboration",
   ],
