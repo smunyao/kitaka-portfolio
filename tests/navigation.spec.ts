@@ -26,7 +26,7 @@ const caseStudies = [
     path: "/case-studies/sitemate",
     heading: "Building quality from the ground up",
     summary:
-      "At Sitemate, I combined hands-on testing with establishing QA practices and starting the automation effort, then helped build the QA team by hiring, onboarding and mentoring engineers.",
+      "At Sitemate, I combined hands-on testing with establishing QA practices and starting the automation effort, then hired, onboarded and mentored the team's first additional QA engineer.",
   },
 ];
 

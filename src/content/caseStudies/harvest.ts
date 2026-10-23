@@ -30,8 +30,8 @@ export const harvestCaseStudy: CaseStudy = {
     "For integration-heavy work, I followed data beyond the immediate interface and through the products and external services involved. This exposed behaviour that isolated user-interface testing could miss and made failures easier to discuss with the engineers working on them.",
     "I rebuilt and expanded automated integration coverage using Playwright and TypeScript. The most useful checks protected important, repeatable workflows across a broad integration surface and provided timely feedback, while exploratory work remained available for new behaviour and risks that were difficult to predict in advance.",
     "I worked with engineers and product managers while features were being shaped, and with Customer Support when production behaviour needed the context of a real customer workflow. That collaboration helped connect implementation decisions, test evidence and the ways people were actually using the products.",
-    "I also guided QA teammates on testing strategy, coverage and release readiness. That work was less about prescribing one method than sharing enough product and risk context for people to make sound testing decisions across their own areas.",
-    "During the revitalisation of Forecast, I led the quality-engineering work while the team reconsidered the relationship between Harvest and Forecast. I brought the same investigative approach to a product with its own users and constraints rather than assuming that practices from Harvest would transfer unchanged.",
+    "I was often the first person to try new testing tools and approaches before they were introduced more widely. That involved learning where an approach was useful, where it fell short and how it might fit the products and workflows the team already had.",
+    "During the revitalisation of Forecast, I supported research and quality-engineering investigation as the team reconsidered the relationship between Harvest and Forecast. I brought the same investigative approach to a product with its own users and constraints rather than assuming that practices from Harvest would transfer unchanged.",
   ],
 
   impact: [
@@ -53,9 +53,9 @@ export const harvestCaseStudy: CaseStudy = {
     "Integration testing",
     "End-to-end automation",
     "Automation strategy",
+    "Tool evaluation",
     "Cross-platform testing",
     "Release readiness",
-    "QA guidance",
     "Cross-functional collaboration",
   ],
 
