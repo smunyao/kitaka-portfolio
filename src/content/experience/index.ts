@@ -7,7 +7,7 @@ export const experiences: ExperienceItem[] = [
     headline: "Building quality at scale",
     context: "Mature SaaS Platform · Web · Mobile · APIs · Integrations",
     summary:
-      "Across Harvest and Forecast, I worked with engineers, product managers and Customer Support to investigate risk across web, mobile, APIs and third-party integrations. My work combined exploratory testing, integration validation and targeted automation across a connected product ecosystem.",
+      "Across Harvest and Forecast, I worked with engineers, product managers, and Customer Support to investigate risk across web, mobile, APIs, and third-party integrations. My work combined exploratory testing, integration validation, and targeted automation across a connected product ecosystem.",
     caseStudyUrl: "/case-studies/harvest",
   },
   {
@@ -16,7 +16,7 @@ export const experiences: ExperienceItem[] = [
     headline: "Navigating complexity",
     context: "CRM Integrations · Calendars · AI Features · Customer Workflows",
     summary:
-      "At Chili Piper, I tested scheduling workflows spanning CRM integrations, calendar providers, APIs and emerging AI capabilities. Understanding customer configurations and data flow was essential to deciding where exploratory testing, integration validation and automation could provide useful evidence.",
+      "At Chili Piper, I tested scheduling workflows spanning CRM integrations, calendar providers, APIs, and emerging AI capabilities. Understanding customer configurations and data flow was essential to deciding where exploratory testing, integration validation, and automation could provide useful evidence.",
     caseStudyUrl: "/case-studies/chili-piper",
   },
   {
@@ -25,7 +25,7 @@ export const experiences: ExperienceItem[] = [
     headline: "Building quality from the ground up",
     context: "Startup · QA Foundations · Team Growth",
     summary:
-      "At Sitemate, I remained hands-on across Dashpivot and Sitemate ID while helping establish QA practices and starting the automation effort. As the organisation grew, I hired, onboarded and mentored its first additional QA engineer while we continued improving the team's processes.",
+      "At Sitemate, I remained hands-on across Dashpivot and Sitemate ID while helping establish QA practices and starting the automation effort. As the organisation grew, I hired, onboarded, and mentored its first additional QA engineer while we continued improving the team's processes.",
     caseStudyUrl: "/case-studies/sitemate",
   },
 ];

@@ -12,21 +12,21 @@ const caseStudies = [
     path: "/case-studies/harvest",
     heading: "Building confidence across a connected product ecosystem",
     summary:
-      "Across Harvest and Forecast, I combined exploratory testing, API and integration validation and targeted automation to help teams understand risk across a connected product ecosystem.",
+      "Across Harvest and Forecast, I combined exploratory testing, API and integration validation, and targeted automation to help teams understand risk across a connected product ecosystem.",
   },
   {
     company: "Chili Piper",
     path: "/case-studies/chili-piper",
     heading: "Quality begins with understanding the system",
     summary:
-      "At Chili Piper, I investigated scheduling workflows across CRM integrations, calendar providers, APIs and emerging AI capabilities, using product understanding to shape the testing approach.",
+      "At Chili Piper, I investigated scheduling workflows across CRM integrations, calendar providers, APIs, and emerging AI capabilities, using product understanding to shape the testing approach.",
   },
   {
     company: "Sitemate",
     path: "/case-studies/sitemate",
     heading: "Building quality from the ground up",
     summary:
-      "At Sitemate, I combined hands-on testing with establishing QA practices and starting the automation effort, then hired, onboarded and mentored the team's first additional QA engineer.",
+      "At Sitemate, I remained hands-on while establishing QA practices and starting the automation effort, then hired, onboarded, and mentored the team's first additional QA engineer.",
   },
 ];
 
