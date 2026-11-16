@@ -17,6 +17,11 @@ const publicRoutes = [
     image: "/social/kitaka-munyao.png",
   },
   {
+    path: "/writing/what-survives-an-automation-rewrite",
+    title: "What survives an automation rewrite | Kitaka",
+    image: "/social/what-survives-an-automation-rewrite.png",
+  },
+  {
     path: "/writing/when-testing-changed-release-conversation",
     title: "When testing changed the release conversation | Kitaka",
     image: "/social/when-testing-changed-release-conversation.png",
@@ -63,6 +68,10 @@ const structuredRoutes = [
   {
     path: "/",
     type: "ProfilePage",
+  },
+  {
+    path: "/writing/what-survives-an-automation-rewrite",
+    type: "BlogPosting",
   },
   {
     path: "/writing/when-testing-changed-release-conversation",
