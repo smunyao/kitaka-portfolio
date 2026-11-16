@@ -17,6 +17,11 @@ const routes = [
     heading: "Writing",
   },
   {
+    name: "automation rewrite article",
+    path: "/writing/what-survives-an-automation-rewrite",
+    heading: "What survives an automation rewrite",
+  },
+  {
     name: "release conversation article",
     path: "/writing/when-testing-changed-release-conversation",
     heading: "When testing changed the release conversation",

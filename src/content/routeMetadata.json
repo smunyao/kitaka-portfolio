@@ -36,7 +36,7 @@
     "title": "What survives an automation rewrite | Kitaka",
     "description": "What moving an integration suite from Ruby to Puppeteer and then Playwright taught me about preserving product knowledge without preserving every test.",
     "type": "article",
-    "image": "/social/kitaka-munyao.png",
+    "image": "/social/what-survives-an-automation-rewrite.png",
     "imageAlt": "What survives an automation rewrite — an article by Kitaka Munyao.",
     "imageLabel": "Writing",
     "imageTitle": "What survives an automation rewrite",

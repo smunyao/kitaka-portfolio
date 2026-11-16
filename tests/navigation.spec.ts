@@ -32,6 +32,10 @@ const caseStudies = [
 
 const articles = [
   {
+    title: "What survives an automation rewrite",
+    path: "/writing/what-survives-an-automation-rewrite",
+  },
+  {
     title: "When testing changed the release conversation",
     path: "/writing/when-testing-changed-release-conversation",
   },
@@ -425,12 +429,12 @@ test.describe("navigation", () => {
 
     const writingSection = page.locator("#writing");
     const featuredArticleLink = writingSection.getByRole("link", {
-      name: "When testing changed the release conversation",
+      name: "What survives an automation rewrite",
     });
 
     await expect(featuredArticleLink).toHaveAttribute(
       "href",
-      "/writing/when-testing-changed-release-conversation",
+      "/writing/what-survives-an-automation-rewrite",
     );
   });
 
@@ -576,12 +580,12 @@ test.describe("navigation", () => {
     await page
       .getByRole("navigation", { name: "Continue exploring writing" })
       .getByRole("link", {
-        name: /When testing changed the release conversation/,
+        name: /What survives an automation rewrite/,
       })
       .click();
 
     await expect(page).toHaveURL(
-      "/writing/when-testing-changed-release-conversation",
+      "/writing/what-survives-an-automation-rewrite",
     );
 
     await page.goto("/case-studies/harvest");
