@@ -32,6 +32,21 @@
     "imageTitle": "Quality engineering, product thinking and collaboration.",
     "imageAccent": "#d28a9d"
   },
+  "/writing/what-survives-an-automation-rewrite": {
+    "title": "What survives an automation rewrite | Kitaka",
+    "description": "What moving an integration suite from Ruby to Puppeteer and then Playwright taught me about preserving product knowledge without preserving every test.",
+    "type": "article",
+    "image": "/social/kitaka-munyao.png",
+    "imageAlt": "What survives an automation rewrite — an article by Kitaka Munyao.",
+    "imageLabel": "Writing",
+    "imageTitle": "What survives an automation rewrite",
+    "imageAccent": "#d28a9d",
+    "structuredData": {
+      "kind": "blog-posting",
+      "headline": "What survives an automation rewrite",
+      "datePublished": "2026-11-16"
+    }
+  },
   "/writing/when-testing-changed-release-conversation": {
     "title": "When testing changed the release conversation | Kitaka",
     "description": "Two anonymised situations where testing changed what a team understood about a release and made the decision in front of it clearer.",
